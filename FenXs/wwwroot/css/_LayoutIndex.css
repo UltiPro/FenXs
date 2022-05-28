@@ -1,0 +1,61 @@
+body,
+html {
+    height: 100%;
+    background-image: url("../img/Background.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: FenXs-Font;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+    font-size: 20px;
+}
+
+header {
+    font-family: FenXs-Font-Logo;
+    font-size: 100px;
+    text-shadow: -3px 0 white, 0 3px white, 3px 0 white, 0 -3px white;
+}
+
+.footer-min {
+    width: 150px;
+    border-radius: 10px 0 0 0;
+}
+
+.footer-max {
+    width: 100%;
+}
+
+.index-menu {
+    width: 400px;
+    height: 305px;
+}
+
+.index-menu-tab {
+    height: 35px;
+}
+
+.index-menu-form {
+    height: 270px;
+}
+
+.index-error {
+    width: 450px;
+    font-size: 18px;
+}
+
+#LoginInSelector {
+    cursor: pointer;
+}
+
+#SignInSelector {
+    cursor: pointer;
+}
+
+#LoginInBox label {
+    height: 42px;
+}
+
+#SignInBox label {
+    height: 38.25px;
+}

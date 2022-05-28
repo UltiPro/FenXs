@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FenXs</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/Site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/FenXs.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/_LayoutIndex.css" asp-append-version="true" />
+</head>
+
+<body>
+    <header class="d-flex justify-content-center text-center p-5">
+        FenXs
+    </header>
+    <main role="main" class="justify-content-center">
+        @RenderBody()
+    </main>
+    <footer class="footer footer-max position-fixed bottom-0 end-0 FenXs-Wooden text-center p-1 border-top border-start border-2 border-dark">
+        <span class="FenXs-CopyRight">&copy</span> 2022 - FenXs
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/_LayoutIndex.js" asp-append-version="true"></script>
+    <script src="~/js/Inputs_Validations.js" asp-append-version="true"></script>
+    <script src="~/js/Audio.js" asp-append-version="true"></script>
+</body>
+
+</html>

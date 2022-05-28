@@ -1,0 +1,29 @@
+.FenXs-Font-Regular {
+    font-family: FenXs-Font-Regular;
+    font-size: 0.75rem;
+    text-shadow: none;
+}
+
+.FenXs-CopyRight {
+    font-family: FenXs-Font-Regular;
+    color: black;
+    text-shadow: none;
+}
+
+.FenXs-Wooden {
+    background-color: rgb(var(--FenXs-Wooden));
+}
+
+.FenXs-Dark-Wooden {
+    background-color: rgb(var(--FenXs-Dark-Wooden));
+}
+
+.FenXs-Dark-Wooden-Btn {
+    background-color: rgb(var(--FenXs-Dark-Wooden));
+    border-color: rgb(var(--bs-dark-rgb));
+}
+
+.FenXs-Dark-Wooden-Btn:hover {
+    color: white;
+    border-color: white;
+}
