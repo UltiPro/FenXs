@@ -1,5 +1,11 @@
 @page
 @model NotFoundModel
 @{
-    Layout = "_LayoutIndex";
+    Layout = "_LayoutForErrors";
+    ViewData["Description"] = "- Page Not Found";
 }
+
+<div class="container text-center">
+    <span class="display-1">Error 404</span><br/>
+    <a href="Index" class="link-light">Back To Main Page</a>
+</div>

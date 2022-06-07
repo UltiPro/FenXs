@@ -28,7 +28,6 @@
         </div>
     </div>
     <div class="row FenXs-Wooden border border-top-0 border-2 border-dark rounded-bottom">
-        <!-- tutaj -->
         <div id="LoginInBox" style="display:none">
             <div class="row index-menu-form">
                 <div class="col-4 border-end border-2 border-dark">
@@ -36,8 +35,8 @@
                     <label asp-for="l.login" class="my-2 p-1 w-100">Password</label>
                 </div>
                 <div class="col-8">
-                    <form method="post" onsubmit="return ValidateLoginIn()">
-                        <!--  -->
+                    <form method="post">
+                        <!-- onsubmit="return ValidateLoginIn()" -->
                         <div class="form-group mt-4">
                             <input type="text" asp-for="l.login" class="form-control p-1 border border-dark"
                                 placeholder="Your Login">
@@ -56,7 +55,6 @@
                 </div>
             </div>
         </div>
-        <!-- tutaj -->
         <div id="SignInBox">
             <div class="row index-menu-form">
                 <div class="col-4 border-end border-2 border-dark">
@@ -66,9 +64,9 @@
                     <label asp-for="r.c_password" class="mt-2 p-1 w-100">Confirm P.</label>
                     <button id="SignInInfoBtn" class="btn FenXs-Dark-Wooden-Btn btn-sm mt-2 p-1 w-100">Info</button>
                 </div>
-                <div class="col-8" onsubmit="return ValidateSignIn()">
-                    <!--  -->
+                <div class="col-8">
                     <form method="post">
+                        <!-- onsubmit="return ValidateSignIn()" -->
                         <div class="form-group mt-3">
                             <input type="text" asp-for="r.login" class="form-control form-control-sm border border-dark"
                                 placeholder="e.g. Player007">

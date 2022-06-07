@@ -1,9 +1,3 @@
-ToggleFotter();
-
-$(window).resize(function () {
-    ToggleFotter();
-})
-
 $(document).ready(function () {
     $("#SignInSelector").bind("click", function () {
         ToggleIndexBox("#LoginInSelector", "#SignInSelector", "#LoginInBox", "#SignInBox");
@@ -27,24 +21,6 @@ $(document).ready(function () {
         ToggleInfoBox("#InfoBox", "#SignInLoginInBox");
     })
 })
-
-$(document).ready(function () {
-    $("input").bind("click", function () {
-        AudioChangeInput();
-    })
-})
-
-function ToggleFotter() {
-    if ($(window).width() < 768) {
-        $("footer").removeClass("footer-min");
-        $("footer").addClass("footer-max");
-        $("footer").removeClass("border-start");
-    } else {
-        $("footer").removeClass("footer-max");
-        $("footer").addClass("footer-min");
-        $("footer").addClass("border-start");
-    }
-}
 
 function ToggleIndexBox(from, to, whatfrom, whatto) {
     if ($(to).hasClass("FenXs-Dark-Wooden")) {

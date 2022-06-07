@@ -1,0 +1,33 @@
+.index-menu {
+    width: 400px;
+    height: 305px;
+}
+
+.index-menu-tab {
+    height: 35px;
+}
+
+.index-menu-form {
+    height: 270px;
+}
+
+.index-error {
+    width: 450px;
+    font-size: 18px;
+}
+
+#LoginInSelector {
+    cursor: pointer;
+}
+
+#SignInSelector {
+    cursor: pointer;
+}
+
+#LoginInBox label {
+    height: 42px;
+}
+
+#SignInBox label {
+    height: 38.25px;
+}

@@ -1,3 +1,9 @@
+$(document).ready(function () {
+    $("input").bind("click", function () {
+        AudioChangeInput();
+    })
+})
+
 function AudioChangeWindow() {
     const audio = new Audio("../audio/Change_Window.wav");
     audio.play();

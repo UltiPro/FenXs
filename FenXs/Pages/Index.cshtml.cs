@@ -12,30 +12,35 @@ public class IndexModel : PageModel
     [BindProperty]
     public Login l { get; set; }
     public bool ErrorBoxOfModels;
-    public IndexModel()
+    public IActionResult OnPost()
     {
-        r = new Registration();
-        l = new Login();
-    }
-    public IActionResult OnPost([FromBody] Registration r)
-    {
-        /*if(ModelState["l"].Errors.Count > 0)
-        {
-            Console.WriteLine("r");
-        }
-        
-        if(TryValidateModel(l))
-        {
-            Console.WriteLine("l");
-        }*/
 
-        if (!ModelState.IsValid)
+        if(r!=null) Console.WriteLine(r.login+" "+r.email+" "+r.password+" "+r.c_password);
+
+        if(!ModelState.IsValid)
         {
             ErrorBoxOfModels = true;
             return Page();
         }
 
-        
-        return Page();
+        return RedirectToPage("Registration");
     }
+
+    /*private bool ValidateRegistration()
+    {
+        if(!TryValidateModel(r,nameof(Registration))) 
+        {
+            Console.WriteLine("val");
+            return false;
+        }
+        if(r.password!=r.c_password) 
+        {
+            Console.WriteLine("===");
+            return false;
+        }
+
+        Console.WriteLine(r.login);
+
+        return true;
+    }*/
 }

@@ -1,4 +1,4 @@
-using Infrastructure.NotFoundMiddleware;
+using Infrastructure.ErrorMiddleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,7 +22,7 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.UseNotFoundMiddleware();
+app.UseErrorMiddleware();
 
 app.MapRazorPages();
 
