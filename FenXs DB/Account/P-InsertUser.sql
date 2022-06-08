@@ -7,7 +7,6 @@ Create procedure InsertUser
     @login VARCHAR(15),
     @password VARCHAR(320),
     @email VARCHAR(320)
-    
 )  
 as   
 Begin   

@@ -14,7 +14,8 @@ CREATE TABLE [Account]
   Banned bit NOT NULL DEFAULT 0,
   Admin bit NOT NULL DEFAULT 0,
   FenXs_stars int NOT NULL DEFAULT 0,
-  SignInDate datetime NOT NULL DEFAULT getdate()
+  SignInDate datetime NOT NULL DEFAULT getdate(),
+  LastLogIn datetime NOT NULL DEFAULT getdate()
     CONSTRAINT [PK_ACCOUNT] PRIMARY KEY CLUSTERED
   (
     [Id] ASC

@@ -8,7 +8,7 @@ function Validation(fun, what, pass) {
     return false;
 }
 
-function ValidationPassword(password, password2, pass) {
+function ValidationPasswords(password, password2, pass) {
     if (CheckPasswordCompatibility(password.val(), password2.val())) {
         password2.removeClass("is-invalid");
         password2.addClass("is-valid");

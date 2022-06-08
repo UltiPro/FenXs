@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Models.Registration;
+namespace Models.RegistrationModel;
 
 public class Registration
 {
