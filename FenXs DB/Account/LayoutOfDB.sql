@@ -6,9 +6,9 @@ USE [FenXs-Account]
 GO
 CREATE TABLE [Account]
 (
-  Id int NOT NULL,
+  Id int NOT NULL IDENTITY(1,1),
   Login varchar(15) NOT NULL UNIQUE,
-  Password varchar(30) NOT NULL,
+  Password varchar(320) NOT NULL,
   Email varchar(320) NOT NULL UNIQUE,
   Active bit NOT NULL DEFAULT 0,
   Banned bit NOT NULL DEFAULT 0,

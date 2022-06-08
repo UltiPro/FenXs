@@ -4,7 +4,7 @@
     Layout = "_LayoutIndex";
 }
 <div class="container index-error FenXs-Font-Regular">
-    @if (Model.ErrorBoxOfModels)
+    @if (Model.ErrorBox)
     {
         <div class="alert bg-danger alert-dismissible border border-2 border-dark shadow-lg" role="alert">
             <span asp-validation-for="r.login" class="d-block"></span>
@@ -13,6 +13,23 @@
             <span asp-validation-for="r.c_password" class="d-block"></span>
             <span asp-validation-for="l.login" class="d-block"></span>
             <span asp-validation-for="l.password" class="d-block"></span>
+            <span class="d-block">@Model.Info</span>
+            <button type="button" class="btn-close position-absolute top-50 translate-middle-y" data-bs-dismiss="alert"
+            aria-label="Close"></button>
+        </div>
+    }
+    @if(Model.WarningBox)
+    {
+        <div class="alert bg-warning alert-dismissible border border-2 border-dark shadow-lg" role="alert">
+            <span class="d-block">@Model.Info</span>
+            <button type="button" class="btn-close position-absolute top-50 translate-middle-y" data-bs-dismiss="alert"
+            aria-label="Close"></button>
+        </div>
+    }
+    @if(Model.SuccessBox)
+    {
+        <div class="alert bg-success alert-dismissible border border-2 border-dark shadow-lg" role="alert">
+            <span class="d-block">@Model.Info</span>
             <button type="button" class="btn-close position-absolute top-50 translate-middle-y" data-bs-dismiss="alert"
             aria-label="Close"></button>
         </div>
