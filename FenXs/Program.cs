@@ -2,9 +2,6 @@ using Infrastructure.ErrorMiddleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddRazorPages();
-
 builder.Services.AddDistributedMemoryCache();
 
 builder.Services.AddSession(options =>
@@ -13,6 +10,11 @@ builder.Services.AddSession(options =>
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
 });
+
+builder.Services.AddSession();
+
+// Add services to the container.
+builder.Services.AddRazorPages();
 
 var app = builder.Build();
 

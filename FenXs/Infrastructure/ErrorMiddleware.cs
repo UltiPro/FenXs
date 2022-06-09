@@ -4,10 +4,7 @@ public class ErrorMiddleware
 {
     private readonly RequestDelegate _next;
 
-    public ErrorMiddleware(RequestDelegate next)
-    {
-        _next = next;
-    }
+    public ErrorMiddleware(RequestDelegate next) { _next = next; }
 
     public async Task InvokeAsync(HttpContext httpContext)
     {
@@ -16,13 +13,13 @@ public class ErrorMiddleware
         {
             case 404:
                 httpContext.Response.Redirect("NotFound");
-            break;
+                break;
             case 500:
                 //Nothing to do (now)...
-            break;
+                break;
             default:
                 //Nothing to do...
-            break;
+                break;
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
+using PageModels.NotLoggedPageModel;
 using DAL.FenXsAccountDAL;
 using Models.RegistrationModel;
 using Models.LoginModel;
@@ -7,12 +7,12 @@ using Models.UserModel;
 
 namespace FenXs.Pages;
 
-public class IndexModel : PageModel
+public class IndexModel : NotLoggedPageModel
 {
     [BindProperty]
-    public Registration r { get; set; }
+    public Registration R { get; set; }
     [BindProperty]
-    public Login l { get; set; }
+    public Login L { get; set; }
     private FenXsAccountDAL FAD;
     public bool ErrorBox, WarningBox, SuccessBox;
     public string Info;
@@ -20,77 +20,23 @@ public class IndexModel : PageModel
     {
         FAD = new FenXsAccountDAL(_configuration);
     }
-    public void OnPost()
+    public IActionResult OnPostLogin()
     {
-        Register();
-        Login();
-    }
-    private bool ValidateRegistration()
-    {
-        if (r.login == "" || r.login == null) return false;
-        if (r.email == "" || r.email == null) return false;
-        if (r.password == "" || r.password == null) return false;
-        if (r.c_password == "" || r.c_password == null) return false;
-        if (r.c_password != r.password)
+        ErrorBox = WarningBox = SuccessBox = false;
+        if (ModelState.ErrorCount - 4 == 0)
         {
-            Info = "Passwords must be the same!";
-            return false;
-        }
-        return true;
-    }
-    private IActionResult Register()
-    {
-        if (ValidateRegistration())
-        {
-            ErrorBox = WarningBox = SuccessBox = false;
-            switch (FAD.Register(r))
+            UserReturn UserReturn = FAD.Login(L);
+            if (UserReturn.User != null)
             {
-                case 0:
-                    SuccessBox = true;
-                    Response.Cookies.Append("Visited", "1");
-                    Info = "A link to activate the account has been sent to the given e-mail address.";
-                    break;
-                case 1:
-                    WarningBox = true;
-                    Info = "This Login is already taken.";
-                    break;
-                case 2:
-                    WarningBox = true;
-                    Info = "This Email is already in use.";
-                    break;
-                case -1:
-                    ErrorBox = true;
-                    Info = "Page server is offline. Sorry for the inconvenience.";
-                    break;
-                default:
-                    RedirectToPage("Error");
-                    break;
+                HttpContext.Session.SetInt32("Id", UserReturn.User.Id);
+                HttpContext.Session.SetString("Login", UserReturn.User.Login);
+                HttpContext.Session.SetString("Email", UserReturn.User.Email);
+                HttpContext.Session.SetInt32("Admin", Convert.ToInt32(UserReturn.User.Admin));
+                HttpContext.Session.SetInt32("FenXs_stars", UserReturn.User.FenXs_stars);
+                return RedirectToPage("Main");
             }
-            return Page();
-        }
-        ErrorBox = true;
-        return Page();
-    }
-    private bool ValidateLogin()
-    {
-        if (l.login == "" || l.login == null) return false;
-        if (l.password == "" || l.password == null) return false;
-        return true;
-    }
-    public IActionResult Login()
-    {
-        //HttpContext.Session.SetInt32("id",u.id);
-        //HttpContext.Session.SetString("login", u.login);
-        if (ValidateLogin())
-        {
-            ErrorBox = WarningBox = SuccessBox = false;
-            UserReturn u = FAD.Login(l);
-            switch (u.statusCode)
+            switch (UserReturn.StatusCode)
             {
-                case 0:
-                    Response.Cookies.Append("Visited", "1");
-                    RedirectToPage("Main");
-                    break;
                 case 1:
                     WarningBox = true;
                     Info = "Account with this login does not exist.";
@@ -104,20 +50,54 @@ public class IndexModel : PageModel
                     Info = "This account is not activated.";
                     break;
                 case 4:
-                    ErrorBox = true;
+                    WarningBox = true;
                     Info = "This account is banned!";
                     break;
                 case -1:
                     ErrorBox = true;
                     Info = "Page server is offline. Sorry for the inconvenience.";
                     break;
-                default:
-                    RedirectToPage("Error");
-                    break;
+                default: return RedirectToPage("Error");
             }
-            return Page();
         }
-        ErrorBox = true;
+        else ErrorBox = true;
+        return Page();
+    }
+    public IActionResult OnPostRegistration()
+    {
+        ErrorBox = WarningBox = SuccessBox = false;
+        if (ModelState.ErrorCount - 2 == 0)
+        {
+            if (R.password != R.c_password)
+            {
+                ErrorBox = true;
+                Info = "The passwords do not match!";
+            }
+            else
+            {
+                switch (FAD.Register(R))
+                {
+                    case 0:
+                        SuccessBox = true;
+                        Info = "A link to activate the account has been sent to the given e-mail address.";
+                        break;
+                    case 1:
+                        WarningBox = true;
+                        Info = "This Login is already taken.";
+                        break;
+                    case 2:
+                        WarningBox = true;
+                        Info = "This Email is already in use.";
+                        break;
+                    case -1:
+                        ErrorBox = true;
+                        Info = "Page server is offline. Sorry for the inconvenience.";
+                        break;
+                    default: return RedirectToPage("Error");
+                }
+            }
+        }
+        else ErrorBox = true;
         return Page();
     }
 }

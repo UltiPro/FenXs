@@ -1,5 +1,3 @@
-OnLoad();
-
 $(document).ready(function () {
     $("#SignInSelector").bind("click", function () {
         ToggleIndexBox("#LoginInSelector", "#SignInSelector", "#LoginInBox", "#SignInBox");
@@ -23,10 +21,6 @@ $(document).ready(function () {
         ToggleInfoBox("#InfoBox", "#SignInLoginInBox");
     })
 })
-
-function OnLoad() {
-    if(getCookie("Visited")==1) ToggleIndexBox("#SignInSelector", "#LoginInSelector", "#SignInBox", "#LoginInBox");
-}
 
 function ToggleIndexBox(from, to, whatfrom, whatto) {
     if ($(to).hasClass("FenXs-Dark-Wooden")) {

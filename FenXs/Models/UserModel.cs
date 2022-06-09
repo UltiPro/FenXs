@@ -4,33 +4,34 @@ namespace Models.UserModel;
 
 public class User
 {
-    [Display(Name = "id")]
-    public int id { get; }
-    [Display(Name = "login")]
-    public string login { get; }
-    [Display(Name = "email")]
-    public string email { get; }
-    [Display(Name = "admin")]
-    public bool admin { get; }
+    [Display(Name = "Id")]
+    public int Id { get; set; }
+    [Display(Name = "Login")]
+    public string Login { get; set; }
+    [Display(Name = "Email")]
+    public string Email { get; set; }
+    [Display(Name = "Admin")]
+    public bool Admin { get; set; }
     [Display(Name = "FenXs_stars")]
-    public int FenXs_stars { get; }
-    public User(int id, string login, string email, bool admin, int FenXs_stars)
+    public int FenXs_stars { get; set; }
+    public User() { }
+    public User(int Id, string Login, string Email, bool Admin, int FenXs_stars)
     {
-        this.id = id;
-        this.login = login;
-        this.email = email;
-        this.admin = admin;
+        this.Id = Id;
+        this.Login = Login;
+        this.Email = Email;
+        this.Admin = Admin;
         this.FenXs_stars = FenXs_stars;
     }
 }
 
 public class UserReturn
 {
-    public int statusCode { get; }
-    private User user { get; }
-    public UserReturn(User user, int statusCode)
+    public int StatusCode { get; }
+    public User User { get; }
+    public UserReturn(User User, int StatusCode)
     {
-        this.user = user;
-        this.statusCode = statusCode;
+        this.User = User;
+        this.StatusCode = StatusCode;
     }
 }

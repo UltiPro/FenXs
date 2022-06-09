@@ -27,21 +27,22 @@
 
 body,
 html {
-    height: 100%;
-    background-image: url("../img/Background.jpg");
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    font-family: FenXs-Font;
-    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
-    font-size: 20px;
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: FenXs-Font;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  font-size: 20px;
 }
 
 header {
-    font-family: FenXs-Font-Logo;
-    font-size: 100px;
-    text-shadow: -3px 0 white, 0 3px white, 3px 0 white, 0 -3px white;
+  font-family: FenXs-Font-Logo;
+}
+
+aside {
+  height: 100px;
 }
 
 a,
