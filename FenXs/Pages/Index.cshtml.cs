@@ -33,7 +33,7 @@ public class IndexModel : NotLoggedPageModel
                 HttpContext.Session.SetString("Email", UserReturn.User.Email);
                 HttpContext.Session.SetInt32("Admin", Convert.ToInt32(UserReturn.User.Admin));
                 HttpContext.Session.SetInt32("FenXs_stars", UserReturn.User.FenXs_stars);
-                return RedirectToPage("Main");
+                return RedirectToPage("/Main");
             }
             switch (UserReturn.StatusCode)
             {
@@ -57,7 +57,7 @@ public class IndexModel : NotLoggedPageModel
                     ErrorBox = true;
                     Info = "Page server is offline. Sorry for the inconvenience.";
                     break;
-                default: return RedirectToPage("Error");
+                default: return RedirectToPage("/Error");
             }
         }
         else ErrorBox = true;
@@ -93,7 +93,7 @@ public class IndexModel : NotLoggedPageModel
                         ErrorBox = true;
                         Info = "Page server is offline. Sorry for the inconvenience.";
                         break;
-                    default: return RedirectToPage("Error");
+                    default: return RedirectToPage("/Error");
                 }
             }
         }

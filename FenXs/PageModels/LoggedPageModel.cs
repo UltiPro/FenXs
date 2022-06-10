@@ -14,7 +14,7 @@ public class LoggedPageModel : PageModel
     }
     public IActionResult OnGet()
     {
-        if (!HttpContext.Session.TryGetValue("Id", out Id)) return RedirectToPage("Index");
+        if (!HttpContext.Session.TryGetValue("Id", out Id)) return RedirectToPage("/Index");
         user.Id = (int)HttpContext.Session.GetInt32("Id");
         user.Login = HttpContext.Session.GetString("Login");
         user.Email = HttpContext.Session.GetString("Email");

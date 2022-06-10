@@ -12,7 +12,7 @@ public class ErrorMiddleware
         switch (httpContext.Response.StatusCode)
         {
             case 404:
-                httpContext.Response.Redirect("NotFound");
+                httpContext.Response.Redirect("/NotFound");
                 break;
             case 500:
                 //Nothing to do (now)...
