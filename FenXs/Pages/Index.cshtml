@@ -52,8 +52,7 @@
                     <label asp-for="L.login" class="my-2 p-1 w-100">Password</label>
                 </div>
                 <div class="col-8">
-                    <form method="post">
-                        <!-- onsubmit="return ValidateLoginIn()" -->
+                    <form method="post" onsubmit="return ValidateLoginIn()" asp-page-handler="Login">
                         <div class="form-group mt-4">
                             <input type="text" asp-for="L.login" class="form-control p-1 border border-dark"
                                 placeholder="Your Login">
@@ -63,8 +62,7 @@
                                 placeholder="Your Password">
                         </div>
                         <div class="form-group my-2 mb-0">
-                            <button type="submit" asp-page-handler="Login"
-                                class="btn btn-success p-1 w-100 border border-dark" value="login">Login In</button>
+                            <button type="submit" class="btn btn-success p-1 w-100 border border-dark">Login In</button>
                         </div>
                         <div class="form-group text-center small">
                             <a href="RestorePasswordOrLogin" class="link-light">Forget Your Password?</a>
@@ -83,8 +81,7 @@
                     <button id="SignInInfoBtn" class="btn FenXs-Dark-Wooden-Btn btn-sm mt-2 p-1 w-100">Info</button>
                 </div>
                 <div class="col-8">
-                    <form method="post">
-                        <!-- onsubmit="return ValidateSignIn()" -->
+                    <form method="post" onsubmit="return ValidateSignIn()" asp-page-handler="Registration">
                         <div class="form-group mt-3">
                             <input type="text" asp-for="R.login" class="form-control form-control-sm border border-dark"
                                 placeholder="e.g. Player007">
@@ -104,8 +101,7 @@
                                 placeholder="Confirm Your Password">
                         </div>
                         <div class="form-group mt-2">
-                            <button type="submit" asp-page-handler="Registration"
-                                class="btn btn-success btn-sm w-100 border border-dark">Sign
+                            <button type="submit" class="btn btn-success btn-sm w-100 border border-dark">Sign
                                 In</button>
                         </div>
                     </form>
