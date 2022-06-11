@@ -1,0 +1,20 @@
+.UserBox{
+    width: 400px;
+    height: 125px;
+}
+
+#BtnSettings{
+    border-radius: 0 3px 0 0;
+}
+
+#BtnLogOut{
+    border-radius: 0 0 3px 0;
+}
+
+#WelcomeBox{
+    border-radius: 3px 0 0 0;
+}
+
+#FenXsStarsBox{
+    border-radius: 0 0 0 3px;
+}

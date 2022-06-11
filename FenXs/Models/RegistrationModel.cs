@@ -20,6 +20,7 @@ public class Registration
     [Display(Name = "password")]
     public string password { get; set; }
     [Required(ErrorMessage = "Confirm Password is required.")]
+    [Compare("password", ErrorMessage = "The passwords do not match!")]
     [Display(Name = "c-password")]
     public string c_password { get; set; }
 }

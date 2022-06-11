@@ -68,33 +68,25 @@ public class IndexModel : NotLoggedPageModel
         ErrorBox = WarningBox = SuccessBox = false;
         if (ModelState.ErrorCount - 2 == 0)
         {
-            if (R.password != R.c_password)
+            switch (FAD.Register(R))
             {
-                ErrorBox = true;
-                Info = "The passwords do not match!";
-            }
-            else
-            {
-                switch (FAD.Register(R))
-                {
-                    case 0:
-                        SuccessBox = true;
-                        Info = "A link to activate the account has been sent to the given e-mail address.";
-                        break;
-                    case 1:
-                        WarningBox = true;
-                        Info = "This Login is already taken.";
-                        break;
-                    case 2:
-                        WarningBox = true;
-                        Info = "This Email is already in use.";
-                        break;
-                    case -1:
-                        ErrorBox = true;
-                        Info = "Page server is offline. Sorry for the inconvenience.";
-                        break;
-                    default: return RedirectToPage("/Error");
-                }
+                case 0:
+                    SuccessBox = true;
+                    Info = "A link to activate the account has been sent to the given e-mail address.";
+                    break;
+                case 1:
+                    WarningBox = true;
+                    Info = "This Login is already taken.";
+                    break;
+                case 2:
+                    WarningBox = true;
+                    Info = "This Email is already in use.";
+                    break;
+                case -1:
+                    ErrorBox = true;
+                    Info = "Page server is offline. Sorry for the inconvenience.";
+                    break;
+                default: return RedirectToPage("/Error");
             }
         }
         else ErrorBox = true;
