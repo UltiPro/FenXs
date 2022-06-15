@@ -1,8 +1,10 @@
 ﻿@page
 @model IndexModel
 @{
-    Layout = "_LayoutIndex";
+    Layout = "_Layout";
+    ViewBag.IsIndex = true;
 }
+
 <div class="container index-error FenXs-Font-Regular">
     @if (Model.ErrorBox)
     {

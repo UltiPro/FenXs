@@ -8,53 +8,18 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/FenXs.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/FenXs-Background.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/FenXs-SmallHeader.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/FenXs-UserInfoBox.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/FenXs-BigHeader.css" asp-append-version="true" />
+    @if (ViewBag.IsIndex == true)
+    {
+        <link rel="stylesheet" href="~/css/Index.css" asp-append-version="true" />
+    }
 </head>
 
 <body>
-    <header class="text-center p-1">
+    <header class="text-center p-5">
         FenXs
     </header>
     <main role="main">
-        <div class="container UserBox shadow-lg">
-            <div class="row h-100">
-                <div class="col-9 px-0 border border-2 border-end-0 border-dark rounded-start">
-                    <span class="FenXs-Font-Regular-Big fw-bold">
-                        <div id="WelcomeBox" class="h-50 w-100 FenXs-Wooden">
-                            Welcome <span class="text-white">@ViewData["Login"]</span>
-                        </div>
-                        <div id="FenXsStarsBox" class="h-50 w-100 FenXs-Dark-Wooden">
-                            Your FenXs's Stars: <span class="text-warning">@ViewData["FenXs-Stars"]</span>
-                        </div>
-                    </span>
-                    <!--
-                    <form action="/BuyFenXsStars" class="d-block ">
-                        <button tpye="submit" id="BtnBuyFenXsStars" class="h-100 w-100 btn FenXs-Stars-Btn">
-                            Buy FenXs Stars!
-                        </button>
-                    </form>-->
-                    <!--<span class="">
-                        ,<br/>
-                        <br/>
-                        <a href="/BuyFenXsStars" class="link-light">Buy FenXs's Stars</a>
-                    </span>
-                    -->
-                </div>
-                <div class="col-3 px-0 border border-2 border-start-0 border-dark rounded-end">
-                    <form action="/Settings" class="d-block h-50 w-100">
-                        <button tpye="submit" id="BtnSettings" class="h-100 w-100 btn btn-secondary">
-                            Settings
-                        </button>
-                    </form>
-                    <form action="/BuyFenXsStars" class="d-block h-50 w-100">
-                        <button tpye="submit" id="BtnLogOut" class="h-100 w-100 btn btn-warning">
-                            Buy!
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
         @RenderBody()
     </main>
     <aside></aside>
@@ -65,6 +30,12 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/FooterToggler.js" asp-append-version="true"></script>
+    @if (ViewBag.IsIndex == true)
+    {
+        <script src="~/js/Audio.js" asp-append-version="true"></script>
+        <script src="~/js/Index.js" asp-append-version="true"></script>
+        <script src="~/js/Inputs_Validations.js" asp-append-version="true"></script>
+    }
 </body>
 
 </html>
