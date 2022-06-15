@@ -5,7 +5,7 @@
     ViewBag.IsIndex = true;
 }
 
-<div class="container index-error FenXs-Font-Regular">
+<div class="container index-error">
     @if (Model.ErrorBox)
     {
         <div class="alert bg-danger alert-dismissible border border-2 border-dark shadow-lg" role="alert">
@@ -37,7 +37,7 @@
         </div>
     }
 </div>
-<div id="SignInLoginInBox" class="container index-menu shadow-lg">
+<div id="SignInLoginInBox" class="container index-menu shadow-lg FenXs-Font-Forms">
     <div class="row text-center index-menu-tab">
         <div id="LoginInSelector" class="col FenXs-Dark-Wooden rounded-top border border-end-0 border-2 border-dark">
             Login In
@@ -51,7 +51,7 @@
             <div class="row index-menu-form">
                 <div class="col-4 border-end border-2 border-dark">
                     <label asp-for="L.login" class="mt-4 p-1 w-100">Login</label>
-                    <label asp-for="L.login" class="my-2 p-1 w-100">Password</label>
+                    <label asp-for="L.password" class="my-2 p-1 w-100">Password</label>
                 </div>
                 <div class="col-8">
                     <form method="post" onsubmit="return ValidateLoginIn()" asp-page-handler="Login">
@@ -114,7 +114,7 @@
 </div>
 <div id="InfoBox" class="container index-menu FenXs-Wooden p-1 px-2 border border-2 border-dark rounded shadow-lg"
     style="display:none;">
-    <ol class="FenXs-Font-Regular text-justify p-1 ps-3">
+    <ol class="FenXs-Font-Smaller text-justify p-1 ps-3">
         <li class="pt-3">Login must start with a letter and end with a letter or a number. There may be a dash
             or the floor in the middle. Login must be between 3 and 15 characters long.</li>
         <li class="pt-3">Password must contain only letters and numbers and must be between 8 and 30 characters
