@@ -3,7 +3,7 @@ using PageModels.LoggedPageModel;
 
 namespace FenXs.Pages;
 
-public class MainModel : LoggedPageModel
+public class MainModel : PageModel
 {
 
 }

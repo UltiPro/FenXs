@@ -1,12 +1,11 @@
 @page
 @model MainModel
 @{
-    Layout = "_Layout";
+    Layout = "_LayoutLogged";
     ViewData["Description"] = "- Main";
-    ViewData["Login"] = @Model.user.Login;
-    ViewData["FenXs-Stars"] = @Model.user.FenXs_stars;
+    //ViewData["Login"] = @Model.user.Login;
+    ViewBag.Admin = false;
+    //ViewData["FenXs-Stars"] = @Model.user.FenXs_stars;
 }
 
-<div>
-    cos
-</div>
+tekst
