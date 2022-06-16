@@ -15,10 +15,7 @@ public class ErrorMiddleware
                 httpContext.Response.Redirect("/NotFound");
                 break;
             case 500:
-                //Nothing to do (now)...
-                break;
-            default:
-                //Nothing to do...
+                httpContext.Response.Redirect("/Error");
                 break;
         }
     }

@@ -1,0 +1,15 @@
+@page
+@model AdminPanelIndexModel
+@{
+    Layout = "_LayoutLogged";
+    ViewData["Description"] = "- Admin Panel";
+    ViewData["Login"] = @Model.user.Login;
+    ViewData["FenXs-Stars"] = @Model.user.FenXs_stars;
+    ViewBag.IsAdminPanel = true;
+}
+
+<div class="row FenXs-Text-Shadow h1 m-2">
+    <a href="/Admin/Users" class="col-12 col-md Settings link-light bg-dark my-2 mx-md-2 rounded">Users</a>
+    <a href="/Admin/Servers" class="col-12 col-md Settings link-light bg-dark my-2 mx-md-2 rounded">Servers</a>
+    <a href="/Admin/News" class="col-12 col-md Settings link-light bg-dark my-2 mx-md-2 rounded">News</a>
+</div>

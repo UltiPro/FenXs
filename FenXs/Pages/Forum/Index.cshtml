@@ -1,0 +1,8 @@
+@page
+@model ForumIndexModel
+@{
+    Layout = "_LayoutLogged";
+    ViewData["Description"] = "- Forum";
+    ViewData["Login"] = @Model.user.Login;
+    ViewData["FenXs-Stars"] = @Model.user.FenXs_stars;
+}
