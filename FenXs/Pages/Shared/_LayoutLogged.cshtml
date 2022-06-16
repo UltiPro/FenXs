@@ -24,7 +24,7 @@
 
 <body>
     <div
-        class="container-fluid col-xxl-7 col-xl-8 col-lg-9 col-12 h-100 p-0 bg-dark bg-gradient bg-opacity-50 shadow-lg">
+        class="container-fluid col-xxl-7 col-xl-8 col-lg-9 col-12 min-vh-100 p-0 bg-dark bg-gradient bg-opacity-50 shadow-lg">
         <nav
             class="navbar navbar-expand-md FenXs-Wooden border border-2 border-top-0 border-dark rounded-bottom shadow">
             <div class="container-fluid">
@@ -39,16 +39,17 @@
                 <div class="collapse navbar-collapse" id="NavCollapseFenXs">
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item border-md-start border-dark">
-                            <a href="*" class="nav-link link-light px-3" aria-current="page">Gallery</a>
+                            <a href="/Gallery/" class="nav-link link-light px-3" aria-current="page">Gallery</a>
                         </li>
                         <li class="nav-item border-md-start border-dark">
-                            <a href="*" class="nav-link link-light px-3" aria-current="page">Forum</a>
+                            <a href="/Forum/" class="nav-link link-light px-3" aria-current="page">Forum</a>
                         </li>
                         <li class="nav-item border-md-start border-dark">
-                            <a href="*" class="nav-link link-light px-3" aria-current="page">Support</a>
+                            <a href="/Support/" class="nav-link link-light px-3" aria-current="page">Support</a>
                         </li>
                     </ul>
-                    <a href="*" class="d-block btn btn-secondary mx-1 my-2 my-md-0 border border-dark">Settings</a>
+                    <a href="/Settings/"
+                        class="d-block btn btn-secondary mx-1 my-2 my-md-0 border border-dark">Settings</a>
                     <a href="/LogOut" class="d-block btn btn-danger mx-1 my-2 my-md-0 border border-dark">Log Out</a>
                 </div>
             </div>
@@ -60,7 +61,7 @@
             <div class="container">
                 <div class="row FenXs-Font-Bigger text-light mx-2 mb-3 p-1 bg-dark border border-light rounded shadow">
                     <div class="col-12 col-md-7 border-md-end border-light">
-                        Welcome, <span class="text-danger">@ViewData["Login"]</span>!
+                        Welcome, <span class="text-danger">@ViewData["Login"]</span> !
                     </div>
                     <div class="col-12 col-md-5">
                         Your Stars: <span class="text-warning">@ViewData["FenXs-Stars"]</span>
