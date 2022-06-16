@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="~/css/FenXs.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/FenXs-Background.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/FenXs-BigHeader.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/FenXs-Footer.css" asp-append-version="true" />
     @if (ViewBag.IsIndex == true)
     {
         <link rel="stylesheet" href="~/css/Index.css" asp-append-version="true" />
@@ -25,7 +26,7 @@
     <aside></aside>
     <footer
         class="footer footer-max position-fixed bottom-0 end-0 FenXs-Wooden text-center p-1 border-top border-start border-2 border-dark">
-        <span class="FenXs-CopyRight">&copy</span> 2022 - FenXs @ViewData["Description"]
+        &copy 2022 - FenXs @ViewData["Description"]
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -33,8 +34,8 @@
     @if (ViewBag.IsIndex == true)
     {
         <script src="~/js/Audio.js" asp-append-version="true"></script>
-        <script src="~/js/Index.js" asp-append-version="true"></script>
         <script src="~/js/Inputs_Validations.js" asp-append-version="true"></script>
+        <script src="~/js/Index.js" asp-append-version="true"></script>
     }
 </body>
 

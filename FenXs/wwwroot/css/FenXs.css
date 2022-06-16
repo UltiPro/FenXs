@@ -23,6 +23,25 @@
   --FenXs-Dark-Wooden: 127, 85, 67;
 }
 
+::-webkit-scrollbar {
+  width: 7px;
+  background: rgb(var(--FenXs-Dark-Wooden));
+}
+
+::-webkit-scrollbar-track {
+  border: 1px solid rgb(var(--bs-dark-rgb));
+  background: rgb(var(--FenXs-Dark-Wooden));
+}
+
+::-webkit-scrollbar-thumb {
+  border: 1px solid rgb(var(--bs-dark-rgb));
+  background: rgb(var(--FenXs-Wooden));
+}
+
+::-webkit-scrollbar-thumb:hover {
+  border: 1px solid white;
+}
+
 body,
 html {
   height: 100%;
@@ -59,30 +78,8 @@ a:hover {
   text-align: justify;
 }
 
-.navbar-toggler .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-}
-
-.navbar-toggler {
-  border-color: white;
-}
-
-.navbar-toggler:focus {
+.btn:focus {
   box-shadow: none;
-}
-
-.footer-min {
-  width: 215px;
-  border-radius: 10px 0 0 0;
-}
-
-.footer-max {
-  width: 100%;
-}
-
-.FenXs-Font-Forms{
-  font-family: FenXs-Font-Forms;
-  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 
 .FenXs-Font-Smaller {
@@ -93,13 +90,13 @@ a:hover {
   font-size: 1.25rem;
 }
 
-.FenXs-Shadow{
+.FenXs-Shadow {
   text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 
-.FenXs-CopyRight {
-  color: black;
-  text-shadow: none;
+.FenXs-Font-Forms {
+  font-family: FenXs-Font-Forms;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 
 .FenXs-Wooden {

@@ -9,13 +9,16 @@
     <link rel="stylesheet" href="~/css/FenXs.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/FenXs-Background.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/FenXs-SmallHeader.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/BorderFix.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/FenXs-NavMenu.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/FenXs-Footer.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Bootstrap-Border.css" asp-append-version="true" />
 </head>
 
 <body>
     <div
         class="container-fluid col-xxl-7 col-xl-8 col-lg-9 col-12 h-100 p-0 bg-dark bg-gradient bg-opacity-50 shadow-lg">
-        <nav class="navbar navbar-expand-md FenXs-Wooden border border-top-0 border-dark rounded-bottom shadow">
+        <nav
+            class="navbar navbar-expand-md FenXs-Wooden border border-2 border-top-0 border-dark rounded-bottom shadow">
             <div class="container-fluid">
                 <a class="navbar-brand link-light" href="/Main">
                     <img src="~/img/Logo.png" alt="" width="40" height="40"> FenXs
@@ -27,23 +30,23 @@
                 </button>
                 <div class="collapse navbar-collapse" id="NavCollapseFenXs">
                     <ul class="navbar-nav me-auto">
-                        <li class="nav-item border-start border-dark">
+                        <li class="nav-item border-md-start border-dark">
                             <a href="*" class="nav-link link-light px-3" aria-current="page">Gallery</a>
                         </li>
-                        <li class="nav-item border-start border-dark">
+                        <li class="nav-item border-md-start border-dark">
                             <a href="*" class="nav-link link-light px-3" aria-current="page">Forum</a>
                         </li>
-                        <li class="nav-item border-start border-dark">
+                        <li class="nav-item border-md-start border-dark">
                             <a href="*" class="nav-link link-light px-3" aria-current="page">Support</a>
                         </li>
                     </ul>
                     @if (ViewBag.Admin)
                     {
-                        <a href="*" class="d-block btn btn-warning mx-1 my-2 my-lg-0 text-light">Admin
+                        <a href="*" class="d-block btn btn-warning mx-1 my-2 my-lg-0 border border-dark">Admin
                             Panel</a>
                     }
-                    <a href="*" class="d-block btn btn-secondary mx-1 my-2 my-lg-0 text-light">Settings</a>
-                    <a href="/LogOut" class="d-block btn btn-danger mx-1 my-2 my-lg-0 text-light">Log Out</a>
+                    <a href="*" class="d-block btn btn-secondary mx-1 my-2 my-lg-0 border border-dark">Settings</a>
+                    <a href="/LogOut" class="d-block btn btn-danger mx-1 my-2 my-lg-0 border border-dark">Log Out</a>
                 </div>
             </div>
         </nav>
@@ -54,7 +57,7 @@
             <div class="container">
                 <div class="row FenXs-Font-Bigger text-light mx-2 mb-3 p-1 bg-dark border border-light rounded shadow">
                     <div class="col-12 col-md-7 border-md-end border-light">
-                        Welcome, <span class="text-danger">@ViewData["Login"]</span>
+                        Welcome, <span class="text-danger">@ViewData["Login"]</span>!
                     </div>
                     <div class="col-12 col-md-5">
                         Your Stars: <span class="text-danger">@ViewData["FenXs-Stars"]</span>
@@ -68,7 +71,7 @@
         <aside></aside>
         <footer
             class="footer footer-max position-fixed bottom-0 end-0 FenXs-Wooden text-center p-1 border-top border-start border-2 border-dark">
-            <span class="FenXs-CopyRight">&copy</span> 2022 - FenXs @ViewData["Description"]
+            &copy 2022 - FenXs @ViewData["Description"]
         </footer>
     </div>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
