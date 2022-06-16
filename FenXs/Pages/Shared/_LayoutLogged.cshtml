@@ -16,6 +16,10 @@
     {
         <link rel="stylesheet" href="~/css/Main.css" asp-append-version="true" />
     }
+    @if (ViewBag.IsAdminPanel == true)
+    {
+        <link rel="stylesheet" href="~/css/Admin.css" asp-append-version="true" />
+    }
 </head>
 
 <body>
