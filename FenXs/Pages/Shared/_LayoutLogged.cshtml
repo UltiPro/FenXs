@@ -12,6 +12,10 @@
     <link rel="stylesheet" href="~/css/FenXs-NavMenu.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/FenXs-Footer.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/Bootstrap-Border.css" asp-append-version="true" />
+    @if (ViewBag.IsMain == true)
+    {
+        <link rel="stylesheet" href="~/css/Main.css" asp-append-version="true" />
+    }
 </head>
 
 <body>
@@ -40,13 +44,8 @@
                             <a href="*" class="nav-link link-light px-3" aria-current="page">Support</a>
                         </li>
                     </ul>
-                    @if (ViewBag.Admin)
-                    {
-                        <a href="*" class="d-block btn btn-warning mx-1 my-2 my-lg-0 border border-dark">Admin
-                            Panel</a>
-                    }
-                    <a href="*" class="d-block btn btn-secondary mx-1 my-2 my-lg-0 border border-dark">Settings</a>
-                    <a href="/LogOut" class="d-block btn btn-danger mx-1 my-2 my-lg-0 border border-dark">Log Out</a>
+                    <a href="*" class="d-block btn btn-secondary mx-1 my-2 my-md-0 border border-dark">Settings</a>
+                    <a href="/LogOut" class="d-block btn btn-danger mx-1 my-2 my-md-0 border border-dark">Log Out</a>
                 </div>
             </div>
         </nav>
@@ -60,7 +59,7 @@
                         Welcome, <span class="text-danger">@ViewData["Login"]</span>!
                     </div>
                     <div class="col-12 col-md-5">
-                        Your Stars: <span class="text-danger">@ViewData["FenXs-Stars"]</span>
+                        Your Stars: <span class="text-warning">@ViewData["FenXs-Stars"]</span>
                     </div>
                 </div>
             </div>
