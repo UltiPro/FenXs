@@ -3,9 +3,41 @@
 @{
     Layout = "_LayoutLogged";
     ViewData["Description"] = "- Main";
-    //ViewData["Login"] = @Model.user.Login;
-    ViewBag.Admin = false;
-    //ViewData["FenXs-Stars"] = @Model.user.FenXs_stars;
+    ViewData["Login"] = @Model.user.Login;
+    ViewData["FenXs-Stars"] = @Model.user.FenXs_stars;
+    ViewBag.IsMain = true;
 }
 
-tekst
+<div class="row FenXs-Text-Shadow h1 m-2">
+    <a href="*" class="col-12 col-md ServerBtn FenXsGame my-2 mx-md-2 rounded shadow">
+        FenXs Game
+    </a>
+    <a href="*" class="col-12 col-md ServerBtn Minecraft my-2 mx-md-2 rounded shadow">
+        Minecraft
+    </a>
+</div>
+<div class="row m-2 mt-3">
+    @if (Model.ListOfNews == null)
+    {
+        <div class="alert bg-danger alert-dismissible border border-2 border-dark shadow" role="alert">
+            Failed to download the news list. Sorry for the inconvenience.
+            <button type="button" class="btn-close position-absolute top-50 translate-middle-y" data-bs-dismiss="alert"
+            aria-label="Close"></button>
+        </div>
+    }
+    else
+    {
+        <div class="text-light bg-light bg-opacity-25 border rounded shadow">
+            <div class="h2 text-center mt-2">News</div>
+            @foreach (var n in Model.ListOfNews)
+            {
+                <div class="col-12 my-2 bg-dark bg-opacity-75 border border-dark rounded shadow-sm">
+                    <div class="h3 mb-0 text-primary text-center border-bottom border-dark">@n.title</div>
+                    <div class="px-2 mb-0 mt-1 text-justify border-bottom border-dark">@n.text</div>
+                    <div class="px-2 mt-1 text-end FenXs-Font-Smaller"><span class="text-danger">Team FenXs</span> -
+                        @n.date.ToString()</div>
+                </div>
+            }
+        </div>
+    }
+</div>

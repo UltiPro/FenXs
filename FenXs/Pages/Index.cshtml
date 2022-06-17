@@ -5,7 +5,7 @@
     ViewBag.IsIndex = true;
 }
 
-<div class="container index-error">
+<div class="container Index-error">
     @if (Model.ErrorBox)
     {
         <div class="alert bg-danger alert-dismissible border border-2 border-dark shadow-lg" role="alert">
@@ -37,8 +37,8 @@
         </div>
     }
 </div>
-<div id="SignInLoginInBox" class="container index-menu shadow-lg FenXs-Font-Forms">
-    <div class="row text-center index-menu-tab">
+<div id="SignInLoginInBox" class="container Index-menu shadow-lg FenXs-Font-Forms">
+    <div class="row text-center Index-menu-tab">
         <div id="LoginInSelector" class="col FenXs-Dark-Wooden rounded-top border border-end-0 border-2 border-dark">
             Login In
         </div>
@@ -48,7 +48,7 @@
     </div>
     <div class="row FenXs-Wooden border border-top-0 border-2 border-dark rounded-bottom">
         <div id="LoginInBox" style="display:none">
-            <div class="row index-menu-form">
+            <div class="row Index-menu-form">
                 <div class="col-4 border-end border-2 border-dark">
                     <label asp-for="L.login" class="mt-4 p-1 w-100">Login</label>
                     <label asp-for="L.password" class="my-2 p-1 w-100">Password</label>
@@ -74,7 +74,7 @@
             </div>
         </div>
         <div id="SignInBox">
-            <div class="row index-menu-form">
+            <div class="row Index-menu-form">
                 <div class="col-4 border-end border-2 border-dark">
                     <label asp-for="R.login" class="mt-3 p-1 w-100">Login</label>
                     <label asp-for="R.email" class="mt-2 p-1 w-100">E-Mail</label>
@@ -112,7 +112,7 @@
         </div>
     </div>
 </div>
-<div id="InfoBox" class="container index-menu FenXs-Wooden p-1 px-2 border border-2 border-dark rounded shadow-lg"
+<div id="InfoBox" class="container Index-menu FenXs-Wooden p-1 px-2 border border-2 border-dark rounded shadow-lg"
     style="display:none;">
     <ol class="FenXs-Font-Smaller text-justify p-1 ps-3">
         <li class="pt-3">Login must start with a letter and end with a letter or a number. There may be a dash

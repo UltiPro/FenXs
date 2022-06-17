@@ -6,7 +6,6 @@
     border: 1px solid white;
 }
 
-.Settings:hover{
+.Settings:hover {
     border-color: rgb(var(--bs-dark-rgb));
 }
-

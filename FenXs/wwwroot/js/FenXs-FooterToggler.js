@@ -6,12 +6,12 @@ $(window).resize(function () {
 
 function ToggleFotter() {
     if ($(window).width() < 768) {
-        $("footer").removeClass("footer-min");
-        $("footer").addClass("footer-max");
+        $("footer").removeClass("FooterMin");
+        $("footer").addClass("FooterMax");
         $("footer").removeClass("border-start");
     } else {
-        $("footer").removeClass("footer-max");
-        $("footer").addClass("footer-min");
+        $("footer").removeClass("FooterMax");
+        $("footer").addClass("FooterMin");
         $("footer").addClass("border-start");
     }
 }

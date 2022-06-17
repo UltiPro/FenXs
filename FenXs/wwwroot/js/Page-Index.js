@@ -60,7 +60,7 @@ function ValidateSignIn() {
     pass = Validation(CheckEmail, email, pass);
     pass = Validation(CheckPassword, password, pass);
     pass = ValidationPasswords(password, c_password, pass);
-    AudioValidateFail(pass);
+    if (!pass) AudioValidateFail();
     return pass;
 }
 
@@ -70,6 +70,6 @@ function ValidateLoginIn() {
     const password = $("input[name='L.password']");
     pass = Validation(CheckLogin, login, pass);
     pass = Validation(CheckPassword, password, pass);
-    AudioValidateFail(pass);
+    if (!pass) AudioValidateFail();
     return pass;
 }
