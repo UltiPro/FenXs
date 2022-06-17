@@ -6,7 +6,7 @@ Create procedure RemoveNews
     (
     @id int
 )
-as
+AS
 Begin
     DELETE FROM News WHERE Id = @id
 End 

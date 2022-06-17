@@ -19,7 +19,7 @@ public class NewsDeleteModel : AdminPageModel
     {
         if (!IsUserLogged()) return RedirectToPage("/Index");
         if (!IsUserAnAdmin()) return RedirectToPage("/Main");
-        FND.RemoveNews(id);
+        if (FND.RemoveNews(id) != 0) return RedirectToPage("/Error");
         return RedirectToPage("../News");
     }
 }
