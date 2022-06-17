@@ -11,6 +11,6 @@ public class MainModel : LoggedPageModel
     public MainModel(IConfiguration _configuration)
     {
         FND = new FenXsNewsDAL(_configuration);
-        ListOfNews = FND.GetAllNews(true);
+        ListOfNews = FND.GetNews(true);
     }
 }
