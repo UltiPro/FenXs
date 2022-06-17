@@ -7,10 +7,10 @@ Create procedure InsertNews
     @title VARCHAR(64),
     @text VARCHAR(1024)
 )
-as
+AS
 Begin
     Insert into News
         (Title,Text)
     Values
-        (@title, @text)
+        (@title, @text);
 End 

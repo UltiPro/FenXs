@@ -1,26 +1,17 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Models.UserModel;
 
 namespace PageModels.AdminPageModel;
 
-public class AdminPageModel : PageModel
+public class AdminPageModel : LoggedPageModel.LoggedPageModel
 {
-    public User user;
-    private byte[] Id;
-    public AdminPageModel()
+    override public IActionResult OnGet()
     {
-        user = new User();
-    }
-    public IActionResult OnGet()
-    {
-        if (!HttpContext.Session.TryGetValue("Id", out Id)) return RedirectToPage("/Index");
-        if (!Convert.ToBoolean(HttpContext.Session.GetInt32("Admin"))) return RedirectToPage("/Main");
-        user.Id = (int)HttpContext.Session.GetInt32("Id");
-        user.Login = HttpContext.Session.GetString("Login");
-        user.Email = HttpContext.Session.GetString("Email");
-        user.Admin = Convert.ToBoolean(HttpContext.Session.GetInt32("Admin"));
-        user.FenXs_stars = (int)HttpContext.Session.GetInt32("FenXs_stars");
+        if (!IsUserLogged()) return RedirectToPage("/Index");
+        if (!IsUserAnAdmin()) return RedirectToPage("/Main");
         return Page();
+    }
+    public bool IsUserAnAdmin()
+    {
+        return user.Admin;
     }
 }

@@ -3,7 +3,7 @@ GO
 DROP PROCEDURE GetAllNews
 GO
 Create procedure GetAllNews
-as
+AS
 Begin
     SELECT *
     FROM News
