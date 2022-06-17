@@ -1,0 +1,12 @@
+.Settings {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("../img/Admin/Settings.png");
+    height: 250px;
+    border: 1px solid white;
+}
+
+.Settings:hover{
+    border-color: rgb(var(--bs-dark-rgb));
+}
+

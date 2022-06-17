@@ -91,4 +91,49 @@ public class FenXsAccountDAL
             return new UserReturn(null, -1);
         }
     }
+    public int UpdateEmail(int id,string email)
+    {
+        try
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand("UpdateEmail", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@email", email);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+        }
+        catch (SqlException ex)
+        {
+            Console.WriteLine(ex.Number + " " + ex.Message);
+            return ex.Number;
+        }
+        return 0;
+    }
+    /*public int UpdatePassword(int id,string password)
+    {
+        try
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                
+                SqlCommand cmd = new SqlCommand("UpdatePassword", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@email", email);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+        }
+        catch (SqlException ex)
+        {
+            Console.WriteLine(ex.Number + " " + ex.Message);
+            return ex.Number;
+        }
+        return 0;
+    }*/
 }
