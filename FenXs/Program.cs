@@ -1,4 +1,4 @@
-using Infrastructure.ErrorMiddleware;
+using Infrastructure.HTTPResponseMiddleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -35,7 +35,7 @@ app.UseAuthorization();
 
 app.UseSession();
 
-app.UseErrorMiddleware();
+app.UseHTTPResponseMiddleware();
 
 app.MapRazorPages();
 
