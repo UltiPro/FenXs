@@ -9,17 +9,17 @@ namespace DAL.FenXsAccountDAL;
 public class FenXsAccountDAL
 {
     string connectionString;
-    public FenXsAccountDAL(IConfiguration _configuration)
+    public FenXsAccountDAL(IConfiguration configuration)
     {
-        connectionString = _configuration.GetConnectionString("FenXs-Account");
+        connectionString = configuration.GetConnectionString("FenXs-Accounts");
     }
-    public int Register(Registration r)
+    public int InsertUser(Registration r)
     {
         try
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                SqlCommand cmd = new SqlCommand("InsertUser", con);
+                SqlCommand cmd = new SqlCommand("Users_InsertUser", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@login", r.login);
                 cmd.Parameters.AddWithValue("@password", BCrypt.Net.BCrypt.HashPassword(r.password));
@@ -28,20 +28,20 @@ public class FenXsAccountDAL
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
+            return 0;
         }
-        catch (SqlException ex)
+        catch (SqlException e)
         {
-            if (ex.Number == 2627)
+            if (e.Number == 2627)
             {
-                if (CheckFree("CheckFreeLogin", "@login", r.login)) return 1;
-                if (CheckFree("CheckFreeEmail", "@email", r.email)) return 2;
+                if (Check("Users_CheckLogin", "@login", r.login)) return 1;
+                if (Check("Users_CheckEmail", "@email", r.email)) return 2;
             }
-            Console.WriteLine(ex.Number + " " + ex.Message);
-            return ex.Number;
+            Console.WriteLine(e.Number + " " + e.Message); //Change to logs
+            return -1;
         }
-        return 0;
     }
-    private bool CheckFree(string storedProcedure, string Indicator, string value)
+    private bool Check(string storedProcedure, string indicator, string value)
     {
         try
         {
@@ -49,55 +49,55 @@ public class FenXsAccountDAL
             {
                 SqlCommand cmd = new SqlCommand(storedProcedure, con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue(Indicator, value);
+                cmd.Parameters.AddWithValue(indicator, value);
                 con.Open();
-                SqlDataReader rdr = cmd.ExecuteReader();
-                if (rdr.Read()) return true;
+                SqlDataReader r = cmd.ExecuteReader();
+                if (r.Read()) return true;
                 con.Close();
             }
-        }
-        catch (SqlException ex)
-        {
-            Console.WriteLine(ex.Number + " " + ex.Message);
             return false;
         }
-        return false;
+        catch (SqlException e)
+        {
+            Console.WriteLine(e.Number + " " + e.Message); //Change to logs
+            return false;
+        }
     }
-    public UserReturn Login(Login l)
+    public UserReturn GetUser(Login l)
     {
         try
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                SqlCommand cmd = new SqlCommand("GetUser", con);
+                SqlCommand cmd = new SqlCommand("Users_GetUser", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@login", l.login);
                 con.Open();
-                SqlDataReader rdr = cmd.ExecuteReader();
-                if (!rdr.Read()) return new UserReturn(null, 1);
-                if (BCrypt.Net.BCrypt.Verify(l.password, rdr["Password"].ToString()))
+                SqlDataReader r = cmd.ExecuteReader();
+                if (!r.Read()) return new UserReturn(null, 1);
+                if (BCrypt.Net.BCrypt.Verify(l.password, r["Password"].ToString()))
                 {
-                    if (!Convert.ToBoolean(rdr["Active"])) return new UserReturn(null, 3);
-                    if (Convert.ToBoolean(rdr["Banned"])) return new UserReturn(null, 4);
-                    User u = new User(Convert.ToInt32(rdr["Id"]), rdr["Login"].ToString(), rdr["Email"].ToString(), Convert.ToBoolean(rdr["Admin"]), Convert.ToInt32(rdr["FenXs_stars"]));
+                    if (!Convert.ToBoolean(r["Active"])) return new UserReturn(null, 3);
+                    if (Convert.ToBoolean(r["Banned"])) return new UserReturn(null, 4);
+                    User u = new User(Convert.ToInt32(r["Id"]), r["Login"].ToString(), r["Email"].ToString(), Convert.ToBoolean(r["Admin"]), Convert.ToInt32(r["FenXs_stars"]));
                     return new UserReturn(u, 0);
                 }
                 else return new UserReturn(null, 2);
             }
         }
-        catch (SqlException ex)
+        catch (SqlException e)
         {
-            Console.WriteLine(ex.Number + " " + ex.Message);
+            Console.WriteLine(e.Number + " " + e.Message); //Change to logs
             return new UserReturn(null, -1);
         }
     }
-    public int UpdateEmail(int id,string email)
+    public bool UpdateEmail(int id, string email)
     {
         try
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                SqlCommand cmd = new SqlCommand("UpdateEmail", con);
+                SqlCommand cmd = new SqlCommand("Users_UpdateEmail", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id", id);
                 cmd.Parameters.AddWithValue("@email", email);
@@ -105,35 +105,76 @@ public class FenXsAccountDAL
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
+            return true;
         }
-        catch (SqlException ex)
+        catch (SqlException e)
         {
-            Console.WriteLine(ex.Number + " " + ex.Message);
-            return ex.Number;
+            Console.WriteLine(e.Number + " " + e.Message); //Change to logs
+            return false;
         }
-        return 0;
     }
-    /*public int UpdatePassword(int id,string password)
+    public bool UpdatePassword(int id, string password)
     {
         try
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                
-                SqlCommand cmd = new SqlCommand("UpdatePassword", con);
+                SqlCommand cmd = new SqlCommand("Users_UpdatePassword", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id", id);
-                cmd.Parameters.AddWithValue("@email", email);
+                cmd.Parameters.AddWithValue("@password", password);
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
+            return true;
         }
-        catch (SqlException ex)
+        catch (SqlException e)
         {
-            Console.WriteLine(ex.Number + " " + ex.Message);
-            return ex.Number;
+            Console.WriteLine(e.Number + " " + e.Message); //Change to logs
+            return false;
         }
-        return 0;
-    }*/
+    }
+    public bool UpdateAdmin(int id)
+    {
+        try
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand("Users_UpdateAdmin", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", id);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            return true;
+        }
+        catch (SqlException e)
+        {
+            Console.WriteLine(e.Number + " " + e.Message); //Change to logs
+            return false;
+        }
+    }
+    public bool RemoveUser(int id)
+    {
+        try
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand("Users_RemoveUser", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", id);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            return true;
+        }
+        catch (SqlException e)
+        {
+            Console.WriteLine(e.Number + " " + e.Message); //Change to logs
+            return false;
+        }
+    }
 }

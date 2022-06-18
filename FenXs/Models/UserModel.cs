@@ -4,34 +4,33 @@ namespace Models.UserModel;
 
 public class User
 {
-    [Display(Name = "Id")]
-    public int Id { get; set; }
-    [Display(Name = "Login")]
-    public string Login { get; set; }
-    [Display(Name = "Email")]
-    public string Email { get; set; }
-    [Display(Name = "Admin")]
-    public bool Admin { get; set; }
-    [Display(Name = "FenXs_stars")]
-    public int FenXs_stars { get; set; }
-    public User() { }
-    public User(int Id, string Login, string Email, bool Admin, int FenXs_stars)
+    [Display(Name = "id")]
+    public int id { get; set; }
+    [Display(Name = "login")]
+    public string login { get; set; }
+    [Display(Name = "email")]
+    public string email { get; set; }
+    [Display(Name = "admin")]
+    public bool admin { get; set; }
+    [Display(Name = "fenXs_Stars")]
+    public int fenXs_Stars { get; set; }
+    public User(int id, string login, string email, bool admin, int fenXs_Stars)
     {
-        this.Id = Id;
-        this.Login = Login;
-        this.Email = Email;
-        this.Admin = Admin;
-        this.FenXs_stars = FenXs_stars;
+        this.id = id;
+        this.login = login;
+        this.email = email;
+        this.admin = admin;
+        this.fenXs_Stars = fenXs_Stars;
     }
 }
 
 public class UserReturn
 {
-    public int StatusCode { get; }
-    public User User { get; }
-    public UserReturn(User User, int StatusCode)
+    public int statusCode { get; }
+    public User user { get; }
+    public UserReturn(User user, int statusCode)
     {
-        this.User = User;
-        this.StatusCode = StatusCode;
+        this.user = user;
+        this.statusCode = statusCode;
     }
 }
