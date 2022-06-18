@@ -7,11 +7,11 @@ namespace DAL.FenXsNewsDAL;
 public class FenXsNewsDAL
 {
     string connectionString;
-    public FenXsNewsDAL(IConfiguration _configuration)
+    public FenXsNewsDAL(IConfiguration configuration)
     {
-        connectionString = _configuration.GetConnectionString("FenXs-News");
+        connectionString = configuration.GetConnectionString("FenXs-News");
     }
-    public int AddNews(News N)
+    public int InsertNews(News n)
     {
         try
         {
@@ -19,21 +19,21 @@ public class FenXsNewsDAL
             {
                 SqlCommand cmd = new SqlCommand("InsertNews", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@title", N.title);
-                cmd.Parameters.AddWithValue("@text", N.text);
+                cmd.Parameters.AddWithValue("@title", n.title);
+                cmd.Parameters.AddWithValue("@text", n.text);
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
         }
-        catch (SqlException ex)
+        catch (SqlException e)
         {
-            Console.WriteLine(ex.Number + " " + ex.Message);
+            Console.WriteLine(e.Number + " " + e.Message); //Change to logs
             return -1;
         }
         return 0;
     }
-    public List<News> GetNews(bool OnlyTen)
+    public List<News> GetNews(bool onlyTen)
     {
         List<News> listOfNews = new List<News>();
         try
@@ -41,26 +41,26 @@ public class FenXsNewsDAL
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 SqlCommand cmd;
-                if (OnlyTen) cmd = new SqlCommand("GetTenNews", con);
+                if (onlyTen) cmd = new SqlCommand("GetTenNews", con);
                 else cmd = new SqlCommand("GetAllNews", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 con.Open();
-                SqlDataReader rdr = cmd.ExecuteReader();
-                while (rdr.Read())
+                SqlDataReader r = cmd.ExecuteReader();
+                while (r.Read())
                 {
                     News n = new News();
-                    n.id = Convert.ToInt32(rdr["Id"]);
-                    n.date = Convert.ToDateTime(rdr["Date"]);
-                    n.title = rdr["Title"].ToString();
-                    n.text = rdr["Text"].ToString();
+                    n.id = Convert.ToInt32(r["Id"]);
+                    n.date = Convert.ToDateTime(r["Date"]);
+                    n.title = r["Title"].ToString();
+                    n.text = r["Text"].ToString();
                     listOfNews.Add(n);
                 }
                 con.Close();
             }
         }
-        catch (SqlException ex)
+        catch (SqlException e)
         {
-            Console.WriteLine(ex.Number + " " + ex.Message);
+            Console.WriteLine(e.Number + " " + e.Message); //Change to logs
             return null;
         }
         return listOfNews;
@@ -79,14 +79,14 @@ public class FenXsNewsDAL
                 con.Close();
             }
         }
-        catch (SqlException ex)
+        catch (SqlException e)
         {
-            Console.WriteLine(ex.Number + " " + ex.Message);
+            Console.WriteLine(e.Number + " " + e.Message); //Change to logs
             return -1;
         }
         return 0;
     }
-    public int UpdateNews(News N)
+    public int UpdateNews(News n)
     {
         try
         {
@@ -94,17 +94,17 @@ public class FenXsNewsDAL
             {
                 SqlCommand cmd = new SqlCommand("UpdateNews", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id", N.id);
-                cmd.Parameters.AddWithValue("@title", N.title);
-                cmd.Parameters.AddWithValue("@text", N.text);
+                cmd.Parameters.AddWithValue("@id", n.id);
+                cmd.Parameters.AddWithValue("@title", n.title);
+                cmd.Parameters.AddWithValue("@text", n.text);
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
         }
-        catch (SqlException ex)
+        catch (SqlException e)
         {
-            Console.WriteLine(ex.Number + " " + ex.Message);
+            Console.WriteLine(e.Number + " " + e.Message); //Change to logs
             return -1;
         }
         return 0;

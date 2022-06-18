@@ -21,7 +21,7 @@ public class NewsAddModel : AdminPageModel
         ErrorBox = false;
         if (ModelState.IsValid)
         {
-            if (FND.AddNews(N) == 0) return RedirectToPage("../News");
+            if (FND.InsertNews(N) == 0) return RedirectToPage("../News");
             else Info = "Currently, the server cannot fulfill the request.";
         }
         ErrorBox = true;
