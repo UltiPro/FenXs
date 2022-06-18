@@ -2,11 +2,11 @@ USE [FenXs-News]
 GO
 DROP PROCEDURE RemoveNews
 GO
-Create procedure RemoveNews
+CREATE PROCEDURE RemoveNews
     (
-    @id int
+    @id INT
 )
 AS
-Begin
+BEGIN
     DELETE FROM News WHERE Id = @id
-End 
+END

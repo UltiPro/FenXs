@@ -4,8 +4,8 @@ DROP PROCEDURE GetAllNews
 GO
 Create procedure GetAllNews
 AS
-Begin
+BEGIN
     SELECT *
     FROM News
-    ORDER BY Date DESC;
-End 
+    ORDER BY Date DESC
+END

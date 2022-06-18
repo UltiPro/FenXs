@@ -2,11 +2,11 @@ USE [FenXs-News]
 GO
 DROP PROCEDURE GetTenNews
 GO
-Create procedure GetTenNews
+CREATE PROCEDURE GetTenNews
 AS
-Begin
+BEGIN
     SELECT TOP 10
         *
     FROM News
-    ORDER BY Date DESC;
-End 
+    ORDER BY Date DESC
+END

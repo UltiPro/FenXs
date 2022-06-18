@@ -2,15 +2,15 @@ USE [FenXs-News]
 GO
 DROP PROCEDURE InsertNews
 GO
-Create procedure InsertNews
+CREATE PROCEDURE InsertNews
     (
     @title VARCHAR(64),
     @text VARCHAR(1024)
 )
 AS
-Begin
-    Insert into News
+BEGIN
+    INSERT INTO News
         (Title,Text)
-    Values
-        (@title, @text);
-End 
+    VALUES
+        (@title, @text)
+END
