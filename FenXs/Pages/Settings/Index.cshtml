@@ -1,0 +1,63 @@
+@page
+@model SettingsIndexModel
+@{
+    Layout = "_LayoutLogged";
+    ViewData["Description"] = "- Settings";
+    ViewData["Login"] = @Model.user.Login;
+    ViewData["FenXs-Stars"] = @Model.user.FenXs_stars;
+}
+
+@if (@Model.user.Admin == true)
+{
+    <div class="row m-2">
+        <a href="/AdminPanel/" class="btn btn-primary border border-dark">Admin Panel</a>
+    </div>
+}
+<!--<div class="row m-2 mt-3 text-light">
+    <div class="col FenXs-Wooden me-1 p-2 border border-dark rounded">
+        <span class="ps-3 FenXs-Font-Bigger FenXs-Text-Dark-Shadow">Your Email: <span class="text-danger">Model.user.Email</span></span>
+        <form method="post" class="m-1 FenXs-Font-Forms">
+            <div class="form-group">
+                <input type="text" asp-for="CE.email" class="form-control form-control-sm border border-dark" placeholder="Your New Email">
+            </div>
+        </form>
+    </div>
+    <div class="col FenXs-Wooden ms-1 border border-dark rounded">
+
+    </div>
+</div>-->
+
+<!--
+<div class="row m-2 p-2 text-light bg-dark bg-opacity-50 border rounded">
+    <a href="/ChangeEmail" class="btn btn-warning border border-dark">Change Password</a>
+</div>
+<div class="row m-2 p-2 text-light bg-dark bg-opacity-50 border rounded">
+    <div>Your Email: <span class="text-danger">Model.user.Email</span></div>
+    <!-- onsubmit="return ValidateChangeEmail()"
+    <form method="post" >
+            <div class="form-group mt-4">
+                <input type="text" asp-for="CE.email" class="form-control p-1 border border-dark" placeholder="Your New Email">
+            </div>
+            <div class="form-group my-2">
+                            <input type="password" asp-for="CE.password" class="form-control p-1 border border-dark"
+                                placeholder="Your Password">
+            </div>
+                        <div class="form-group my-2 mb-0">
+                            <button type="submit" class="btn btn-success p-1 w-100 border border-dark">Login In</button>
+                        </div>
+        </form>
+    <a href="/ChangeEmail" class="btn btn-warning border border-dark">Change Email</a>
+</div>
+<div class="row m-2 p-2 text-light bg-dark bg-opacity-50 border rounded">
+    <div>Admin Status:
+        if (Model.user.Admin)
+        {
+            <span class="text-success">Active</span>
+        }
+        else
+        {
+            <span class="text-danger">None</span>
+        }
+    </div>
+    <a href="/ChangeAdmin" class="btn btn border border-dark">Change Email</a>
+</div> -->
