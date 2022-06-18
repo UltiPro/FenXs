@@ -1,4 +1,4 @@
 function AudioChangeWindow() {
-    const audio = new Audio("../audio/Change_Window.wav");
+    const audio = new Audio("../audio/ChangeWindow.wav");
     audio.play();
 }

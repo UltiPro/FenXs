@@ -5,6 +5,6 @@ $(document).ready(function () {
 })
 
 function AudioChangeInput() {
-    const audio = new Audio("../audio/Change_Input.wav");
+    const audio = new Audio("../audio/ChangeInput.wav");
     audio.play();
 }
