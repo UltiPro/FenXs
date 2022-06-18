@@ -1,12 +1,12 @@
-select
+SELECT
     'data source=' + @@servername +
     ';initial catalog=' + db_name() +
-    case type_desc
-        when 'WINDOWS_LOGIN' 
-            then ';trusted_connection=true'
-        else
+    CASE TYPE_DESC
+        WHEN 'WINDOWS_LOGIN' 
+            THEN ';trusted_connection=true'
+        ELSE
             ';user id=' + suser_name() + ';password=<<YourPassword>>'
-    end
-    as ConnectionString
-from sys.server_principals
-where name = suser_name()
+    END
+    AS ConnectionString
+FROM sys.server_principals
+WHERE NAME = suser_name()
