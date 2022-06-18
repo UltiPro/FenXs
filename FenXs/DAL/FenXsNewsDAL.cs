@@ -11,7 +11,7 @@ public class FenXsNewsDAL
     {
         connectionString = configuration.GetConnectionString("FenXs-News");
     }
-    public int InsertNews(News n)
+    public bool InsertNews(News n)
     {
         try
         {
@@ -25,19 +25,19 @@ public class FenXsNewsDAL
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
+            return true;
         }
         catch (SqlException e)
         {
             Console.WriteLine(e.Number + " " + e.Message); //Change to logs
-            return -1;
+            return false;
         }
-        return 0;
     }
     public List<News> GetNews(bool onlyTen)
     {
-        List<News> listOfNews = new List<News>();
         try
         {
+            List<News> listOfNews = new List<News>();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 SqlCommand cmd;
@@ -57,15 +57,15 @@ public class FenXsNewsDAL
                 }
                 con.Close();
             }
+            return listOfNews;
         }
         catch (SqlException e)
         {
             Console.WriteLine(e.Number + " " + e.Message); //Change to logs
             return null;
         }
-        return listOfNews;
     }
-    public int RemoveNews(int id)
+    public bool RemoveNews(int id)
     {
         try
         {
@@ -78,15 +78,15 @@ public class FenXsNewsDAL
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
+            return true;
         }
         catch (SqlException e)
         {
             Console.WriteLine(e.Number + " " + e.Message); //Change to logs
-            return -1;
+            return false;
         }
-        return 0;
     }
-    public int UpdateNews(News n)
+    public bool UpdateNews(News n)
     {
         try
         {
@@ -101,12 +101,12 @@ public class FenXsNewsDAL
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
+            return true;
         }
         catch (SqlException e)
         {
             Console.WriteLine(e.Number + " " + e.Message); //Change to logs
-            return -1;
+            return false;
         }
-        return 0;
     }
 }
