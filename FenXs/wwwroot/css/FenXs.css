@@ -94,6 +94,18 @@ a:hover {
   text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 
+.FenXs-Text-Dark-Shadow {
+  text-shadow: -1px 0 rgb(var(--bs-dark-rgb)), 0 1px rgb(var(--bs-dark-rgb)), 1px 0 rgb(var(--bs-dark-rgb)), 0 -1px rgb(var(--bs-dark-rgb));
+}
+
+.FenXs-Text-NoShadow {
+  text-shadow: none;
+}
+
+.FenXs-Text-NoShadow:hover {
+  text-shadow: none;
+}
+
 .FenXs-Font-Forms {
   font-family: FenXs-Font-Forms;
   text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
