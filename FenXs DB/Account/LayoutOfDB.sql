@@ -1,54 +1,23 @@
-DROP DATABASE [FenXs-Account]
+DROP DATABASE [FenXs-Accounts]
 GO
-CREATE DATABASE [FenXs-Account]
+CREATE DATABASE [FenXs-Accounts]
 GO
-USE [FenXs-Account]
+USE [FenXs-Accounts]
 GO
-CREATE TABLE [Account]
+CREATE TABLE [Users]
 (
-  Id int NOT NULL IDENTITY(1,1),
-  Login varchar(15) NOT NULL UNIQUE,
-  Password varchar(320) NOT NULL,
-  Email varchar(320) NOT NULL UNIQUE,
-  Active bit NOT NULL DEFAULT 0,
-  Banned bit NOT NULL DEFAULT 0,
-  Admin bit NOT NULL DEFAULT 0,
-  FenXs_stars int NOT NULL DEFAULT 0,
-  SignInDate datetime NOT NULL DEFAULT getdate(),
-  LastLogIn datetime NOT NULL DEFAULT getdate()
+  Id INT NOT NULL IDENTITY(1,1),
+  Login VARCHAR(15) NOT NULL UNIQUE,
+  Password VARCHAR(320) NOT NULL,
+  Email VARCHAR(320) NOT NULL UNIQUE,
+  Active BIT NOT NULL DEFAULT 0,
+  Banned BIT NOT NULL DEFAULT 0,
+  Admin BIT NOT NULL DEFAULT 0,
+  FenXs_stars INT NOT NULL DEFAULT 0,
+  SignInDate DATETIME NOT NULL DEFAULT GETDATE(),
+  LastLogIn DATETIME NOT NULL DEFAULT GETDATE()
     CONSTRAINT [PK_ACCOUNT] PRIMARY KEY CLUSTERED
   (
     [Id] ASC
   ) WITH (IGNORE_DUP_KEY = OFF)
 )
-GO
-CREATE TABLE [Characters]
-(
-  Id int NOT NULL,
-  Id_account int NOT NULL,
-  Id_server int NOT NULL,
-  CONSTRAINT [PK_CHARACTERS] PRIMARY KEY CLUSTERED
-  (
-    [Id] ASC
-  ) WITH (IGNORE_DUP_KEY = OFF)
-)
-GO
-CREATE TABLE [Servers]
-(
-  Id int NOT NULL,
-  Name varchar(64) NOT NULL UNIQUE,
-  CONSTRAINT [PK_SERVERS] PRIMARY KEY CLUSTERED
-  (
-    [Id] ASC
-  ) WITH (IGNORE_DUP_KEY = OFF)
-)
-GO
-ALTER TABLE [Characters] WITH CHECK ADD CONSTRAINT [Characters_fk0] FOREIGN KEY ([Id_account]) REFERENCES [Account]([Id])
-ON DELETE CASCADE
-GO
-ALTER TABLE [Characters] CHECK CONSTRAINT [Characters_fk0]
-GO
-ALTER TABLE [Characters] WITH CHECK ADD CONSTRAINT [Characters_fk1] FOREIGN KEY ([Id_server]) REFERENCES [Servers]([Id])
-ON DELETE CASCADE
-GO
-ALTER TABLE [Characters] CHECK CONSTRAINT [Characters_fk1];
