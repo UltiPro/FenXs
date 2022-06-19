@@ -7,7 +7,6 @@ namespace PageModels.LoggedPageModel;
 public class LoggedPageModel : PageModel
 {
     public User user;
-    private byte[] Id;
     public LoggedPageModel()
     {
         user = new User();
@@ -19,12 +18,15 @@ public class LoggedPageModel : PageModel
     }
     public bool IsUserLogged()
     {
-        if (!HttpContext.Session.TryGetValue("Id", out Id)) return false;
-        user.Id = (int)HttpContext.Session.GetInt32("Id");
-        user.Login = HttpContext.Session.GetString("Login");
-        user.Email = HttpContext.Session.GetString("Email");
-        user.Admin = Convert.ToBoolean(HttpContext.Session.GetInt32("Admin"));
-        user.FenXs_stars = (int)HttpContext.Session.GetInt32("FenXs_stars");
-        return true;
+        if (User.Identity.IsAuthenticated)
+        {
+            user.id = (int)HttpContext.Session.GetInt32("Id");
+            user.login = HttpContext.Session.GetString("Login");
+            user.email = HttpContext.Session.GetString("Email");
+            user.admin = Convert.ToBoolean(HttpContext.Session.GetInt32("Admin"));
+            user.fenXs_Stars = (int)HttpContext.Session.GetInt32("FenXs_stars");
+            return true;
+        }
+        return false;
     }
 }

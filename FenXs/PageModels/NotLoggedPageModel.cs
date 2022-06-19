@@ -5,10 +5,10 @@ namespace PageModels.NotLoggedPageModel;
 
 public class NotLoggedPageModel : PageModel
 {
-    private byte[] Id;
+    private byte[] id;
     public IActionResult OnGet()
     {
-        if (HttpContext.Session.TryGetValue("Id", out Id)) return RedirectToPage("/Main");
+        if (HttpContext.Session.TryGetValue("Id", out id)) return RedirectToPage("/Main");
         return Page();
     }
 }
