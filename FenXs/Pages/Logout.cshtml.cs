@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FenXs.Pages;
 
-public class LogOutModel : PageModel
+public class LogoutModel : PageModel
 {
     public IActionResult OnGet()
     {
