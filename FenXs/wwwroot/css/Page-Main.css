@@ -5,7 +5,7 @@
     height: 256px;
     font-family: FenXs-Font;
     color: white;
-    text-shadow: 3px 3px rgb(var(--bs-dark-rgb));
+    text-shadow: 4px 3px 0px rgb(var(--bs-dark-rgb));
     border: 1px solid rgb(var(--bs-dark-rgb));
 }
 
