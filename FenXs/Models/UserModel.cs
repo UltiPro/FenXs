@@ -14,6 +14,7 @@ public class User
     public bool admin { get; set; }
     [Display(Name = "fenXs_Stars")]
     public int fenXs_Stars { get; set; }
+    public User() { }
     public User(int id, string login, string email, bool admin, int fenXs_Stars)
     {
         this.id = id;
