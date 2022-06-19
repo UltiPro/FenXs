@@ -91,7 +91,7 @@ public class FenXsAccountDAL
             return new UserReturn(null, -1);
         }
     }
-    public bool UpdateEmail(int id, string email)
+    public int UpdateEmail(int id, string email)
     {
         try
         {
@@ -105,12 +105,13 @@ public class FenXsAccountDAL
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
-            return true;
+            return 0;
         }
         catch (SqlException e)
         {
+            if (e.Number == 2627) return 1;
             Console.WriteLine(e.Number + " " + e.Message); //Change to logs
-            return false;
+            return -1;
         }
     }
     public bool UpdatePassword(int id, string password)

@@ -10,7 +10,7 @@ public class Registration
     [Display(Name = "login")]
     public string login { get; set; }
     [Required(ErrorMessage = "E-mail is required.")]
-    [EmailAddress(ErrorMessage = "Incorrect Address E-mail.")]
+    [EmailAddress(ErrorMessage = "Incorrect address e-mail.")]
     [RegularExpression(@"^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$", ErrorMessage = "Incorrect expression of e-mail. Check info!")]
     [Display(Name = "email")]
     public string email { get; set; }
@@ -19,7 +19,7 @@ public class Registration
     [RegularExpression(@"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,30}$", ErrorMessage = "Incorrect expression of password. Check info!")]
     [Display(Name = "password")]
     public string password { get; set; }
-    [Required(ErrorMessage = "Confirm Password is required.")]
+    [Required(ErrorMessage = "Confirm password is required.")]
     [Compare("password", ErrorMessage = "The passwords do not match!")]
     [Display(Name = "c_password")]
     public string c_password { get; set; }

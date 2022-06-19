@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PageModels.VisitorPageModel;
-using DAL.FenXsAccountDAL;
 using Models.RegistrationModel;
 using Models.LoginModel;
 using Models.UserModel;
+using DAL.FenXsAccountDAL;
 
 namespace FenXs.Pages;
 
