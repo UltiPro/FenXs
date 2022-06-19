@@ -52,10 +52,10 @@ function ToggleInfoBox(fromBox, toBox) {
 
 function ValidateSignIn() {
     let pass = true;
-    const login = $("input[name='R.login']");
-    const email = $("input[name='R.email']");
-    const password = $("input[name='R.password']");
-    const c_password = $("input[name='R.c_password']");
+    const login = $("input[name='r.login']");
+    const email = $("input[name='r.email']");
+    const password = $("input[name='r.password']");
+    const c_password = $("input[name='r.c_password']");
     pass = Validation(CheckLogin, login, pass);
     pass = Validation(CheckEmail, email, pass);
     pass = Validation(CheckPassword, password, pass);
@@ -66,8 +66,8 @@ function ValidateSignIn() {
 
 function ValidateLoginIn() {
     let pass = true;
-    const login = $("input[name='L.login']");
-    const password = $("input[name='L.password']");
+    const login = $("input[name='l.login']");
+    const password = $("input[name='l.password']");
     pass = Validation(CheckLogin, login, pass);
     pass = Validation(CheckPassword, password, pass);
     if (!pass) AudioValidateFail();

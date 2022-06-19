@@ -21,11 +21,11 @@ public class UserPageModel : PageModel
         byte[] id;
         if (HttpContext.Session.TryGetValue("Id", out id))
         {
-            user.id = (int)HttpContext.Session.GetInt32("Id");
-            user.login = HttpContext.Session.GetString("Login");
-            user.email = HttpContext.Session.GetString("Email");
-            user.admin = Convert.ToBoolean(HttpContext.Session.GetInt32("Admin"));
-            user.fenXs_Stars = (int)HttpContext.Session.GetInt32("FenXs_stars");
+            user.id = (int)HttpContext.Session.GetInt32("id");
+            user.login = HttpContext.Session.GetString("login");
+            user.email = HttpContext.Session.GetString("email");
+            user.admin = Convert.ToBoolean(HttpContext.Session.GetInt32("admin"));
+            user.fenXs_Stars = (int)HttpContext.Session.GetInt32("fenXs_Stars");
             return true;
         }
         return false;
