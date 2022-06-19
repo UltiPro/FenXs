@@ -14,7 +14,7 @@ public class IndexModel : VisitorPageModel
     [BindProperty]
     public Login l { get; set; }
     private FenXsAccountDAL fenXsAccountDAL;
-    public bool errorBox, warningBox, successBox;
+    public bool dangerBox, warningBox, successBox;
     public string info;
     public IndexModel(IConfiguration configuration)
     {
@@ -22,7 +22,7 @@ public class IndexModel : VisitorPageModel
     }
     public IActionResult OnPostLogin()
     {
-        errorBox = warningBox = successBox = false;
+        dangerBox = warningBox = successBox = false;
         if (ModelState.ErrorCount - 4 == 0)
         {
             UserReturn userReturn = fenXsAccountDAL.GetUser(l);
@@ -54,18 +54,18 @@ public class IndexModel : VisitorPageModel
                     info = "This account is banned.";
                     break;
                 case -1:
-                    errorBox = true;
+                    dangerBox = true;
                     info = "Page server is offline. Sorry for the inconvenience.";
                     break;
                 default: return RedirectToPage("/Error");
             }
         }
-        else errorBox = true;
+        else dangerBox = true;
         return Page();
     }
     public IActionResult OnPostRegistration()
     {
-        errorBox = warningBox = successBox = false;
+        dangerBox = warningBox = successBox = false;
         if (ModelState.ErrorCount - 2 == 0)
         {
             switch (fenXsAccountDAL.InsertUser(r))
@@ -83,13 +83,13 @@ public class IndexModel : VisitorPageModel
                     info = "This Email is already taken.";
                     break;
                 case -1:
-                    errorBox = true;
+                    dangerBox = true;
                     info = "Page server is offline. Sorry for the inconvenience.";
                     break;
                 default: return RedirectToPage("/Error");
             }
         }
-        else errorBox = true;
+        else dangerBox = true;
         return Page();
     }
 }
