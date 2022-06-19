@@ -8,5 +8,5 @@ CREATE PROCEDURE Users_RemoveUser
 )
 AS
 BEGIN
-    DELETE FROM Account WHERE Id = @id
+    DELETE FROM Users WHERE Id = @id
 END

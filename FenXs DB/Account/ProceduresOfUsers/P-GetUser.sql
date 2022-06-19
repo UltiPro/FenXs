@@ -9,6 +9,6 @@ CREATE PROCEDURE Users_GetUser
 AS
 BEGIN
     SELECT *
-    FROM Account
+    FROM Users
     WHERE Login = @login
 END

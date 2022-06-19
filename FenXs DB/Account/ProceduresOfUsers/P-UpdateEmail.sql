@@ -9,5 +9,5 @@ CREATE PROCEDURE Users_UpdateEmail
 )
 AS
 BEGIN
-    UPDATE Account SET Email = @email WHERE Id = @id
+    UPDATE Users SET Email = @email WHERE Id = @id
 END

@@ -24,7 +24,7 @@ public class NewsEditModel : AdminPageModel
         if (ModelState.IsValid)
         {
             N.id = id;
-            if (FND.UpdateNews(N) == 0) return RedirectToPage("../News");
+            if (FND.UpdateNews(N)) return RedirectToPage("../News");
             else Info = "Currently, the server cannot fulfill the request.";
         }
         ErrorBox = true;

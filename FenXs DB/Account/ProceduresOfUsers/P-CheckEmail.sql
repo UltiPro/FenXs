@@ -9,6 +9,6 @@ CREATE PROCEDURE Users_CheckEmail
 AS
 BEGIN
     SELECT Email
-    FROM Account
+    FROM Users
     WHERE Email = @email
 End

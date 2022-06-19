@@ -1,10 +1,10 @@
-using PageModels.LoggedPageModel;
+using PageModels.UserPageModel;
 using Models.NewsModel;
 using DAL.FenXsNewsDAL;
 
 namespace FenXs.Pages;
 
-public class MainModel : LoggedPageModel
+public class MainModel : UserPageModel
 {
     private FenXsNewsDAL FND;
     public List<News> ListOfNews;

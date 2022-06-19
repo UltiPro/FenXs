@@ -1,9 +1,9 @@
-using PageModels.LoggedPageModel;
+using PageModels.UserPageModel;
 using DAL.FenXsAccountDAL;
 
 namespace FenXs.Pages;
 
-public class SettingsIndexModel : LoggedPageModel
+public class SettingsIndexModel : UserPageModel
 {
     private FenXsAccountDAL FAD;
     public SettingsIndexModel(IConfiguration _configuration)

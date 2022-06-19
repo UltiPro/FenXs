@@ -10,7 +10,7 @@ CREATE PROCEDURE Users_InsertUser
 )
 AS
 BEGIN
-    INSERT INTO Account
+    INSERT INTO Users
         (Login,Password,Email)
     Values
         (@login, @password, @email)

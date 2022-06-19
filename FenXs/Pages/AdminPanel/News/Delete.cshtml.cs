@@ -16,8 +16,8 @@ public class NewsDeleteModel : AdminPageModel
     override public IActionResult OnGet()
     {
         if (!IsUserLogged()) return RedirectToPage("/Index");
-        if (!IsUserAnAdmin()) return RedirectToPage("/Main");
-        if (FND.RemoveNews(id) != 0) return RedirectToPage("/Error");
+        if (!user.admin) return RedirectToPage("/Main");
+        if (!FND.RemoveNews(id)) return RedirectToPage("/Error");
         return RedirectToPage("../News");
     }
 }

@@ -3,11 +3,11 @@
 @{
     Layout = "_LayoutLogged";
     ViewData["Description"] = "- Settings";
-    ViewData["Login"] = @Model.user.Login;
-    ViewData["FenXs-Stars"] = @Model.user.FenXs_stars;
+    ViewData["Login"] = @Model.user.login;
+    ViewData["FenXs-Stars"] = @Model.user.fenXs_Stars;
 }
 
-@if (@Model.user.Admin == true)
+@if (@Model.user.admin == true)
 {
     <div class="row m-2">
         <a href="/AdminPanel/" class="btn btn-primary border border-dark">Admin Panel</a>

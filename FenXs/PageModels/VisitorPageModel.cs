@@ -7,7 +7,7 @@ public class VisitorPageModel : PageModel
 {
     public IActionResult OnGet()
     {
-        if (User.Identity.IsAuthenticated) return RedirectToPage("/Main");
+        if (!HttpContext.Session.IsAvailable) return RedirectToPage("/Main");
         return Page();
     }
 }

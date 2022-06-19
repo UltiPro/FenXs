@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PageModels.NotLoggedPageModel;
+using PageModels.VisitorPageModel;
 using DAL.FenXsAccountDAL;
 using Models.RegistrationModel;
 using Models.LoginModel;
@@ -7,7 +7,7 @@ using Models.UserModel;
 
 namespace FenXs.Pages;
 
-public class IndexModel : NotLoggedPageModel
+public class IndexModel : VisitorPageModel
 {
     [BindProperty]
     public Registration R { get; set; }
@@ -25,17 +25,17 @@ public class IndexModel : NotLoggedPageModel
         ErrorBox = WarningBox = SuccessBox = false;
         if (ModelState.ErrorCount - 4 == 0)
         {
-            UserReturn UserReturn = FAD.Login(L);
-            if (UserReturn.User != null)
+            UserReturn UserReturn = FAD.GetUser(L);
+            if (UserReturn.user != null)
             {
-                HttpContext.Session.SetInt32("Id", UserReturn.User.Id);
-                HttpContext.Session.SetString("Login", UserReturn.User.Login);
-                HttpContext.Session.SetString("Email", UserReturn.User.Email);
-                HttpContext.Session.SetInt32("Admin", Convert.ToInt32(UserReturn.User.Admin));
-                HttpContext.Session.SetInt32("FenXs_stars", UserReturn.User.FenXs_stars);
+                HttpContext.Session.SetInt32("Id", UserReturn.user.id);
+                HttpContext.Session.SetString("Login", UserReturn.user.login);
+                HttpContext.Session.SetString("Email", UserReturn.user.email);
+                HttpContext.Session.SetInt32("Admin", Convert.ToInt32(UserReturn.user.admin));
+                HttpContext.Session.SetInt32("FenXs_stars", UserReturn.user.fenXs_Stars);
                 return RedirectToPage("/Main");
             }
-            switch (UserReturn.StatusCode)
+            switch (UserReturn.statusCode)
             {
                 case 1:
                     WarningBox = true;
@@ -68,7 +68,7 @@ public class IndexModel : NotLoggedPageModel
         ErrorBox = WarningBox = SuccessBox = false;
         if (ModelState.ErrorCount - 2 == 0)
         {
-            switch (FAD.Register(R))
+            switch (FAD.InsertUser(R))
             {
                 case 0:
                     SuccessBox = true;

@@ -8,5 +8,5 @@ CREATE PROCEDURE Users_UpdateAdmin
 )
 AS
 BEGIN
-    UPDATE Account SET Admin = 1 WHERE Id = @id
+    UPDATE Users SET Admin = 1 WHERE Id = @id
 END

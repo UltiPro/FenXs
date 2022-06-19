@@ -1,8 +1,8 @@
-using PageModels.LoggedPageModel;
+using PageModels.UserPageModel;
 
 namespace FenXs.Pages;
 
-public class SupportIndexModel : LoggedPageModel
+public class SupportIndexModel : UserPageModel
 {
 
 }

@@ -18,7 +18,7 @@ public class UserPageModel : PageModel
     }
     public bool IsUserLogged()
     {
-        if (User.Identity.IsAuthenticated)
+        if (HttpContext.Session.IsAvailable)
         {
             user.id = (int)HttpContext.Session.GetInt32("Id");
             user.login = HttpContext.Session.GetString("Login");

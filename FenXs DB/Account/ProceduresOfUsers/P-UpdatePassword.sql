@@ -9,5 +9,5 @@ CREATE PROCEDURE Users_UpdatePassword
 )
 AS
 BEGIN
-    UPDATE Account SET Password = @password WHERE Id = @id
+    UPDATE Users SET Password = @password WHERE Id = @id
 END

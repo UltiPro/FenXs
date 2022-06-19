@@ -9,6 +9,6 @@ CREATE PROCEDURE Users_CheckLogin
 AS
 BEGIN
     SELECT Login
-    FROM Account
+    FROM Users
     WHERE Login = @login
 END
