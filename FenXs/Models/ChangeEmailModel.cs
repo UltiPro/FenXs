@@ -15,8 +15,7 @@ public class ChangeEmail
     [Display(Name = "newEmail")]
     public string newEmail { get; set; }
     [Required(ErrorMessage = "Repeat e-mail is required.")]
-    [EmailAddress(ErrorMessage = "Incorrect repeat address e-mail.")]
-    [RegularExpression(@"^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$", ErrorMessage = "Incorrect expression of repeat e-mail.")]
+    [Compare("newEmail", ErrorMessage = "New email and repeat email do not match!")]
     [Display(Name = "r_newEmail")]
     public string r_newEmail { get; set; }
 }
