@@ -59,7 +59,7 @@ function ValidateSignIn() {
     pass = Validation(CheckLogin, login, pass);
     pass = Validation(CheckEmail, email, pass);
     pass = Validation(CheckPassword, password, pass);
-    pass = ValidationPasswords(password, c_password, pass);
+    pass = CheckPasswords(password, c_password, pass);
     if (!pass) AudioValidateFail();
     return pass;
 }

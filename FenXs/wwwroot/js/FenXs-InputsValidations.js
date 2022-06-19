@@ -1,20 +1,10 @@
-function Validation(fun, what, pass) {
-    if (fun(what.val())) {
-        what.removeClass("is-invalid");
-        what.addClass("is-valid");
+function Validation(fun, obj, pass) {
+    if (fun(obj.val())) {
+        obj.removeClass("is-invalid");
+        obj.addClass("is-valid");
         return pass;
     }
-    what.addClass("is-invalid");
-    return false;
-}
-
-function ValidationPasswords(password, password2, pass) {
-    if (CheckPasswordCompatibility(password.val(), password2.val())) {
-        password2.removeClass("is-invalid");
-        password2.addClass("is-valid");
-        return pass;
-    }
-    password2.addClass("is-invalid");
+    obj.addClass("is-invalid");
     return false;
 }
 
@@ -36,7 +26,12 @@ function CheckPassword(password) {
     return true;
 }
 
-function CheckPasswordCompatibility(password, password2) {
-    if ((password != password2) || (password == "") || (password2 == "")) return false;
-    return true;
+function CheckPasswords(password, password2, pass) {
+    if ((password.val() != password2.val()) || (password.val() == "") || (password2.val() == "")) {
+        password2.addClass("is-invalid");
+        return false;
+    }
+    password2.removeClass("is-invalid");
+    password2.addClass("is-valid");
+    return pass;
 }
