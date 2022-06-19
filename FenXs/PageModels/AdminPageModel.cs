@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace PageModels.AdminPageModel;
 
-public class AdminPageModel : LoggedPageModel.LoggedPageModel
+public class AdminPageModel : UserPageModel.UserPageModel
 {
     override public IActionResult OnGet()
     {

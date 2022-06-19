@@ -2,12 +2,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Models.UserModel;
 
-namespace PageModels.LoggedPageModel;
+namespace PageModels.UserPageModel;
 
-public class LoggedPageModel : PageModel
+public class UserPageModel : PageModel
 {
     public User user;
-    public LoggedPageModel()
+    public UserPageModel()
     {
         user = new User();
     }
