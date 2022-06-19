@@ -10,86 +10,86 @@ namespace FenXs.Pages;
 public class IndexModel : VisitorPageModel
 {
     [BindProperty]
-    public Registration R { get; set; }
+    public Registration r { get; set; }
     [BindProperty]
-    public Login L { get; set; }
-    private FenXsAccountDAL FAD;
-    public bool ErrorBox, WarningBox, SuccessBox;
-    public string Info;
-    public IndexModel(IConfiguration _configuration)
+    public Login l { get; set; }
+    private FenXsAccountDAL fenXsAccountDAL;
+    public bool errorBox, warningBox, successBox;
+    public string info;
+    public IndexModel(IConfiguration configuration)
     {
-        FAD = new FenXsAccountDAL(_configuration);
+        fenXsAccountDAL = new FenXsAccountDAL(configuration);
     }
     public IActionResult OnPostLogin()
     {
-        ErrorBox = WarningBox = SuccessBox = false;
+        errorBox = warningBox = successBox = false;
         if (ModelState.ErrorCount - 4 == 0)
         {
-            UserReturn UserReturn = FAD.GetUser(L);
-            if (UserReturn.user != null)
+            UserReturn userReturn = fenXsAccountDAL.GetUser(l);
+            if (userReturn.user != null)
             {
-                HttpContext.Session.SetInt32("Id", UserReturn.user.id);
-                HttpContext.Session.SetString("Login", UserReturn.user.login);
-                HttpContext.Session.SetString("Email", UserReturn.user.email);
-                HttpContext.Session.SetInt32("Admin", Convert.ToInt32(UserReturn.user.admin));
-                HttpContext.Session.SetInt32("FenXs_stars", UserReturn.user.fenXs_Stars);
+                HttpContext.Session.SetInt32("id", userReturn.user.id);
+                HttpContext.Session.SetString("login", userReturn.user.login);
+                HttpContext.Session.SetString("email", userReturn.user.email);
+                HttpContext.Session.SetInt32("admin", Convert.ToInt32(userReturn.user.admin));
+                HttpContext.Session.SetInt32("fenXs_Stars", userReturn.user.fenXs_Stars);
                 return RedirectToPage("/Main");
             }
-            switch (UserReturn.statusCode)
+            switch (userReturn.statusCode)
             {
                 case 1:
-                    WarningBox = true;
-                    Info = "Account with this login does not exist.";
+                    warningBox = true;
+                    info = "Account with this login does not exist.";
                     break;
                 case 2:
-                    WarningBox = true;
-                    Info = "Incorrect password.";
+                    warningBox = true;
+                    info = "Incorrect password.";
                     break;
                 case 3:
-                    WarningBox = true;
-                    Info = "This account is not activated.";
+                    warningBox = true;
+                    info = "This account is not activated.";
                     break;
                 case 4:
-                    WarningBox = true;
-                    Info = "This account is banned!";
+                    warningBox = true;
+                    info = "This account is banned.";
                     break;
                 case -1:
-                    ErrorBox = true;
-                    Info = "Page server is offline. Sorry for the inconvenience.";
+                    errorBox = true;
+                    info = "Page server is offline. Sorry for the inconvenience.";
                     break;
                 default: return RedirectToPage("/Error");
             }
         }
-        else ErrorBox = true;
+        else errorBox = true;
         return Page();
     }
     public IActionResult OnPostRegistration()
     {
-        ErrorBox = WarningBox = SuccessBox = false;
+        errorBox = warningBox = successBox = false;
         if (ModelState.ErrorCount - 2 == 0)
         {
-            switch (FAD.InsertUser(R))
+            switch (fenXsAccountDAL.InsertUser(r))
             {
                 case 0:
-                    SuccessBox = true;
-                    Info = "A link to activate the account has been sent to the given e-mail address.";
+                    successBox = true;
+                    info = "A link to activate the account has been sent to the given e-mail address.";
                     break;
                 case 1:
-                    WarningBox = true;
-                    Info = "This Login is already taken.";
+                    warningBox = true;
+                    info = "This Login is already taken.";
                     break;
                 case 2:
-                    WarningBox = true;
-                    Info = "This Email is already in use.";
+                    warningBox = true;
+                    info = "This Email is already taken.";
                     break;
                 case -1:
-                    ErrorBox = true;
-                    Info = "Page server is offline. Sorry for the inconvenience.";
+                    errorBox = true;
+                    info = "Page server is offline. Sorry for the inconvenience.";
                     break;
                 default: return RedirectToPage("/Error");
             }
         }
-        else ErrorBox = true;
+        else errorBox = true;
         return Page();
     }
 }

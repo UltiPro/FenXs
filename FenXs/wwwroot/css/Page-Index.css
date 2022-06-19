@@ -1,17 +1,17 @@
-.Index-menu {
+.IndexMenu {
     width: 400px;
     height: 305px;
 }
 
-.Index-menu-tab {
+.IndexMenuTab {
     height: 35px;
 }
 
-.Index-menu-form {
+.IndexMenuForm {
     height: 270px;
 }
 
-.Index-error {
+.IndexError {
     width: 450px;
     font-size: 18px;
 }

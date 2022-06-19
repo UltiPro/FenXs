@@ -8,7 +8,7 @@ public class VisitorPageModel : PageModel
     public IActionResult OnGet()
     {
         byte[] id;
-        if (HttpContext.Session.TryGetValue("Id", out id)) return RedirectToPage("/Main");
+        if (HttpContext.Session.TryGetValue("id", out id)) return RedirectToPage("/Main");
         return Page();
     }
 }
