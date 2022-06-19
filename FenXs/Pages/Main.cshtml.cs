@@ -6,11 +6,11 @@ namespace FenXs.Pages;
 
 public class MainModel : UserPageModel
 {
-    private FenXsNewsDAL FND;
-    public List<News> ListOfNews;
-    public MainModel(IConfiguration _configuration)
+    private FenXsNewsDAL fenXsNewsDAL;
+    public List<News> listOfNews;
+    public MainModel(IConfiguration configuration)
     {
-        FND = new FenXsNewsDAL(_configuration);
-        ListOfNews = FND.GetNews(true);
+        fenXsNewsDAL = new FenXsNewsDAL(configuration);
+        listOfNews = fenXsNewsDAL.GetNews(true);
     }
 }
