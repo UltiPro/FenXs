@@ -5,17 +5,17 @@
 
 @font-face {
   font-family: FenXs-Font-Logo;
-  src: url("../font/Page-Logo.ttf");
+  src: url("../font/Logo.ttf");
 }
 
 @font-face {
   font-family: FenXs-Font-Forms;
-  src: url("../font/Page-Forms.ttf");
+  src: url("../font/Forms.ttf");
 }
 
 @font-face {
   font-family: FenXs-Font-Anchor;
-  src: url("../font/Page-Anchor.ttf");
+  src: url("../font/Anchor.ttf");
 }
 
 :root {
