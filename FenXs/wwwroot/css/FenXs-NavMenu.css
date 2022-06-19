@@ -3,7 +3,7 @@
 }
 
 .navbar-toggler {
-    border-color: rgb(var(--bs-dark-rgb));
+    border: 2px solid rgb(var(--bs-dark-rgb));
 }
 
 .navbar-toggler:hover {

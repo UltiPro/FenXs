@@ -7,11 +7,7 @@ public class LogOutModel : PageModel
 {
     public IActionResult OnGet()
     {
-        HttpContext.Session.Remove("Id");
-        HttpContext.Session.Remove("Login");
-        HttpContext.Session.Remove("Email");
-        HttpContext.Session.Remove("Admin");
-        HttpContext.Session.Remove("FenXs_stars");
+        HttpContext.Session.Clear();
         return RedirectToPage("/Index");
     }
 }

@@ -12,42 +12,42 @@ $(document).ready(function () {
 
 $(document).ready(function () {
     $("#SignInInfoBtn").bind("click", function () {
-        ToggleInfoBox("#SignInLoginInBox", "#InfoBox");
+        ToggleInfoBox("#SignInLoginInBox", "#SignInInfoBox");
     })
 })
 
 $(document).ready(function () {
-    $("#InfoBoxQuitBtn").bind("click", function () {
-        ToggleInfoBox("#InfoBox", "#SignInLoginInBox");
+    $("#SignInInfoBtnQuit").bind("click", function () {
+        ToggleInfoBox("#SignInInfoBox", "#SignInLoginInBox");
     })
 })
 
-function ToggleIndexBox(from, to, whatfrom, whatto) {
-    if ($(to).hasClass("FenXs-Dark-Wooden")) {
+function ToggleIndexBox(fromSelector, toSelector, fromBox, toBox) {
+    if ($(toSelector).hasClass("FenXs-Dark-Wooden")) {
         AudioChangeWindow();
-        $(whatfrom).hide();
-        $(from).removeClass("FenXs-Wooden");
-        $(from).addClass("FenXs-Dark-Wooden");
-        $(whatto).show();
-        $(to).removeClass("FenXs-Dark-Wooden");
-        $(to).addClass("FenXs-Wooden");
-        switch (to) {
+        $(fromBox).hide();
+        $(fromSelector).removeClass("FenXs-Wooden");
+        $(fromSelector).addClass("FenXs-Dark-Wooden");
+        $(toBox).show();
+        $(toSelector).removeClass("FenXs-Dark-Wooden");
+        $(toSelector).addClass("FenXs-Wooden");
+        switch (toSelector) {
             case "#LoginInSelector":
-                $(from).addClass("border-start-0");
-                $(to).removeClass("border-end-0");
+                $(fromSelector).addClass("border-start-0");
+                $(toSelector).removeClass("border-end-0");
                 break;
             case "#SignInSelector":
-                $(from).addClass("border-end-0");
-                $(to).removeClass("border-start-0");
+                $(fromSelector).addClass("border-end-0");
+                $(toSelector).removeClass("border-start-0");
                 break;
         }
     }
 }
 
-function ToggleInfoBox(from, to) {
+function ToggleInfoBox(fromBox, toBox) {
     AudioChangeWindow();
-    $(from).hide();
-    $(to).show();
+    $(fromBox).hide();
+    $(toBox).show();
 }
 
 function ValidateSignIn() {
