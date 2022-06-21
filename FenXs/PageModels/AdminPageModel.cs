@@ -1,13 +1,10 @@
-using Microsoft.AspNetCore.Mvc;
-
 namespace PageModels.AdminPageModel;
 
 public class AdminPageModel : UserPageModel.UserPageModel
 {
-    override public IActionResult OnGet()
+    override public void OnGet()
     {
-        if (!IsUserLogged()) return RedirectToPage("/Index");
-        if (!user.admin) return RedirectToPage("/Main");
-        return Page();
+        if (!IsUserLogged()) Response.Redirect("/");
+        if (!user.admin) Response.Redirect("/Main");
     }
 }

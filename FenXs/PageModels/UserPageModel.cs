@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Models.UserModel;
 
@@ -11,10 +10,9 @@ public class UserPageModel : PageModel
     {
         user = new User();
     }
-    virtual public IActionResult OnGet()
+    virtual public void OnGet()
     {
-        if (!IsUserLogged()) return RedirectToPage("/Index");
-        return Page();
+        if (!IsUserLogged()) Response.Redirect("/");
     }
     public bool IsUserLogged()
     {

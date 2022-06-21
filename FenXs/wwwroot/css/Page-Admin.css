@@ -1,8 +1,8 @@
 .Settings {
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url("../img/Admin/Settings.png");
-    height: 250px;
+    background-image: url("../img/AdminPanel/Settings.png");
+    height: 256px;
     border: 1px solid white;
 }
 

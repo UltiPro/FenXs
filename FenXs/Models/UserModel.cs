@@ -35,3 +35,22 @@ public class UserReturn
         this.statusCode = statusCode;
     }
 }
+
+public class UserFULL : User
+{
+    [Display(Name = "active")]
+    public bool active { get; set; }
+    [Display(Name = "banned")]
+    public bool banned { get; set; }
+    [Display(Name = "signInDate")]
+    public DateTime signInDate { get; set; }
+    [Display(Name = "lastLogin")]
+    public DateTime lastLogin { get; set; }
+    public UserFULL(int id, string login, string email, bool admin, int fenXs_Stars, bool active, bool banned, DateTime signInDate, DateTime lastLogin) : base(id, login, email, admin, fenXs_Stars)
+    {
+        this.active = active;
+        this.banned = banned;
+        this.signInDate = signInDate;
+        this.lastLogin = lastLogin;
+    }
+}

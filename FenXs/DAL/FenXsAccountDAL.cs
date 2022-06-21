@@ -112,6 +112,32 @@ public class FenXsAccountDAL
             return null;
         }
     }
+    public List<UserFULL> GetAllUsers()
+    {
+        try
+        {
+            List<UserFULL> listOfUsers = new List<UserFULL>();
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand("Users_GetAllUsers", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                con.Open();
+                SqlDataReader r = cmd.ExecuteReader();
+                while (r.Read())
+                {
+                    UserFULL userFull = new UserFULL(Convert.ToInt32(r["Id"]), r["Login"].ToString(), r["Email"].ToString(), Convert.ToBoolean(r["Admin"]), Convert.ToInt32(r["FenXs_stars"]), Convert.ToBoolean(r["Active"]), Convert.ToBoolean(r["Banned"]), Convert.ToDateTime(r["SignInDate"]), Convert.ToDateTime(r["LastLogin"]));
+                    listOfUsers.Add(userFull);
+                }
+                con.Close();
+            }
+            return listOfUsers;
+        }
+        catch (SqlException e)
+        {
+            Console.WriteLine(e.Number + " " + e.Message); //Change to logs
+            return null;
+        }
+    }
     public int UpdateEmail(int id, string email)
     {
         try
