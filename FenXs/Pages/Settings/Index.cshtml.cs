@@ -12,9 +12,9 @@ public class SettingsIndexModel : UserPageModel
     public ChangeEmail ce { get; set; }
     public bool dangerBox, warningBox, successBox;
     public string info;
-    public SettingsIndexModel(IConfiguration configuration)
+    public SettingsIndexModel(IConfiguration configuration,DAL.IFenXsLogger.IFenXsLogger iFenXsLogger)
     {
-        fenXsAccountDAL = new FenXsAccountDAL(configuration);
+        fenXsAccountDAL = new FenXsAccountDAL(configuration,iFenXsLogger);
     }
     public void OnPostChangeEmail()
     {

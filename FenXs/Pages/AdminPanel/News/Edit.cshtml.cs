@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using PageModels.AdminPageModel;
-using DAL.FenXsNewsDAL;
 using Models.NewsModel;
+using DAL.FenXsNewsDAL;
 
 namespace FenXs.Pages;
 

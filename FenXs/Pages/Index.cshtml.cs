@@ -16,9 +16,9 @@ public class IndexModel : VisitorPageModel
     private FenXsAccountDAL fenXsAccountDAL;
     public bool dangerBox, warningBox, successBox;
     public string info;
-    public IndexModel(IConfiguration configuration)
+    public IndexModel(IConfiguration configuration,DAL.IFenXsLogger.IFenXsLogger iFenXsLogger)
     {
-        fenXsAccountDAL = new FenXsAccountDAL(configuration);
+        fenXsAccountDAL = new FenXsAccountDAL(configuration,iFenXsLogger);
     }
     public IActionResult OnPostLogin()
     {

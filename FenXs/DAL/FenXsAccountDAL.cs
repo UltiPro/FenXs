@@ -8,10 +8,12 @@ namespace DAL.FenXsAccountDAL;
 
 public class FenXsAccountDAL
 {
+    private DAL.IFenXsLogger.IFenXsLogger iFenXsLogger;
     string connectionString;
-    public FenXsAccountDAL(IConfiguration configuration)
+    public FenXsAccountDAL(IConfiguration configuration, DAL.IFenXsLogger.IFenXsLogger iFenXsLogger)
     {
         connectionString = configuration.GetConnectionString("FenXs-Accounts");
+        this.iFenXsLogger = iFenXsLogger;
     }
     public int InsertUser(Registration r)
     {
@@ -37,7 +39,7 @@ public class FenXsAccountDAL
                 if (Check("Users_CheckLogin", "@login", r.login)) return 1;
                 if (Check("Users_CheckEmail", "@email", r.email)) return 2;
             }
-            Console.WriteLine(e.Number + " " + e.Message); //Change to logs
+            iFenXsLogger.SaveLog(e.Number + " " + e.Message);
             return -1;
         }
     }
@@ -59,7 +61,7 @@ public class FenXsAccountDAL
         }
         catch (SqlException e)
         {
-            Console.WriteLine(e.Number + " " + e.Message); //Change to logs
+            iFenXsLogger.SaveLog(e.Number + " " + e.Message);
             return false;
         }
     }
@@ -87,7 +89,7 @@ public class FenXsAccountDAL
         }
         catch (SqlException e)
         {
-            Console.WriteLine(e.Number + " " + e.Message); //Change to logs
+            iFenXsLogger.SaveLog(e.Number + " " + e.Message);
             return new UserReturn(null, -1);
         }
     }
@@ -108,7 +110,7 @@ public class FenXsAccountDAL
         }
         catch (SqlException e)
         {
-            Console.WriteLine(e.Number + " " + e.Message); //Change to logs
+            iFenXsLogger.SaveLog(e.Number + " " + e.Message);
             return null;
         }
     }
@@ -134,7 +136,7 @@ public class FenXsAccountDAL
         }
         catch (SqlException e)
         {
-            Console.WriteLine(e.Number + " " + e.Message); //Change to logs
+            iFenXsLogger.SaveLog(e.Number + " " + e.Message);
             return null;
         }
     }
@@ -157,7 +159,7 @@ public class FenXsAccountDAL
         catch (SqlException e)
         {
             if (e.Number == 2627) return 1;
-            Console.WriteLine(e.Number + " " + e.Message); //Change to logs
+            iFenXsLogger.SaveLog(e.Number + " " + e.Message);
             return -1;
         }
     }
@@ -179,7 +181,7 @@ public class FenXsAccountDAL
         }
         catch (SqlException e)
         {
-            Console.WriteLine(e.Number + " " + e.Message); //Change to logs
+            iFenXsLogger.SaveLog(e.Number + " " + e.Message);
             return false;
         }
     }
@@ -200,7 +202,7 @@ public class FenXsAccountDAL
         }
         catch (SqlException e)
         {
-            Console.WriteLine(e.Number + " " + e.Message); //Change to logs
+            iFenXsLogger.SaveLog(e.Number + " " + e.Message);
             return false;
         }
     }
@@ -221,7 +223,7 @@ public class FenXsAccountDAL
         }
         catch (SqlException e)
         {
-            Console.WriteLine(e.Number + " " + e.Message); //Change to logs
+            iFenXsLogger.SaveLog(e.Number + " " + e.Message);
             return false;
         }
     }
