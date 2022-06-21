@@ -8,7 +8,7 @@ public class MainModel : UserPageModel
 {
     private FenXsNewsDAL fenXsNewsDAL;
     public List<News> listOfNews;
-    public MainModel(IConfiguration configuration)
+    public MainModel(IConfiguration configuration) : base(configuration)
     {
         fenXsNewsDAL = new FenXsNewsDAL(configuration);
         listOfNews = fenXsNewsDAL.GetNews(true);
