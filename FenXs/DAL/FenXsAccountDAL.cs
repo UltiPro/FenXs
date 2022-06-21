@@ -79,8 +79,8 @@ public class FenXsAccountDAL
                 {
                     if (!Convert.ToBoolean(r["Active"])) return new UserReturn(null, 3);
                     if (Convert.ToBoolean(r["Banned"])) return new UserReturn(null, 4);
-                    User u = new User(Convert.ToInt32(r["Id"]), r["Login"].ToString(), r["Email"].ToString(), Convert.ToBoolean(r["Admin"]), Convert.ToInt32(r["FenXs_stars"]));
-                    return new UserReturn(u, 0);
+                    User user = new User(Convert.ToInt32(r["Id"]), r["Login"].ToString(), r["Email"].ToString(), Convert.ToBoolean(r["Admin"]), Convert.ToInt32(r["FenXs_stars"]));
+                    return new UserReturn(user, 0);
                 }
                 else return new UserReturn(null, 2);
             }
@@ -89,6 +89,27 @@ public class FenXsAccountDAL
         {
             Console.WriteLine(e.Number + " " + e.Message); //Change to logs
             return new UserReturn(null, -1);
+        }
+    }
+    public User GetUserById(int id)
+    {
+        try
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand("Users_GetUserById", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", id);
+                con.Open();
+                SqlDataReader r = cmd.ExecuteReader();
+                r.Read();
+                return new User(Convert.ToInt32(r["Id"]), r["Login"].ToString(), r["Email"].ToString(), Convert.ToBoolean(r["Admin"]), Convert.ToInt32(r["FenXs_stars"]));
+            }
+        }
+        catch (SqlException e)
+        {
+            Console.WriteLine(e.Number + " " + e.Message); //Change to logs
+            return null;
         }
     }
     public int UpdateEmail(int id, string email)
