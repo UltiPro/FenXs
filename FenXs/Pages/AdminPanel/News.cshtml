@@ -23,6 +23,7 @@
                 <th scope="col" class="border-end border-light">Title</th>
                 <th scope="col" class="border-end border-light">Text</th>
                 <th scope="col" class="border-end border-light">Date</th>
+                <th scope="col" class="border-end border-light">Category</th>
                 <th scope="col">Actions</th>
             </tr>
         </thead>
@@ -34,6 +35,16 @@
                     <td class="border-end border-light">@Html.DisplayFor(m => news.title)</td>
                     <td class="border-end border-light">@Html.DisplayFor(m => news.text)</td>
                     <td class="text-center border-end border-light">@Html.DisplayFor(m => news.date)</td>
+                    <td class="text-center border-end border-light">
+                        @foreach (var newsCategory in Model.listOfNewsCategories)
+                        {
+                            if (news.idOfCategory == newsCategory.id)
+                            {
+                                <span>@newsCategory.name</span>
+                                break;
+                            }
+                        }
+                    </td>
                     <td class="text-center">
                         <a asp-page="News/Edit" asp-route-id="@news.id"
                         class="link-success fw-bold FenXs-Text-NoShadow">Edit</a> |

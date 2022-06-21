@@ -5,12 +5,13 @@ GO
 CREATE PROCEDURE InsertNews
     (
     @title VARCHAR(64),
-    @text VARCHAR(1024)
+    @text VARCHAR(1024),
+    @idOfCategory INT
 )
 AS
 BEGIN
     INSERT INTO News
-        (Title,Text)
+        (Title,Text,IdOfCategory)
     VALUES
-        (@title, @text)
+        (@title, @text, @idOfCategory)
 END

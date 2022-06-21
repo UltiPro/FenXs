@@ -12,11 +12,13 @@ public class NewsEditModel : AdminPageModel
     private FenXsNewsDAL fenXsNewsDAL;
     [BindProperty]
     public News news { get; set; }
+    public List<NewsCategory> listOfNewsCategories;
     public bool dangerBox;
     public string info;
     public NewsEditModel(IConfiguration configuration)
     {
         fenXsNewsDAL = new FenXsNewsDAL(configuration);
+        listOfNewsCategories = fenXsNewsDAL.GetCategories();
     }
     public IActionResult OnPost()
     {

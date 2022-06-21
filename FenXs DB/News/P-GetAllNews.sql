@@ -2,7 +2,7 @@ USE [FenXs-News]
 GO
 DROP PROCEDURE GetAllNews
 GO
-Create procedure GetAllNews
+CREATE PROCEDURE GetAllNews
 AS
 BEGIN
     SELECT *

@@ -14,4 +14,13 @@ public class News
     [StringLength(64, ErrorMessage = "Text should be 3 to 1024 characters long.", MinimumLength = 3)]
     [Display(Name = "text")]
     public string text { get; set; }
+    [Required(ErrorMessage = "Id of category is required.")]
+    [Display(Name = "idOfCategory")]
+    public int idOfCategory { get; set; }
+}
+
+public class NewsCategory
+{
+    public int id { get; set; }
+    public string name { get; set; }
 }

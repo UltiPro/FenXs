@@ -21,6 +21,7 @@ public class FenXsNewsDAL
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@title", n.title);
                 cmd.Parameters.AddWithValue("@text", n.text);
+                cmd.Parameters.AddWithValue("@idOfCategory", n.idOfCategory);
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -53,6 +54,7 @@ public class FenXsNewsDAL
                     n.date = Convert.ToDateTime(r["Date"]);
                     n.title = r["Title"].ToString();
                     n.text = r["Text"].ToString();
+                    n.idOfCategory = Convert.ToInt32(r["IdOfCategory"]);
                     listOfNews.Add(n);
                 }
                 con.Close();
@@ -97,6 +99,7 @@ public class FenXsNewsDAL
                 cmd.Parameters.AddWithValue("@id", n.id);
                 cmd.Parameters.AddWithValue("@title", n.title);
                 cmd.Parameters.AddWithValue("@text", n.text);
+                cmd.Parameters.AddWithValue("@idOfCategory", n.idOfCategory);
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -107,6 +110,34 @@ public class FenXsNewsDAL
         {
             Console.WriteLine(e.Number + " " + e.Message); //Change to logs
             return false;
+        }
+    }
+    public List<NewsCategory> GetCategories()
+    {
+        try
+        {
+            List<NewsCategory> listOfCategories = new List<NewsCategory>();
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand("GetCategories", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                con.Open();
+                SqlDataReader r = cmd.ExecuteReader();
+                while (r.Read())
+                {
+                    NewsCategory nc = new NewsCategory();
+                    nc.id = Convert.ToInt32(r["Id"]);
+                    nc.name = r["Name"].ToString();
+                    listOfCategories.Add(nc);
+                }
+                con.Close();
+            }
+            return listOfCategories;
+        }
+        catch (SqlException e)
+        {
+            Console.WriteLine(e.Number + " " + e.Message); //Change to logs
+            return null;
         }
     }
 }
