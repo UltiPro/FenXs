@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using PageModels.AdminPageModel;
 using Models.NewsModel;
 using DAL.FenXsNewsDAL;
+using Infrastructure.FenXsLogger;
 
 namespace FenXs.Pages;
 
@@ -13,9 +14,9 @@ public class NewsAddModel : AdminPageModel
     public List<NewsCategory> listOfNewsCategories;
     public bool dangerBox;
     public string info;
-    public NewsAddModel(IConfiguration configuration)
+    public NewsAddModel(IConfiguration configuration, IFenXsLogger iFenXsLogger)
     {
-        fenXsNewsDAL = new FenXsNewsDAL(configuration);
+        fenXsNewsDAL = new FenXsNewsDAL(configuration, iFenXsLogger);
         listOfNewsCategories = fenXsNewsDAL.GetCategories();
     }
     public IActionResult OnPost()

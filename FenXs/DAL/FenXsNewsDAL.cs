@@ -1,15 +1,18 @@
 using System.Data;
 using System.Data.SqlClient;
 using Models.NewsModel;
+using Infrastructure.FenXsLogger;
 
 namespace DAL.FenXsNewsDAL;
 
 public class FenXsNewsDAL
 {
+    private IFenXsLogger iFenXsLogger;
     string connectionString;
-    public FenXsNewsDAL(IConfiguration configuration)
+    public FenXsNewsDAL(IConfiguration configuration, IFenXsLogger iFenXsLogger)
     {
         connectionString = configuration.GetConnectionString("FenXs-News");
+        this.iFenXsLogger = iFenXsLogger;
     }
     public bool InsertNews(News n)
     {
@@ -30,7 +33,7 @@ public class FenXsNewsDAL
         }
         catch (SqlException e)
         {
-            Console.WriteLine(e.Number + " " + e.Message); //Change to logs
+            iFenXsLogger.SaveLog(e.Number + " " + e.Message);
             return false;
         }
     }
@@ -63,7 +66,7 @@ public class FenXsNewsDAL
         }
         catch (SqlException e)
         {
-            Console.WriteLine(e.Number + " " + e.Message); //Change to logs
+            iFenXsLogger.SaveLog(e.Number + " " + e.Message);
             return null;
         }
     }
@@ -84,7 +87,7 @@ public class FenXsNewsDAL
         }
         catch (SqlException e)
         {
-            Console.WriteLine(e.Number + " " + e.Message); //Change to logs
+            iFenXsLogger.SaveLog(e.Number + " " + e.Message);
             return false;
         }
     }
@@ -108,7 +111,7 @@ public class FenXsNewsDAL
         }
         catch (SqlException e)
         {
-            Console.WriteLine(e.Number + " " + e.Message); //Change to logs
+            iFenXsLogger.SaveLog(e.Number + " " + e.Message);
             return false;
         }
     }
@@ -136,7 +139,7 @@ public class FenXsNewsDAL
         }
         catch (SqlException e)
         {
-            Console.WriteLine(e.Number + " " + e.Message); //Change to logs
+            iFenXsLogger.SaveLog(e.Number + " " + e.Message);
             return null;
         }
     }

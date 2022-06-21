@@ -1,4 +1,4 @@
-namespace DAL.IFenXsLogger;
+namespace Infrastructure.FenXsLogger;
 
 public interface IFenXsLogger
 {

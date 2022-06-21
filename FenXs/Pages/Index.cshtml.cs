@@ -4,6 +4,7 @@ using Models.RegistrationModel;
 using Models.LoginModel;
 using Models.UserModel;
 using DAL.FenXsAccountDAL;
+using Infrastructure.FenXsLogger;
 
 namespace FenXs.Pages;
 
@@ -16,7 +17,7 @@ public class IndexModel : VisitorPageModel
     private FenXsAccountDAL fenXsAccountDAL;
     public bool dangerBox, warningBox, successBox;
     public string info;
-    public IndexModel(IConfiguration configuration,DAL.IFenXsLogger.IFenXsLogger iFenXsLogger)
+    public IndexModel(IConfiguration configuration, IFenXsLogger iFenXsLogger)
     {
         fenXsAccountDAL = new FenXsAccountDAL(configuration,iFenXsLogger);
     }

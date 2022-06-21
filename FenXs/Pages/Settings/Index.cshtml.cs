@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using PageModels.UserPageModel;
 using Models.ChangeEmailModel;
 using DAL.FenXsAccountDAL;
+using Infrastructure.FenXsLogger;
 
 namespace FenXs.Pages;
 
@@ -12,9 +13,9 @@ public class SettingsIndexModel : UserPageModel
     public ChangeEmail ce { get; set; }
     public bool dangerBox, warningBox, successBox;
     public string info;
-    public SettingsIndexModel(IConfiguration configuration,DAL.IFenXsLogger.IFenXsLogger iFenXsLogger)
+    public SettingsIndexModel(IConfiguration configuration, IFenXsLogger iFenXsLogger)
     {
-        fenXsAccountDAL = new FenXsAccountDAL(configuration,iFenXsLogger);
+        fenXsAccountDAL = new FenXsAccountDAL(configuration, iFenXsLogger);
     }
     public void OnPostChangeEmail()
     {

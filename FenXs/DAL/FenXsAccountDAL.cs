@@ -3,14 +3,15 @@ using System.Data.SqlClient;
 using Models.RegistrationModel;
 using Models.LoginModel;
 using Models.UserModel;
+using Infrastructure.FenXsLogger;
 
 namespace DAL.FenXsAccountDAL;
 
 public class FenXsAccountDAL
 {
-    private DAL.IFenXsLogger.IFenXsLogger iFenXsLogger;
+    private IFenXsLogger iFenXsLogger;
     string connectionString;
-    public FenXsAccountDAL(IConfiguration configuration, DAL.IFenXsLogger.IFenXsLogger iFenXsLogger)
+    public FenXsAccountDAL(IConfiguration configuration, IFenXsLogger iFenXsLogger)
     {
         connectionString = configuration.GetConnectionString("FenXs-Accounts");
         this.iFenXsLogger = iFenXsLogger;

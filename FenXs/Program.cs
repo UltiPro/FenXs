@@ -1,6 +1,5 @@
 using Infrastructure.HTTPResponseMiddleware;
-using DAL.IFenXsLogger;
-using DAL.FenXsLoggerConsole;
+using Infrastructure.FenXsLogger;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,7 +13,7 @@ builder.Services.AddMemoryCache();
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-builder.Services.AddTransient<IFenXsLogger,FenXsLoggerConsole>();
+builder.Services.AddTransient<IFenXsLogger,FenXsLoggerFile>();
 
 var app = builder.Build();
 
