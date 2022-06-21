@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Mvc;
 using PageModels.AdminPageModel;
 using Models.NewsModel;
 using DAL.FenXsNewsDAL;
