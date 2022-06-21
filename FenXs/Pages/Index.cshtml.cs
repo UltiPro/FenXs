@@ -33,6 +33,7 @@ public class IndexModel : VisitorPageModel
                 HttpContext.Session.SetString("email", userReturn.user.email);
                 HttpContext.Session.SetInt32("admin", Convert.ToInt32(userReturn.user.admin));
                 HttpContext.Session.SetInt32("fenXs_Stars", userReturn.user.fenXs_Stars);
+                Response.Cookies.Append("whereLogged", "1");
                 return RedirectToPage("/Main");
             }
             switch (userReturn.statusCode)
@@ -73,6 +74,7 @@ public class IndexModel : VisitorPageModel
                 case 0:
                     successBox = true;
                     info = "A link to activate the account has been sent to the given e-mail address.";
+                    Response.Cookies.Append("whereLogged", "1");
                     break;
                 case 1:
                     warningBox = true;

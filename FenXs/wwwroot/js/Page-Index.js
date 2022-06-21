@@ -1,12 +1,14 @@
+if (GetCookie("whereLogged") != null) ToggleIndexBox("#SignInSelector", "#LoginInSelector", "#SignInBox", "#LoginInBox", 0);
+
 $(document).ready(function () {
     $("#SignInSelector").bind("click", function () {
-        ToggleIndexBox("#LoginInSelector", "#SignInSelector", "#LoginInBox", "#SignInBox");
+        ToggleIndexBox("#LoginInSelector", "#SignInSelector", "#LoginInBox", "#SignInBox", 1);
     })
 })
 
 $(document).ready(function () {
     $("#LoginInSelector").bind("click", function () {
-        ToggleIndexBox("#SignInSelector", "#LoginInSelector", "#SignInBox", "#LoginInBox");
+        ToggleIndexBox("#SignInSelector", "#LoginInSelector", "#SignInBox", "#LoginInBox", 1);
     })
 })
 
@@ -22,9 +24,9 @@ $(document).ready(function () {
     })
 })
 
-function ToggleIndexBox(fromSelector, toSelector, fromBox, toBox) {
+function ToggleIndexBox(fromSelector, toSelector, fromBox, toBox, playAudio) {
     if ($(toSelector).hasClass("FenXs-Dark-Wooden")) {
-        AudioChangeWindow();
+        if (playAudio) AudioChangeWindow();
         $(fromBox).hide();
         $(fromSelector).removeClass("FenXs-Wooden");
         $(fromSelector).addClass("FenXs-Dark-Wooden");
