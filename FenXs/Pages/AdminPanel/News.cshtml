@@ -31,10 +31,10 @@
             @foreach (var news in Model.listOfNews)
             {
                 <tr class="FenXs-Font-Smaller">
-                    <th scope="row" class="text-center border-end border-light">@Html.DisplayFor(m => news.id)</th>
-                    <td class="border-end border-light">@Html.DisplayFor(m => news.title)</td>
-                    <td class="border-end border-light">@Html.DisplayFor(m => news.text)</td>
-                    <td class="text-center border-end border-light">@Html.DisplayFor(m => news.date)</td>
+                    <th scope="row" class="text-center border-end border-light">@news.id</th>
+                    <td class="border-end border-light">@news.title</td>
+                    <td class="border-end border-light">@news.text</td>
+                    <td class="text-center border-end border-light">@news.date</td>
                     <td class="text-center border-end border-light">
                         @foreach (var newsCategory in Model.listOfNewsCategories)
                         {

@@ -30,15 +30,15 @@
             @foreach (var user in Model.listOfUsers)
             {
                 <tr class="FenXs-Font-Smaller">
-                    <th scope="row" class="text-center border-end border-light">@Html.DisplayFor(m => user.id)</th>
-                    <td class="border-end border-light">@Html.DisplayFor(m => user.login)</td>
-                    <td class="border-end border-light">@Html.DisplayFor(m => user.email)</td>
-                    <td class="text-success text-center border-end border-light">@Html.DisplayFor(m => user.active)</td>
-                    <td class="text-success text-center border-end border-light">@Html.DisplayFor(m => user.banned)</td>
-                    <td class="text-success text-center border-end border-light">@Html.DisplayFor(m => user.admin)</td>
-                    <td class="border-end border-light">@Html.DisplayFor(m => user.fenXs_Stars)</td>
-                    <td class="text-center border-end border-light">@Html.DisplayFor(m => user.signInDate)</td>
-                    <td class="text-center border-end border-light">@Html.DisplayFor(m => user.lastLogin)</td>
+                    <th scope="row" class="text-center border-end border-light">@user.id</th>
+                    <td class="border-end border-light">@user.login</td>
+                    <td class="border-end border-light">@user.email</td>
+                    <td class="text-success text-center border-end border-light">@user.active</td>
+                    <td class="text-danger text-center border-end border-light">@user.banned</td>
+                    <td class="text-warning text-center border-end border-light">@user.admin</td>
+                    <td class="border-end border-light">@user.fenXs_Stars</td>
+                    <td class="text-center border-end border-light">@user.signInDate</td>
+                    <td class="text-center border-end border-light">@user.lastLogin</td>
                     <td class="text-center">
                         <a asp-page="Users/SetActive" asp-route-id="@user.id" asp-route-set="@user.active"
                         class="link-success fw-bold FenXs-Text-NoShadow">Active</a> |
