@@ -16,7 +16,7 @@ public class NewsDeleteModel : AdminPageModel
     }
     override public void OnGet()
     {
-        if (!IsUserLogged()) Response.Redirect("/Index");
+        if (!IsUserLogged()) Response.Redirect("/");
         if (!user.admin) Response.Redirect("/Main");
         if (!fenXsNewsDAL.RemoveNews(id)) Response.Redirect("/Error");
         Response.Redirect("../News");

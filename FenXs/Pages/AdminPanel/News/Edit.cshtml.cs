@@ -21,15 +21,15 @@ public class NewsEditModel : AdminPageModel
         fenXsNewsDAL = new FenXsNewsDAL(configuration, iFenXsLogger);
         listOfNewsCategories = fenXsNewsDAL.GetCategories();
     }
-    public IActionResult OnPost()
+    public void OnPost()
     {
         if (ModelState.IsValid)
         {
             news.id = id;
-            if (fenXsNewsDAL.UpdateNews(news)) return RedirectToPage("../News");
+            if (fenXsNewsDAL.UpdateNews(news)) Response.Redirect("../News");
             else info = "Currently, the server cannot fulfill the request.";
         }
         dangerBox = true;
-        return Page();
+        OnGet();
     }
 }

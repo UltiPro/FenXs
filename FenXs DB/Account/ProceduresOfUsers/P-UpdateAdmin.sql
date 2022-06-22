@@ -4,9 +4,10 @@ DROP PROCEDURE Users_UpdateAdmin
 GO
 CREATE PROCEDURE Users_UpdateAdmin
     (
-    @id INT
+    @id INT,
+    @set BIT
 )
 AS
 BEGIN
-    UPDATE Users SET Admin = 1 WHERE Id = @id
+    UPDATE Users SET Admin = @set WHERE Id = @id
 END

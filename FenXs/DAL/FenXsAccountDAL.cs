@@ -186,7 +186,7 @@ public class FenXsAccountDAL
             return false;
         }
     }
-    public bool UpdateAdmin(int id)
+    public bool UpdateAdmin(int id, bool set)
     {
         try
         {
@@ -195,6 +195,51 @@ public class FenXsAccountDAL
                 SqlCommand cmd = new SqlCommand("Users_UpdateAdmin", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@set", set);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            return true;
+        }
+        catch (SqlException e)
+        {
+            iFenXsLogger.SaveLog(e.Number + " " + e.Message);
+            return false;
+        }
+    }
+    public bool UpdateBanned(int id, bool set)
+    {
+        try
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand("Users_UpdateBanned", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@set", set);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            return true;
+        }
+        catch (SqlException e)
+        {
+            iFenXsLogger.SaveLog(e.Number + " " + e.Message);
+            return false;
+        }
+    }
+    public bool UpdateActive(int id, bool set)
+    {
+        try
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand("Users_UpdateActive", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@set", set);
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
