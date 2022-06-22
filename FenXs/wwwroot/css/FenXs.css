@@ -9,8 +9,8 @@
 }
 
 @font-face {
-  font-family: FenXs-Font-Forms;
-  src: url("../font/Forms.ttf");
+  font-family: FenXs-Font-Form;
+  src: url("../font/Form.ttf");
 }
 
 @font-face {
@@ -51,6 +51,7 @@ html {
   background-size: cover;
   font-family: FenXs-Font;
   font-size: 20px;
+  color: black;
 }
 
 header {
@@ -71,31 +72,26 @@ a:active {
 
 a:hover {
   text-shadow: -1px 0 darkgrey, 0 1px darkgrey, 1px 0 darkgrey, 0 -1px darkgrey;
-  cursor: pointer;
-}
-
-.text-justify {
-  text-align: justify;
 }
 
 .btn:focus {
   box-shadow: none;
 }
 
-.FenXs-Font-Smaller {
+.text-justify {
+  text-align: justify;
+}
+
+.FenXs-Text-Smaller {
   font-size: 0.75rem;
 }
 
-.FenXs-Font-Bigger {
+.FenXs-Text-Bigger {
   font-size: 1.25rem;
 }
 
 .FenXs-Text-Shadow {
   text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
-}
-
-.FenXs-Text-Dark-Shadow {
-  text-shadow: -1px 0 rgb(var(--bs-dark-rgb)), 0 1px rgb(var(--bs-dark-rgb)), 1px 0 rgb(var(--bs-dark-rgb)), 0 -1px rgb(var(--bs-dark-rgb));
 }
 
 .FenXs-Text-NoShadow {
@@ -107,7 +103,7 @@ a:hover {
 }
 
 .FenXs-Font-Forms {
-  font-family: FenXs-Font-Forms;
+  font-family: FenXs-Font-Form;
   text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 
