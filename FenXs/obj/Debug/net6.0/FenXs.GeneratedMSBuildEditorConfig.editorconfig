@@ -1,0 +1,88 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = FenXs
+build_property.RootNamespace = FenXs
+build_property.ProjectDir = d:\3. PROJEKTY\FenXs\FenXs\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = d:\3. PROJEKTY\FenXs\FenXs
+build_property._RazorSourceGeneratorDebug = 
+
+[d:/3. PROJEKTY/FenXs/FenXs/Pages/AdminPanel/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5QYW5lbFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/3. PROJEKTY/FenXs/FenXs/Pages/AdminPanel/News.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5QYW5lbFxOZXdzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/3. PROJEKTY/FenXs/FenXs/Pages/AdminPanel/News/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5QYW5lbFxOZXdzXEFkZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/3. PROJEKTY/FenXs/FenXs/Pages/AdminPanel/News/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5QYW5lbFxOZXdzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/3. PROJEKTY/FenXs/FenXs/Pages/AdminPanel/News/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5QYW5lbFxOZXdzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/3. PROJEKTY/FenXs/FenXs/Pages/AdminPanel/Users.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5QYW5lbFxVc2Vycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/3. PROJEKTY/FenXs/FenXs/Pages/AdminPanel/Users/SetActive.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5QYW5lbFxVc2Vyc1xTZXRBY3RpdmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/3. PROJEKTY/FenXs/FenXs/Pages/AdminPanel/Users/SetAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5QYW5lbFxVc2Vyc1xTZXRBZG1pbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/3. PROJEKTY/FenXs/FenXs/Pages/AdminPanel/Users/SetBanned.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5QYW5lbFxVc2Vyc1xTZXRCYW5uZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/3. PROJEKTY/FenXs/FenXs/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/3. PROJEKTY/FenXs/FenXs/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/3. PROJEKTY/FenXs/FenXs/Pages/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9nb3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/3. PROJEKTY/FenXs/FenXs/Pages/Main.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/3. PROJEKTY/FenXs/FenXs/Pages/NotFound.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTm90Rm91bmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/3. PROJEKTY/FenXs/FenXs/Pages/Settings/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2V0dGluZ3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/3. PROJEKTY/FenXs/FenXs/Pages/Shared/LayoutDefault.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXExheW91dERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/3. PROJEKTY/FenXs/FenXs/Pages/Shared/LayoutLogged.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXExheW91dExvZ2dlZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/3. PROJEKTY/FenXs/FenXs/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
