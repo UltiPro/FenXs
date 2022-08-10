@@ -1,10 +1,10 @@
 {
   "Version": 1,
-  "Hash": "JKmjJAYOa1Fhdva+fAbNrTYGrYBNzS1z9Bl8ZFez7Ss=",
+  "Hash": "Li0uB4wGCFVxxnh4uquT/KgwVNIs6CSb4JlupzTUbJU=",
   "Source": "FenXs",
   "BasePath": "_content/FenXs",
   "Mode": "Default",
-  "ManifestType": "Build",
+  "ManifestType": "Publish",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [
     {

@@ -1,0 +1,14 @@
+D:\3. PROJEKTY\FenXs\FenXs\rdy\FenXs.exe
+D:\3. PROJEKTY\FenXs\FenXs\rdy\appsettings.Development.json
+D:\3. PROJEKTY\FenXs\FenXs\rdy\appsettings.json
+D:\3. PROJEKTY\FenXs\FenXs\rdy\FenXs.dll
+D:\3. PROJEKTY\FenXs\FenXs\rdy\FenXs.deps.json
+D:\3. PROJEKTY\FenXs\FenXs\rdy\FenXs.runtimeconfig.json
+D:\3. PROJEKTY\FenXs\FenXs\rdy\FenXs.pdb
+D:\3. PROJEKTY\FenXs\FenXs\rdy\BCrypt.Net-Next.dll
+D:\3. PROJEKTY\FenXs\FenXs\rdy\System.Data.SqlClient.dll
+D:\3. PROJEKTY\FenXs\FenXs\rdy\runtimes\win-arm64\native\sni.dll
+D:\3. PROJEKTY\FenXs\FenXs\rdy\runtimes\win-x64\native\sni.dll
+D:\3. PROJEKTY\FenXs\FenXs\rdy\runtimes\win-x86\native\sni.dll
+D:\3. PROJEKTY\FenXs\FenXs\rdy\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\3. PROJEKTY\FenXs\FenXs\rdy\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
