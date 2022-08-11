@@ -55,6 +55,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5QYW5lbFxVc2Vyc1xTZXRCYW5uZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/3. PROJEKTY/FenXs/FenXs/Pages/AdminPanel/Users/SetModerator.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5QYW5lbFxVc2Vyc1xTZXRNb2RlcmF0b3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/3. PROJEKTY/FenXs/FenXs/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
