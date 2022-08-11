@@ -30,3 +30,8 @@ D:\3. PROJEKTY\FenXs\FenXs\obj\Debug\net6.0\refint\FenXs.dll
 D:\3. PROJEKTY\FenXs\FenXs\obj\Debug\net6.0\FenXs.pdb
 D:\3. PROJEKTY\FenXs\FenXs\obj\Debug\net6.0\FenXs.genruntimeconfig.cache
 D:\3. PROJEKTY\FenXs\FenXs\obj\Debug\net6.0\ref\FenXs.dll
+D:\3. PROJEKTY\FenXs\FenXs\bin\Debug\net6.0\1.OUTPUT\web.config
+D:\3. PROJEKTY\FenXs\FenXs\bin\Debug\net6.0\1.OUTPUT\appsettings.Development.json
+D:\3. PROJEKTY\FenXs\FenXs\bin\Debug\net6.0\1.OUTPUT\appsettings.json
+D:\3. PROJEKTY\FenXs\FenXs\bin\Debug\net6.0\1.OUTPUT\FenXs.deps.json
+D:\3. PROJEKTY\FenXs\FenXs\bin\Debug\net6.0\1.OUTPUT\FenXs.runtimeconfig.json
