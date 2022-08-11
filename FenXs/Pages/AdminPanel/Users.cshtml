@@ -19,9 +19,8 @@
                 <th scope="col" class="border-end border-light">Active</th>
                 <th scope="col" class="border-end border-light">Banned</th>
                 <th scope="col" class="border-end border-light">Admin</th>
+                <th scope="col" class="border-end border-light">Moderator</th>
                 <th scope="col" class="border-end border-light">Stars</th>
-                <th scope="col" class="border-end border-light">Sign In</th>
-                <th scope="col" class="border-end border-light">Last Login In</th>
                 <th scope="col">Actions</th>
             </tr>
         </thead>
@@ -34,16 +33,17 @@
                     <td scope="row" class="text-success text-center border-end border-light">@user.active</td>
                     <td scope="row" class="text-danger text-center border-end border-light">@user.banned</td>
                     <td scope="row" class="text-warning text-center border-end border-light">@user.admin</td>
-                    <td scope="row" class="border-end border-light">@user.fenXs_Stars</td>
-                    <td scope="row" class="text-center border-end border-light">@user.signInDate</td>
-                    <td scope="row" class="text-center border-end border-light">@user.lastLogin</td>
+                    <td scope="row" class="text-primary text-center border-end border-light">@user.moderator</td>
+                    <td scope="row" class="text-center border-end border-light">@user.fenXs_Stars</td>
                     <td scope="row" class="text-center">
                         <a asp-page="Users/SetActive" asp-route-id="@user.id" asp-route-set="@user.active"
                         class="link-success fw-bold FenXs-Text-NoShadow">Active</a> |
                         <a asp-page="Users/SetBanned" asp-route-id="@user.id" asp-route-set="@user.banned"
                         class="link-danger fw-bold FenXs-Text-NoShadow">Ban</a> |
                         <a asp-page="Users/SetAdmin" asp-route-id="@user.id" asp-route-set="@user.admin"
-                        class="link-warning fw-bold FenXs-Text-NoShadow">Admin</a>
+                        class="link-warning fw-bold FenXs-Text-NoShadow">Admin</a> |
+                        <a asp-page="Users/SetModerator" asp-route-id="@user.id" asp-route-set="@user.moderator"
+                        class="link-primary fw-bold FenXs-Text-NoShadow">Moderator</a>
                     </td>
                 </tr>
             }

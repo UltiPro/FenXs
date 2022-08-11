@@ -12,15 +12,18 @@ public class User
     public string email { get; set; }
     [Display(Name = "admin")]
     public bool admin { get; set; }
+    [Display(Name = "moderator")]
+    public bool moderator { get; set; }
     [Display(Name = "fenXs_Stars")]
     public int fenXs_Stars { get; set; }
     public User() { }
-    public User(int id, string login, string email, bool admin, int fenXs_Stars)
+    public User(int id, string login, string email, bool admin, bool moderator, int fenXs_Stars)
     {
         this.id = id;
         this.login = login;
         this.email = email;
         this.admin = admin;
+        this.moderator = moderator;
         this.fenXs_Stars = fenXs_Stars;
     }
 }
@@ -46,7 +49,7 @@ public class UserFULL : User
     public DateTime signInDate { get; set; }
     [Display(Name = "lastLogin")]
     public DateTime lastLogin { get; set; }
-    public UserFULL(int id, string login, string email, bool admin, int fenXs_Stars, bool active, bool banned, DateTime signInDate, DateTime lastLogin) : base(id, login, email, admin, fenXs_Stars)
+    public UserFULL(int id, string login, string email, bool admin, bool moderator, int fenXs_Stars, bool active, bool banned, DateTime signInDate, DateTime lastLogin) : base(id, login, email, admin, moderator, fenXs_Stars)
     {
         this.active = active;
         this.banned = banned;

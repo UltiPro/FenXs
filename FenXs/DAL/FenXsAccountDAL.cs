@@ -82,7 +82,7 @@ public class FenXsAccountDAL
                 {
                     if (!Convert.ToBoolean(r["Active"])) return new UserReturn(null, 3);
                     if (Convert.ToBoolean(r["Banned"])) return new UserReturn(null, 4);
-                    User user = new User(Convert.ToInt32(r["Id"]), r["Login"].ToString(), r["Email"].ToString(), Convert.ToBoolean(r["Admin"]), Convert.ToInt32(r["FenXs_stars"]));
+                    User user = new User(Convert.ToInt32(r["Id"]), r["Login"].ToString(), r["Email"].ToString(), Convert.ToBoolean(r["Admin"]), Convert.ToBoolean(r["Moderator"]), Convert.ToInt32(r["FenXs_stars"]));
                     return new UserReturn(user, 0);
                 }
                 else return new UserReturn(null, 2);
@@ -106,7 +106,7 @@ public class FenXsAccountDAL
                 con.Open();
                 SqlDataReader r = cmd.ExecuteReader();
                 r.Read();
-                return new User(Convert.ToInt32(r["Id"]), r["Login"].ToString(), r["Email"].ToString(), Convert.ToBoolean(r["Admin"]), Convert.ToInt32(r["FenXs_stars"]));
+                return new User(Convert.ToInt32(r["Id"]), r["Login"].ToString(), r["Email"].ToString(), Convert.ToBoolean(r["Admin"]), Convert.ToBoolean(r["Moderator"]), Convert.ToInt32(r["FenXs_stars"]));
             }
         }
         catch (SqlException e)
@@ -128,7 +128,7 @@ public class FenXsAccountDAL
                 SqlDataReader r = cmd.ExecuteReader();
                 while (r.Read())
                 {
-                    UserFULL userFull = new UserFULL(Convert.ToInt32(r["Id"]), r["Login"].ToString(), r["Email"].ToString(), Convert.ToBoolean(r["Admin"]), Convert.ToInt32(r["FenXs_stars"]), Convert.ToBoolean(r["Active"]), Convert.ToBoolean(r["Banned"]), Convert.ToDateTime(r["SignInDate"]), Convert.ToDateTime(r["LastLogin"]));
+                    UserFULL userFull = new UserFULL(Convert.ToInt32(r["Id"]), r["Login"].ToString(), r["Email"].ToString(), Convert.ToBoolean(r["Admin"]), Convert.ToBoolean(r["Moderator"]), Convert.ToInt32(r["FenXs_stars"]), Convert.ToBoolean(r["Active"]), Convert.ToBoolean(r["Banned"]), Convert.ToDateTime(r["SignInDate"]), Convert.ToDateTime(r["LastLogin"]));
                     listOfUsers.Add(userFull);
                 }
                 con.Close();
@@ -252,7 +252,29 @@ public class FenXsAccountDAL
             return false;
         }
     }
-    public bool RemoveUser(int id)
+    public bool UpdateModerator(int id, bool set)
+    {
+        try
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand("Users_UpdateModerator", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@set", set);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            return true;
+        }
+        catch (SqlException e)
+        {
+            iFenXsLogger.SaveLog(e.Number + " " + e.Message);
+            return false;
+        }
+    }
+    /*public bool RemoveUser(int id)
     {
         try
         {
@@ -272,5 +294,5 @@ public class FenXsAccountDAL
             iFenXsLogger.SaveLog(e.Number + " " + e.Message);
             return false;
         }
-    }
+    }*/
 }

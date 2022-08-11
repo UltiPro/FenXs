@@ -16348,6 +16348,16 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\3. PROJEKTY\\FenXs\\FenXs\\Pages\\AdminPanel\\TurnOffServer.cshtml",
+      "TargetPath": "Pages\\AdminPanel\\TurnOffServer.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\3. PROJEKTY\\FenXs\\FenXs\\Pages\\AdminPanel\\Users\\SetModerator.cshtml",
+      "TargetPath": "Pages\\AdminPanel\\Users\\SetModerator.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\3. PROJEKTY\\FenXs\\FenXs\\Pages\\AdminPanel\\News\\Edit.cshtml",
       "TargetPath": "Pages\\AdminPanel\\News\\Edit.cshtml",
       "FileKind": "mvc"
