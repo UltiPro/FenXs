@@ -1,5 +1,3 @@
-DROP DATABASE [FenXs-News]
-GO
 CREATE DATABASE [FenXs-News]
 GO
 USE [FenXs-News]
