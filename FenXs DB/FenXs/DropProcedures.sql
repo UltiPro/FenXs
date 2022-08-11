@@ -1,4 +1,4 @@
-USE [FenXs-Accounts]
+USE [FenXs]
 GO
 DROP PROCEDURE Users_InsertUser
 GO
@@ -25,3 +25,15 @@ GO
 DROP PROCEDURE Users_UpdateModerator
 GO
 DROP PROCEDURE Users_RemoveUser
+GO
+DROP PROCEDURE GetAllNews
+GO
+DROP PROCEDURE GetCategories
+GO
+DROP PROCEDURE GetTenNews
+GO
+DROP PROCEDURE InsertNews
+GO
+DROP PROCEDURE RemoveNews
+GO
+DROP PROCEDURE UpdateNews

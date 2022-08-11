@@ -11,7 +11,7 @@ public class FenXsNewsDAL
     string connectionString;
     public FenXsNewsDAL(IConfiguration configuration, IFenXsLogger iFenXsLogger)
     {
-        connectionString = configuration.GetConnectionString("FenXs-News");
+        connectionString = configuration.GetConnectionString("FenXs");
         this.iFenXsLogger = iFenXsLogger;
     }
     public bool InsertNews(News n)

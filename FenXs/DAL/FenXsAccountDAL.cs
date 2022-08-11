@@ -13,7 +13,7 @@ public class FenXsAccountDAL
     string connectionString;
     public FenXsAccountDAL(IConfiguration configuration, IFenXsLogger iFenXsLogger)
     {
-        connectionString = configuration.GetConnectionString("FenXs-Accounts");
+        connectionString = configuration.GetConnectionString("FenXs");
         this.iFenXsLogger = iFenXsLogger;
     }
     public int InsertUser(Registration r)
