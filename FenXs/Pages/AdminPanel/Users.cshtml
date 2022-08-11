@@ -15,7 +15,6 @@
         <thead>
             <tr class="text-center">
                 <th scope="col" class="border-end border-light">Id</th>
-                <th scope="col" class="border-end border-light">Login</th>
                 <th scope="col" class="border-end border-light">Email</th>
                 <th scope="col" class="border-end border-light">Active</th>
                 <th scope="col" class="border-end border-light">Banned</th>
@@ -31,15 +30,14 @@
             {
                 <tr class="FenXs-Font-Smaller">
                     <th scope="row" class="text-center border-end border-light">@user.id</th>
-                    <td class="border-end border-light">@user.login</td>
-                    <td class="border-end border-light">@user.email</td>
-                    <td class="text-success text-center border-end border-light">@user.active</td>
-                    <td class="text-danger text-center border-end border-light">@user.banned</td>
-                    <td class="text-warning text-center border-end border-light">@user.admin</td>
-                    <td class="border-end border-light">@user.fenXs_Stars</td>
-                    <td class="text-center border-end border-light">@user.signInDate</td>
-                    <td class="text-center border-end border-light">@user.lastLogin</td>
-                    <td class="text-center">
+                    <td scope="row" class="border-end border-light">@user.email</td>
+                    <td scope="row" class="text-success text-center border-end border-light">@user.active</td>
+                    <td scope="row" class="text-danger text-center border-end border-light">@user.banned</td>
+                    <td scope="row" class="text-warning text-center border-end border-light">@user.admin</td>
+                    <td scope="row" class="border-end border-light">@user.fenXs_Stars</td>
+                    <td scope="row" class="text-center border-end border-light">@user.signInDate</td>
+                    <td scope="row" class="text-center border-end border-light">@user.lastLogin</td>
+                    <td scope="row" class="text-center">
                         <a asp-page="Users/SetActive" asp-route-id="@user.id" asp-route-set="@user.active"
                         class="link-success fw-bold FenXs-Text-NoShadow">Active</a> |
                         <a asp-page="Users/SetBanned" asp-route-id="@user.id" asp-route-set="@user.banned"
