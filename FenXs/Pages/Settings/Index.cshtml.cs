@@ -14,6 +14,8 @@ public class SettingsIndexModel : UserPageModel
     public ChangeEmail ce { get; set; }
     [BindProperty]
     public ChangePassword cp { get; set; }
+    [BindProperty]
+    public string passwordToDeleteAcc { get; set; }
     public bool dangerBox, warningBox, successBox;
     public string info;
     public SettingsIndexModel(IConfiguration configuration, IFenXsLogger iFenXsLogger)
@@ -87,9 +89,31 @@ public class SettingsIndexModel : UserPageModel
         else dangerBox = true;
         OnGet();
     }
-    public void OnPostChangePassword()
+    public void OnPostRemoveAccount()
     {
         successBox = warningBox = dangerBox = false;
-        if()
+        if (ModelState.ErrorCount - 6 == 0)
+        {
+            if (!fenXsAccountDAL.CheckPasswordCompatibility((int)HttpContext.Session.GetInt32("id"), passwordToDeleteAcc))
+            {
+                dangerBox = true;
+                info = "Wrong password provided.";
+            }
+            else
+            {
+                switch (fenXsAccountDAL.UpdatePassword((int)HttpContext.Session.GetInt32("id"), cp.newPassword))
+                {
+                    case true:
+                        Response.Redirect("/Logout");
+                        break;
+                    case false:
+                        dangerBox = true;
+                        info = "The server was unable to process the request. Sorry for the inconvenience.";
+                        break;
+                }
+            }
+        }
+        else dangerBox = true;
+        OnGet();
     }
 }
