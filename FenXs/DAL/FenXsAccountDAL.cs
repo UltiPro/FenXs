@@ -141,6 +141,28 @@ public class FenXsAccountDAL
             return null;
         }
     }
+    public bool CheckPasswordCompatibility(int id, string password)
+    {
+        try
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand("Users_GetPassword", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", id);
+                con.Open();
+                SqlDataReader r = cmd.ExecuteReader();
+                r.Read();
+                if (BCrypt.Net.BCrypt.Verify(password, r["Password"].ToString())) return true;
+                return false;
+            }
+        }
+        catch (SqlException e)
+        {
+            iFenXsLogger.SaveLog(e.Number + " " + e.Message);
+            return false;
+        }
+    }
     public int UpdateEmail(int id, string email)
     {
         try
@@ -173,7 +195,7 @@ public class FenXsAccountDAL
                 SqlCommand cmd = new SqlCommand("Users_UpdatePassword", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id", id);
-                cmd.Parameters.AddWithValue("@password", password);
+                cmd.Parameters.AddWithValue("@password", BCrypt.Net.BCrypt.HashPassword(password));
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -274,7 +296,7 @@ public class FenXsAccountDAL
             return false;
         }
     }
-    /*public bool RemoveUser(int id)
+    public bool RemoveUser(int id)
     {
         try
         {
@@ -294,5 +316,5 @@ public class FenXsAccountDAL
             iFenXsLogger.SaveLog(e.Number + " " + e.Message);
             return false;
         }
-    }*/
+    }
 }

@@ -94,6 +94,10 @@ a:hover {
   text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 
+.FenXs-Text-Dark-Shadow {
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
 .FenXs-Text-NoShadow {
   text-shadow: none;
 }

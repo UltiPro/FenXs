@@ -65,6 +65,17 @@ BEGIN
     FROM Users
 END
 GO
+CREATE PROCEDURE Users_GetPassword
+    (
+    @id INT
+)
+AS
+BEGIN
+    SELECT Password
+    FROM Users
+    WHERE Id = @id
+END
+GO
 CREATE PROCEDURE Users_UpdateEmail
     (
     @id INT,

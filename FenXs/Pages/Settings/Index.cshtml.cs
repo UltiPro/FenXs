@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using PageModels.UserPageModel;
 using Models.ChangeEmailModel;
+using Models.ChangePasswordModel;
 using DAL.FenXsAccountDAL;
 using Infrastructure.FenXsLogger;
 
@@ -11,6 +12,8 @@ public class SettingsIndexModel : UserPageModel
     private FenXsAccountDAL fenXsAccountDAL;
     [BindProperty]
     public ChangeEmail ce { get; set; }
+    [BindProperty]
+    public ChangePassword cp { get; set; }
     public bool dangerBox, warningBox, successBox;
     public string info;
     public SettingsIndexModel(IConfiguration configuration, IFenXsLogger iFenXsLogger)
@@ -20,7 +23,7 @@ public class SettingsIndexModel : UserPageModel
     public void OnPostChangeEmail()
     {
         successBox = warningBox = dangerBox = false;
-        if (ModelState.IsValid)
+        if (ModelState.ErrorCount - 4 == 0)
         {
             if (!(String.Compare(ce.oldEmail, HttpContext.Session.GetString("email")) == 0))
             {
@@ -55,5 +58,38 @@ public class SettingsIndexModel : UserPageModel
         }
         else dangerBox = true;
         OnGet();
+    }
+    public void OnPostChangePassword()
+    {
+        successBox = warningBox = dangerBox = false;
+        if (ModelState.ErrorCount - 4 == 0)
+        {
+            if (!fenXsAccountDAL.CheckPasswordCompatibility((int)HttpContext.Session.GetInt32("id"), cp.oldPassword))
+            {
+                dangerBox = true;
+                info = "Wrong old password provided.";
+            }
+            else
+            {
+                switch (fenXsAccountDAL.UpdatePassword((int)HttpContext.Session.GetInt32("id"), cp.newPassword))
+                {
+                    case true:
+                        successBox = true;
+                        info = "Your password has been successfully changed.";
+                        break;
+                    case false:
+                        dangerBox = true;
+                        info = "The server was unable to process the request. Sorry for the inconvenience.";
+                        break;
+                }
+            }
+        }
+        else dangerBox = true;
+        OnGet();
+    }
+    public void OnPostChangePassword()
+    {
+        successBox = warningBox = dangerBox = false;
+        if()
     }
 }

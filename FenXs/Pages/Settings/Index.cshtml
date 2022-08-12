@@ -46,7 +46,7 @@
             Change E-mail
         </div>
         <div>
-            Your E-mail: <span class="FenXs-Text-NoShadow">@Model.user.email</span>
+            Your E-mail: <span class="FenXs-Text-Dark-Shadow text-warning">@Model.user.email</span>
         </div>
         <form method="post" asp-page-handler="ChangeEmail">
             <div class="form-group my-2">
@@ -70,13 +70,35 @@
         <div class="text-center h4 mt-1">
             Change Password
         </div>
-        <form method="post">
-
+        <div>
+            &nbsp
+        </div>
+        <form method="post" asp-page-handler="ChangePassword">
+            <div class="form-group my-2">
+                <input type="password" asp-for="cp.oldPassword" class="form-control form-control-sm border border-dark"
+                    placeholder="Your Old Password">
+            </div>
+            <div class="form-group my-2">
+                <input type="password" asp-for="cp.newPassword" class="form-control form-control-sm border border-dark"
+                    placeholder="Your New Password">
+            </div>
+            <div class="form-group my-2">
+                <input type="password" asp-for="cp.r_newPassword"
+                    class="form-control form-control-sm border border-dark" placeholder="Repeat New Password">
+            </div>
+            <div class="form-group my-2">
+                <button type="submit" class="btn btn-success w-100 border border-dark">Change!</button>
+            </div>
         </form>
     </div>
 </div>
-<div class="row m-2 mt-3 text-light">
-    <div class="col FenXs-Wooden border border-dark rounded">
-
+<div class="row justify-content-center FenXs-Font-Forms text-dark m-2 mt-3">
+    <div class="col-12 col-md bg-danger me-2 border border-2 border-dark rounded shadow-sm">
+        <span class="h3">Remove Account</span>
+        <form method="post" asp-page-handler="RemoveAccount">
+            <input type="password" asp-for="cp.oldPassword" class="form-control form-control-sm w-25 border border-dark"
+                placeholder="Your Password">
+            <button type="submit" class="btn btn-warning border border-dark">Remove Account</button>
+        </form>
     </div>
 </div>
