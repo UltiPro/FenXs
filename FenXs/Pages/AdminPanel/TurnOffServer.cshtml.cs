@@ -5,9 +5,18 @@ namespace FenXs.Pages;
 
 public class TurnOffServerModel : AdminPageModel
 {
-    string connectionString;
-    public TurnOffServerModel(IConfiguration configuration, IFenXsLogger iFenXsLogger)
+    public TurnOffServerModel() { }
+    override public void OnGet()
     {
-        
+        if (!IsUserLogged()) Response.Redirect("/");
+        if (!user.admin) Response.Redirect("/Main");
+    }
+    public void OnPostTurnOffServerStart()
+    {
+
+    }
+    public void OnPostTurnOffServerStop()
+    {
+
     }
 }

@@ -82,6 +82,10 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/FenXs-FooterToggler.js" asp-append-version="true"></script>
+    @if (ViewBag.IsTurnOffPage == true)
+    {
+        <script src="~/js/Page-TurnOffServer.js" asp-append-version="true"></script>
+    }
 </body>
 
 </html>
