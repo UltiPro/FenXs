@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using PageModels.UserPageModel;
 using Models.ChangeEmailModel;
 using Models.ChangePasswordModel;
+using Models.RemoveAccountModel;
 using DAL.FenXsAccountDAL;
 using Infrastructure.FenXsLogger;
 
@@ -15,7 +16,7 @@ public class SettingsIndexModel : UserPageModel
     [BindProperty]
     public ChangePassword cp { get; set; }
     [BindProperty]
-    public string passwordToDeleteAcc { get; set; }
+    public RemoveAccount ra { get; set; }
     public bool dangerBox, warningBox, successBox;
     public string info;
     public SettingsIndexModel(IConfiguration configuration, IFenXsLogger iFenXsLogger)
@@ -94,14 +95,14 @@ public class SettingsIndexModel : UserPageModel
         successBox = warningBox = dangerBox = false;
         if (ModelState.ErrorCount - 6 == 0)
         {
-            if (!fenXsAccountDAL.CheckPasswordCompatibility((int)HttpContext.Session.GetInt32("id"), passwordToDeleteAcc))
+            if (!fenXsAccountDAL.CheckPasswordCompatibility((int)HttpContext.Session.GetInt32("id"), ra.password))
             {
                 dangerBox = true;
                 info = "Wrong password provided.";
             }
             else
             {
-                switch (fenXsAccountDAL.UpdatePassword((int)HttpContext.Session.GetInt32("id"), cp.newPassword))
+                switch (fenXsAccountDAL.RemoveUser((int)HttpContext.Session.GetInt32("id")))
                 {
                     case true:
                         Response.Redirect("/Logout");
