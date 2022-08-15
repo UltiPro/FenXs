@@ -12,14 +12,16 @@
     <a href="Index" class="btn btn-primary w-100 border border-dark rounded shadow">Back To Admin Panel</a>
 </div>
 <div class="row m-2 text-center">
-    <button id="TurnOffServerStart"
-        class="col-12 col-md my-2 mx-md-2 pt-2 btn btn-danger border border-2 border-dark rounded shadow">
-        Turn Off
-    </button>
-    <button id="TurnOffServerStop" href="*"
-        class="col-12 col-md my-2 mx-md-2 pt-2 btn btn-success border border-2 border-dark rounded shadow">
-        Cancel
-    </button>
+    <form method="post">
+        <button id="TurnOffServerStart" asp-page-handler="TurnOffServerStart"
+            class="col-12 col-md my-2 mx-md-2 pt-2 btn btn-danger border border-2 border-dark rounded shadow">
+            Turn Off
+        </button>
+        <button id="TurnOffServerStop" asp-page-handler="TurnOffServerStop"
+            class="col-12 col-md my-2 mx-md-2 pt-2 btn btn-success border border-2 border-dark rounded shadow">
+            Cancel
+        </button>
+    </form>
 </div>
 <div id="TurnOffServerText" class="m-2 h1 text-center">
     Turn Off Server?

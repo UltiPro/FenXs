@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "JKmjJAYOa1Fhdva+fAbNrTYGrYBNzS1z9Bl8ZFez7Ss=",
+  "Hash": "bHJ/2EFxKGaIvCe1tw5ljMW4fV0SrdTeu5J3cGghICY=",
   "Source": "FenXs",
   "BasePath": "_content/FenXs",
   "Mode": "Default",
@@ -542,6 +542,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\Page-Index.js"
+    },
+    {
+      "Identity": "D:\\3. PROJEKTY\\FenXs\\FenXs\\wwwroot\\js\\Page-TurnOffServer.js",
+      "SourceId": "FenXs",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\3. PROJEKTY\\FenXs\\FenXs\\wwwroot\\",
+      "BasePath": "_content/FenXs",
+      "RelativePath": "js/Page-TurnOffServer.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Page-TurnOffServer.js"
     },
     {
       "Identity": "D:\\3. PROJEKTY\\FenXs\\FenXs\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
