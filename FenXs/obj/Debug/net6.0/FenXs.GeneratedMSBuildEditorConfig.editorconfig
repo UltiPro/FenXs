@@ -8,89 +8,89 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = FenXs
 build_property.RootNamespace = FenXs
-build_property.ProjectDir = D:\3. PROJEKTY\FenXs\FenXs\
+build_property.ProjectDir = d:\3. PROJEKTY\FenXs\FenXs\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\3. PROJEKTY\FenXs\FenXs
+build_property.MSBuildProjectDirectory = d:\3. PROJEKTY\FenXs\FenXs
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/3. PROJEKTY/FenXs/FenXs/Pages/AdminPanel/Index.cshtml]
+[d:/3. PROJEKTY/FenXs/FenXs/Pages/AdminPanel/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5QYW5lbFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3. PROJEKTY/FenXs/FenXs/Pages/AdminPanel/News.cshtml]
+[d:/3. PROJEKTY/FenXs/FenXs/Pages/AdminPanel/News.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5QYW5lbFxOZXdzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3. PROJEKTY/FenXs/FenXs/Pages/AdminPanel/News/Add.cshtml]
+[d:/3. PROJEKTY/FenXs/FenXs/Pages/AdminPanel/News/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5QYW5lbFxOZXdzXEFkZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3. PROJEKTY/FenXs/FenXs/Pages/AdminPanel/News/Delete.cshtml]
+[d:/3. PROJEKTY/FenXs/FenXs/Pages/AdminPanel/News/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5QYW5lbFxOZXdzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3. PROJEKTY/FenXs/FenXs/Pages/AdminPanel/News/Edit.cshtml]
+[d:/3. PROJEKTY/FenXs/FenXs/Pages/AdminPanel/News/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5QYW5lbFxOZXdzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3. PROJEKTY/FenXs/FenXs/Pages/AdminPanel/TurnOffServer.cshtml]
+[d:/3. PROJEKTY/FenXs/FenXs/Pages/AdminPanel/TurnOffServer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5QYW5lbFxUdXJuT2ZmU2VydmVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3. PROJEKTY/FenXs/FenXs/Pages/AdminPanel/Users.cshtml]
+[d:/3. PROJEKTY/FenXs/FenXs/Pages/AdminPanel/Users.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5QYW5lbFxVc2Vycy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3. PROJEKTY/FenXs/FenXs/Pages/AdminPanel/Users/SetActive.cshtml]
+[d:/3. PROJEKTY/FenXs/FenXs/Pages/AdminPanel/Users/SetActive.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5QYW5lbFxVc2Vyc1xTZXRBY3RpdmUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3. PROJEKTY/FenXs/FenXs/Pages/AdminPanel/Users/SetAdmin.cshtml]
+[d:/3. PROJEKTY/FenXs/FenXs/Pages/AdminPanel/Users/SetAdmin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5QYW5lbFxVc2Vyc1xTZXRBZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3. PROJEKTY/FenXs/FenXs/Pages/AdminPanel/Users/SetBanned.cshtml]
+[d:/3. PROJEKTY/FenXs/FenXs/Pages/AdminPanel/Users/SetBanned.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5QYW5lbFxVc2Vyc1xTZXRCYW5uZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3. PROJEKTY/FenXs/FenXs/Pages/AdminPanel/Users/SetModerator.cshtml]
+[d:/3. PROJEKTY/FenXs/FenXs/Pages/AdminPanel/Users/SetModerator.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5QYW5lbFxVc2Vyc1xTZXRNb2RlcmF0b3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3. PROJEKTY/FenXs/FenXs/Pages/Error.cshtml]
+[d:/3. PROJEKTY/FenXs/FenXs/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3. PROJEKTY/FenXs/FenXs/Pages/Index.cshtml]
+[d:/3. PROJEKTY/FenXs/FenXs/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3. PROJEKTY/FenXs/FenXs/Pages/Logout.cshtml]
+[d:/3. PROJEKTY/FenXs/FenXs/Pages/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9nb3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3. PROJEKTY/FenXs/FenXs/Pages/Main.cshtml]
+[d:/3. PROJEKTY/FenXs/FenXs/Pages/Main.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3. PROJEKTY/FenXs/FenXs/Pages/NotFound.cshtml]
+[d:/3. PROJEKTY/FenXs/FenXs/Pages/NotFound.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTm90Rm91bmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3. PROJEKTY/FenXs/FenXs/Pages/Settings/Index.cshtml]
+[d:/3. PROJEKTY/FenXs/FenXs/Pages/Settings/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2V0dGluZ3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3. PROJEKTY/FenXs/FenXs/Pages/Shared/LayoutDefault.cshtml]
+[d:/3. PROJEKTY/FenXs/FenXs/Pages/Shared/LayoutDefault.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXExheW91dERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3. PROJEKTY/FenXs/FenXs/Pages/Shared/LayoutLogged.cshtml]
+[d:/3. PROJEKTY/FenXs/FenXs/Pages/Shared/LayoutLogged.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXExheW91dExvZ2dlZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3. PROJEKTY/FenXs/FenXs/Pages/_ViewImports.cshtml]
+[d:/3. PROJEKTY/FenXs/FenXs/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
