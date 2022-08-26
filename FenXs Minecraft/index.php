@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="css/Page-Index.css" />
 </head>
 <body>
-
+    <header>
+        
+    </header>
 <!--
 	<div class="strona">
 		<a href="#" class="scrollgora"></a>
-
 <header>
 	<div class="menugora">
 		<div class="tytul"><h1><a href="http://nerdownia.ddns.net/" class="odnosnikimenu">Nerdownia</a></h1></div>
@@ -23,8 +24,6 @@
 	<div class="oddzialka2"></div>
 	</div>
 </header>
-
-
 <main>
 <div id="slider"></div>
 	<div class="tresc" >
@@ -51,7 +50,6 @@
 						<li>Status Serwera: <b>
                             l'; else echo '<span style="color:red">'.$status.'</span>'; ?></b></li>						
 					</ul>
-	
 	<a href="FTP/Minecraft 1.15 Ulti.rar" class="pobierz"><fieldset class="pobierzstyl"><legend>POBIERZ</legend></fieldset></a>
 	<br />	
 		 if((isset($_SESSION['zalogowany']))&&($_SESSION['zalogowany']==true)&&($_SESSION['premium']=="Tak"))
@@ -60,14 +58,11 @@
 		if($status=="Offline") echo '<a href="PHP/SERWER/wlaczmine.php" class="wlacz">Włącz</a>';
 		if($status=="Online") echo '<a href="PHP/SERWER/RCON/1.15/index.php" class="wylacz" target="blank">Konsola - Zarządzanie</a>';
 		echo '<div class="clearboth"></div>';
-		};
-		
-				
+		};	
 					</fieldset>
 				</section>
 			</div>
 		</article>
-	
 	<aside>
 		<article>
 			<div class="prawy">
@@ -93,10 +88,8 @@
 			</div>
 		</article>
 	</aside>
-	
 	</div>
 </main>
-
 <footer>
 	<div class="menudulopacity9"></div>
 	<div class="menudulopacity8"></div>
@@ -108,8 +101,7 @@
 	<div class="menudulopacity2"></div>
 	<div class="menudulopacity1"></div>
 </footer>
-	</div>
-    -->
+-->
 </body>
     <script type="text/javascript" src="js/Page-Slider.js"></script>
 </html>
