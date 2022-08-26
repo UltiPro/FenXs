@@ -1,0 +1,41 @@
+body,
+html {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    backface-visibility: hidden;
+    animation-timing-function: ease-in-out;
+    animation: BackgroundSlider infinite;
+    animation-duration: 0.001s;
+    animation-direction: alternate;
+}
+
+@keyframes BackgroundSlider {
+    0% {
+        background-image: url("../img/Background0.png");
+    }
+
+    20% {
+        background-image: url("../img/Background1.png");
+    }
+
+    40% {
+        background-image: url("../img/Background2.png");
+    }
+
+    60% {
+        background-image: url("../img/Background3.png");
+    }
+
+    80% {
+        background-image: url("../img/Background4.png");
+    }
+
+    100% {
+        background-image: url("../img/Background5.png");
+    }
+}

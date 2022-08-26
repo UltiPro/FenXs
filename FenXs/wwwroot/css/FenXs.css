@@ -49,6 +49,7 @@ html {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-image: url("../img/Background.jpg");
   font-family: FenXs-Font;
   font-size: 20px;
   color: black;
