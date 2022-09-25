@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "bHJ/2EFxKGaIvCe1tw5ljMW4fV0SrdTeu5J3cGghICY=",
+  "Hash": "pz1F98IOVLGEREuAwfDTsMy3NXay30nlhGVyDcFaaLA=",
   "Source": "FenXs",
   "BasePath": "_content/FenXs",
   "Mode": "Default",
@@ -83,23 +83,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\Bootstrap-Border.css"
-    },
-    {
-      "Identity": "D:\\3. PROJEKTY\\FenXs\\FenXs\\wwwroot\\css\\FenXs-Background.css",
-      "SourceId": "FenXs",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\3. PROJEKTY\\FenXs\\FenXs\\wwwroot\\",
-      "BasePath": "_content/FenXs",
-      "RelativePath": "css/FenXs-Background.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\FenXs-Background.css"
     },
     {
       "Identity": "D:\\3. PROJEKTY\\FenXs\\FenXs\\wwwroot\\css\\FenXs-Footer.css",
