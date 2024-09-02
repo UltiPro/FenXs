@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace FenXsDAL.Models.NewsModel;
+namespace FenXsData.Models.NewsModel;
 
 public class News
 {

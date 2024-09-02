@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace FenXsDAL.Models.LoginModel;
+namespace FenXsData.Models.LoginModel;
 
 public class Login
 {

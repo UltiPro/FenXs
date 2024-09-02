@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace FenXsDAL.Models.RemoveAccountModel;
+namespace FenXsData.Models.RemoveAccountModel;
 
 public class RemoveAccount
 {

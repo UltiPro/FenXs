@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace FenXsDAL.Models.UserModel;
+namespace FenXsData.Models.UserModel;
 
 public class User
 {

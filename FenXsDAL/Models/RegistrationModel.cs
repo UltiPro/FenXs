@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace FenXsDAL.Models.RegistrationModel;
+namespace FenXsData.Models.RegistrationModel;
 
 public class Registration
 {

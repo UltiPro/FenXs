@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace FenXsDAL.Models.ChangeEmailModel;
+namespace FenXsData.Models.ChangeEmailModel;
 
 public class ChangeEmail
 {

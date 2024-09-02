@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace FenXsDAL.Models.ChangePasswordModel;
+namespace FenXsData.Models.ChangePasswordModel;
 
 public class ChangePassword
 {

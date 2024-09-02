@@ -1,4 +1,4 @@
-namespace FenXsDAL.Infrastructure.Logger;
+namespace FenXsData.Infrastructure.Logger;
 
 public class LoggerConsole : ILogger
 {
