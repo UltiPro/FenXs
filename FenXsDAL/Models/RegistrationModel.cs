@@ -1,9 +1,8 @@
-using FenXsDAL.Models.LoginModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace FenXsDAL.Models.RegistrationModel;
 
-public class Registration : Login
+public class Registration
 {
     [Required(ErrorMessage = "Login is required.")]
     [StringLength(30, ErrorMessage = "Login should be 4 to 30 characters long.", MinimumLength = 4)]
