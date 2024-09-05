@@ -8,7 +8,7 @@ public class User
     public int id { get; set; }
 
     [Display(Name = "Login")]
-    public string? login { get; set; }
+    public string login { get; set; }
 
     [Display(Name = "Email")]
     public string email { get; set; }
