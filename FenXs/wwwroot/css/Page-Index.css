@@ -1,0 +1,33 @@
+.IndexMenu {
+    width: 400px;
+    height: 305px;
+}
+
+.IndexMenuTab {
+    height: 35px;
+}
+
+.IndexMenuForm {
+    height: 270px;
+}
+
+.IndexError {
+    width: 450px;
+    font-size: 18px;
+}
+
+#LoginInSelector {
+    cursor: pointer;
+}
+
+#SignInSelector {
+    cursor: pointer;
+}
+
+#LoginInBox label {
+    height: 42px;
+}
+
+#SignInBox label {
+    height: 38.25px;
+}

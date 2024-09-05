@@ -1,0 +1,24 @@
+.Settings {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("../img/AdminPanel/Settings.png");
+    height: 256px;
+    border: 1px solid white;
+}
+
+.Settings:hover {
+    border-color: rgb(var(--bs-dark-rgb));
+}
+
+.TurnOffServer {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("../img/AdminPanel/TurnOff.png");
+    height: 256px;
+    border: 1px solid white;
+}
+
+.TurnOffServer:hover {
+    border-color: rgb(var(--bs-danger-rgb));
+    border: 1px solid rgb(var(--bs-danger-rgb));
+}

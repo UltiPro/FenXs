@@ -1,0 +1,131 @@
+@font-face {
+  font-family: FenXs-Font;
+  src: url("../font/Page.ttf");
+}
+
+@font-face {
+  font-family: FenXs-Font-Logo;
+  src: url("../font/Logo.ttf");
+}
+
+@font-face {
+  font-family: FenXs-Font-Form;
+  src: url("../font/Form.ttf");
+}
+
+@font-face {
+  font-family: FenXs-Font-Anchor;
+  src: url("../font/Anchor.ttf");
+}
+
+:root {
+  --FenXs-Wooden: 156, 102, 68;
+  --FenXs-Dark-Wooden: 127, 85, 67;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  background: rgb(var(--FenXs-Dark-Wooden));
+}
+
+::-webkit-scrollbar-track {
+  border: 1px solid rgb(var(--bs-dark-rgb));
+  background: rgb(var(--FenXs-Dark-Wooden));
+}
+
+::-webkit-scrollbar-thumb {
+  border: 1px solid rgb(var(--bs-dark-rgb));
+  background: rgb(var(--FenXs-Wooden));
+}
+
+::-webkit-scrollbar-thumb:hover {
+  border: 1px solid white;
+}
+
+body,
+html {
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../img/Background.jpg");
+  font-family: FenXs-Font;
+  font-size: 20px;
+  color: black;
+}
+
+header {
+  font-family: FenXs-Font-Logo;
+}
+
+aside {
+  height: 100px;
+}
+
+a,
+a:focus,
+a:active {
+  font-family: FenXs-Font-Anchor;
+  text-decoration: none;
+  text-shadow: -1px 0 grey, 0 1px grey, 1px 0 grey, 0 -1px grey;
+}
+
+a:hover {
+  text-shadow: -1px 0 darkgrey, 0 1px darkgrey, 1px 0 darkgrey, 0 -1px darkgrey;
+}
+
+.btn:focus {
+  box-shadow: none;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.FenXs-Text-Smaller {
+  font-size: 0.75rem;
+}
+
+.FenXs-Text-Bigger {
+  font-size: 1.25rem;
+}
+
+.FenXs-Text-Shadow {
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+.FenXs-Text-Dark-Shadow {
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.FenXs-Text-NoShadow {
+  text-shadow: none;
+}
+
+.FenXs-Text-NoShadow:hover {
+  text-shadow: none;
+}
+
+.FenXs-Font-Forms {
+  font-family: FenXs-Font-Form;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+.FenXs-Wooden {
+  background-color: rgb(var(--FenXs-Wooden));
+}
+
+.FenXs-Dark-Wooden {
+  background-color: rgb(var(--FenXs-Dark-Wooden));
+}
+
+.FenXs-Dark-Wooden-Btn {
+  background-color: rgb(var(--FenXs-Dark-Wooden));
+  border-color: rgb(var(--bs-dark-rgb));
+}
+
+.FenXs-Dark-Wooden-Btn:hover {
+  color: white;
+  border-color: white;
+}

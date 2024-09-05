@@ -1,0 +1,25 @@
+.ServerBtn {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 256px;
+    font-family: FenXs-Font;
+    color: white;
+    text-shadow: 4px 3px 0px rgb(var(--bs-dark-rgb));
+    border: 1px solid rgb(var(--bs-dark-rgb));
+}
+
+.ServerBtn:hover {
+    color: white;
+    text-shadow: none;
+    border-color: white;
+    cursor: pointer;
+}
+
+.FenXsGame {
+    background-image: url("../img/Main/BtnFenXsGame.jpg");
+}
+
+.Minecraft {
+    background-image: url("../img/Main/BtnMinecraft.jpg");
+}
