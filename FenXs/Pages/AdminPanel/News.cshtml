@@ -1,0 +1,58 @@
+@page
+@model NewsModel
+@{
+    Layout = "LayoutLogged";
+    ViewData["Description"] = "- Admin Panel - News";
+    ViewData["Login"] = @Model.user.login;
+    ViewData["FenXs-Stars"] = @Model.user.fenxsStars;
+}
+
+<div class="row m-2">
+    <div class="col-12 col-md p-0 my-1 my-md-0 me-md-1">
+        <a href="News/Add" class="btn btn-success w-100 border border-dark rounded shadow">Add News</a>
+    </div>
+    <div class="col-12 col-md p-0 my-1 my-md-0 ms-md-1">
+        <a href="Index" class="btn btn-primary w-100 border border-dark rounded shadow">Back To Admin Panel</a>
+    </div>
+</div>
+<div class="m-2 mt-3">
+    <table class="table table-striped table-dark border border-light shadow">
+        <thead>
+            <tr class="text-center">
+                <th scope="col" class="border-end border-light">ID</th>
+                <th scope="col" class="border-end border-light">Title</th>
+                <th scope="col" class="border-end border-light">Text</th>
+                <th scope="col" class="border-end border-light">Date</th>
+                <th scope="col" class="border-end border-light">Category</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var news in Model.listOfNews)
+            {
+                <tr class="FenXs-Font-Smaller">
+                    <th scope="row" class="text-center border-end border-light">@news.id</th>
+                    <td class="border-end border-light">@news.title</td>
+                    <td class="border-end border-light">@news.text</td>
+                    <td class="text-center border-end border-light">@news.date</td>
+                    <td class="text-center border-end border-light">
+                        @foreach (var newsCategory in Model.listOfNewsCategories)
+                        {
+                            if (news.idOfCategory == newsCategory.id)
+                            {
+                                <span>@newsCategory.name</span>
+                                break;
+                            }
+                        }
+                    </td>
+                    <td class="text-center">
+                        <a asp-page="News/Edit" asp-route-id="@news.id"
+                           class="link-success fw-bold FenXs-Text-NoShadow">Edit</a> |
+                        <a asp-page="News/Delete" asp-route-id="@news.id"
+                           class="link-danger fw-bold FenXs-Text-NoShadow">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

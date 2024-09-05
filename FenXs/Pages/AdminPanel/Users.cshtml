@@ -1,0 +1,52 @@
+@page
+@model UsersModel
+@{
+    Layout = "LayoutLogged";
+    ViewData["Description"] = "- Admin Panel - Users";
+    ViewData["Login"] = @Model.user.login;
+    ViewData["FenXs-Stars"] = @Model.user.fenxsStars;
+}
+
+<div class="m-2">
+    <a href="Index" class="btn btn-primary w-100 border border-dark rounded shadow">Back To Admin Panel</a>
+</div>
+<div class="m-2 mt-3">
+    <table class="table table-striped table-dark border border-light shadow">
+        <thead>
+            <tr class="text-center">
+                <th scope="col" class="border-end border-light">Id</th>
+                <th scope="col" class="border-end border-light">Email</th>
+                <th scope="col" class="border-end border-light">Active</th>
+                <th scope="col" class="border-end border-light">Banned</th>
+                <th scope="col" class="border-end border-light">Admin</th>
+                <th scope="col" class="border-end border-light">Moderator</th>
+                <th scope="col" class="border-end border-light">Stars</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model.listOfUsers)
+            {
+                <tr class="FenXs-Font-Smaller">
+                    <th scope="row" class="text-center border-end border-light">@user.id</th>
+                    <td scope="row" class="border-end border-light">@user.email</td>
+                    <td scope="row" class="text-success text-center border-end border-light">@user.active</td>
+                    <td scope="row" class="text-danger text-center border-end border-light">@user.banned</td>
+                    <td scope="row" class="text-warning text-center border-end border-light">@user.admin</td>
+                    <td scope="row" class="text-primary text-center border-end border-light">@user.moderator</td>
+                    <td scope="row" class="text-center border-end border-light">@user.fenXs_Stars</td>
+                    <td scope="row" class="text-center">
+                        <a asp-page="Users/SetActive" asp-route-id="@user.id" asp-route-set="@user.active"
+                           class="link-success fw-bold FenXs-Text-NoShadow">Active</a> |
+                        <a asp-page="Users/SetBanned" asp-route-id="@user.id" asp-route-set="@user.banned"
+                           class="link-danger fw-bold FenXs-Text-NoShadow">Ban</a> |
+                        <a asp-page="Users/SetAdmin" asp-route-id="@user.id" asp-route-set="@user.admin"
+                           class="link-warning fw-bold FenXs-Text-NoShadow">Admin</a> |
+                        <a asp-page="Users/SetModerator" asp-route-id="@user.id" asp-route-set="@user.moderator"
+                           class="link-primary fw-bold FenXs-Text-NoShadow">Moderator</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

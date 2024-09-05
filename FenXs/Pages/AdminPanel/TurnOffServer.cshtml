@@ -1,0 +1,28 @@
+@page
+@model TurnOffServerModel
+@{
+    Layout = "LayoutLogged";
+    ViewData["Description"] = "- Admin Panel - Turn Off Server";
+    ViewData["Login"] = @Model.user.login;
+    ViewData["FenXs-Stars"] = @Model.user.fenxsStars;
+    ViewBag.IsTurnOffPage = true;
+}
+
+<div class="m-2">
+    <a href="Index" class="btn btn-primary w-100 border border-dark rounded shadow">Back To Admin Panel</a>
+</div>
+<div class="row m-2 text-center">
+    <form method="post">
+        <button id="TurnOffServerStart" asp-page-handler="TurnOffServerStart"
+                class="col-12 col-md my-2 mx-md-2 pt-2 btn btn-danger border border-2 border-dark rounded shadow">
+            Turn Off
+        </button>
+        <button id="TurnOffServerStop" asp-page-handler="TurnOffServerStop"
+                class="col-12 col-md my-2 mx-md-2 pt-2 btn btn-success border border-2 border-dark rounded shadow">
+            Cancel
+        </button>
+    </form>
+</div>
+<div id="TurnOffServerText" class="m-2 h1 text-center">
+    Turn Off Server?
+</div>
