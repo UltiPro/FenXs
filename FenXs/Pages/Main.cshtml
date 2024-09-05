@@ -1,0 +1,45 @@
+@page
+@model MainModel
+@{
+    Layout = "LayoutLogged";
+    ViewData["Description"] = "- Main";
+    ViewData["Login"] = @Model.user.login;
+    ViewData["FenXs-Stars"] = @Model.user.fenxsStars;
+    ViewBag.IsMain = true;
+}
+
+<div class="row h1 m-2">
+    <a href="*" class="col-12 col-md ServerBtn FenXsGame my-2 mx-md-2 rounded shadow">
+        FenXs Game
+    </a>
+    <a href="https://FenXs.ddns.net:8888" class="col-12 col-md ServerBtn Minecraft my-2 mx-md-2 rounded shadow">
+        Minecraft
+    </a>
+</div>
+<div class="row m-2 mt-3">
+    @if (Model.listOfNews == null)
+    {
+        <div class="alert alert-dismissible bg-danger border border-2 border-dark shadow" role="alert">
+            Failed to download the news list. Sorry for the inconvenience.
+            <button type="button" class="btn-close position-absolute top-50 translate-middle-y" data-bs-dismiss="alert"
+                    aria-label="Close"></button>
+        </div>
+    }
+    else
+    {
+        <div class="text-light bg-light bg-opacity-25 border rounded shadow">
+            <div class="h2 text-center mt-2">News</div>
+            @foreach (var n in Model.listOfNews)
+            {
+                <div class="my-2 bg-dark bg-opacity-75 border border-dark rounded shadow-sm">
+                    <div class="h3 mb-0 mt-1 text-success text-center border-bottom border-dark">@n.title</div>
+                    <div class="px-2 mb-0 mt-1 text-justify border-bottom border-dark">@n.text</div>
+                    <div class="px-2 mt-1 text-end FenXs-Text-Smaller">
+                        <span class="text-danger">Team FenXs</span> -
+                        @n.date.ToString()
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
