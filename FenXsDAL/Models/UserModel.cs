@@ -8,7 +8,7 @@ public class User
     public int id { get; set; }
 
     [Display(Name = "Login")]
-    public string login { get; set; }
+    public string? login { get; set; }
 
     [Display(Name = "Email")]
     public string email { get; set; }
@@ -21,6 +21,12 @@ public class User
 
     [Display(Name = "FenXs Stars")]
     public int fenxsStars { get; set; }
+
+    public User()
+    {
+        login = "";
+        email = "";
+    }
 
     public User(int id, string login, string email, bool admin, bool moderator, int fenxsStars)
     {
