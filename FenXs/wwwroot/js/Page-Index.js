@@ -57,7 +57,7 @@ function ValidateSignIn() {
     const login = $("input[name='r.login']");
     const email = $("input[name='r.email']");
     const password = $("input[name='r.password']");
-    const c_password = $("input[name='r.c_password']");
+    const c_password = $("input[name='r.confirmPassword']");
     pass = Validation(CheckLogin, login, pass);
     pass = Validation(CheckEmail, email, pass);
     pass = Validation(CheckPassword, password, pass);
