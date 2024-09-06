@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FenXs</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/FenXs.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/FenXs-HeaderBig.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/FenXs-Footer.css" asp-append-version="true" />
+    @if (ViewBag.IsIndex == true)
+    {
+        <link rel="stylesheet" href="~/css/Page-Index.css" asp-append-version="true" />
+    }
+</head>
+
+<body>
+    <header class="text-center p-5">
+        FenXs
+    </header>
+    <main role="main">
+        @RenderBody()
+    </main>
+    <aside></aside>
+    <footer class="footer FooterMax position-fixed bottom-0 end-0 FenXs-Wooden text-center p-1 border-top border-start border-2 border-dark">
+        &copy 2022 - FenXs @ViewData["Description"]
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/FenXs-FooterToggler.js" asp-append-version="true"></script>
+    @if (ViewBag.IsIndex == true)
+    {
+        <script src="~/js/FenXs-AudioChangeInput.js" asp-append-version="true"></script>
+        <script src="~/js/FenXs-AudioChangeWindow.js" asp-append-version="true"></script>
+        <script src="~/js/FenXs-AudioValidationFail.js" asp-append-version="true"></script>
+        <script src="~/js/FenXs-GetCookie.js" asp-append-version="true"></script>
+        <script src="~/js/FenXs-InputsValidations.js" asp-append-version="true"></script>
+        <script src="~/js/Page-Index.js" asp-append-version="true"></script>
+    }
+</body>
+
+</html>
