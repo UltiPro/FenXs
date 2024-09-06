@@ -16,13 +16,13 @@
 @if (Model.dangerBox)
 {
     <div class="alert alert-dismissible mx-2 bg-danger border border-2 border-dark shadow-lg" role="alert">
-        <span asp-validation-for="ce.oldEmail" class="d-block"></span>
-        <span asp-validation-for="ce.newEmail" class="d-block"></span>
-        <span asp-validation-for="ce.r_newEmail" class="d-block"></span>
-        <span asp-validation-for="cp.oldPassword" class="d-block"></span>
-        <span asp-validation-for="cp.oldPassword" class="d-block"></span>
-        <span asp-validation-for="cp.r_newPassword" class="d-block"></span>
-        <span asp-validation-for="ra.password" class="d-block"></span>
+        <span asp-validation-for="ce!.oldEmail" class="d-block"></span>
+        <span asp-validation-for="ce!.newEmail" class="d-block"></span>
+        <span asp-validation-for="ce!.repeatNewEmail" class="d-block"></span>
+        <span asp-validation-for="cp!.oldPassword" class="d-block"></span>
+        <span asp-validation-for="cp!.oldPassword" class="d-block"></span>
+        <span asp-validation-for="cp!.repeatNewPassword" class="d-block"></span>
+        <span asp-validation-for="ra!.password" class="d-block"></span>
         <span class="d-block">@Model.info</span>
         <button type="button" class="btn-close position-absolute top-50 translate-middle-y" data-bs-dismiss="alert"
                 aria-label="Close"></button>
@@ -54,15 +54,15 @@
         </div>
         <form method="post" asp-page-handler="ChangeEmail">
             <div class="form-group my-2">
-                <input type="email" asp-for="ce.oldEmail" class="form-control form-control-sm border border-dark"
+                <input type="email" asp-for="ce!.oldEmail" class="form-control form-control-sm border border-dark"
                        placeholder="Your Old E-mail">
             </div>
             <div class="form-group my-2">
-                <input type="email" asp-for="ce.newEmail" class="form-control form-control-sm border border-dark"
+                <input type="email" asp-for="ce!.newEmail" class="form-control form-control-sm border border-dark"
                        placeholder="Your New E-mail">
             </div>
             <div class="form-group my-2">
-                <input type="email" asp-for="ce.r_newEmail" class="form-control form-control-sm border border-dark"
+                <input type="email" asp-for="ce!.repeatNewEmail" class="form-control form-control-sm border border-dark"
                        placeholder="Repeat New E-mail">
             </div>
             <div class="form-group my-2">
@@ -79,15 +79,15 @@
         </div>
         <form method="post" asp-page-handler="ChangePassword">
             <div class="form-group my-2">
-                <input type="password" asp-for="cp.oldPassword" class="form-control form-control-sm border border-dark"
+                <input type="password" asp-for="cp!.oldPassword" class="form-control form-control-sm border border-dark"
                        placeholder="Your Old Password">
             </div>
             <div class="form-group my-2">
-                <input type="password" asp-for="cp.newPassword" class="form-control form-control-sm border border-dark"
+                <input type="password" asp-for="cp!.newPassword" class="form-control form-control-sm border border-dark"
                        placeholder="Your New Password">
             </div>
             <div class="form-group my-2">
-                <input type="password" asp-for="cp.r_newPassword"
+                <input type="password" asp-for="cp!.repeatNewPassword"
                        class="form-control form-control-sm border border-dark" placeholder="Repeat New Password">
             </div>
             <div class="form-group my-2">
@@ -103,7 +103,7 @@
         </div>
         <form method="post" asp-page-handler="RemoveAccount">
             <div class="form-group my-2">
-                <input type="password" asp-for="ra.password" class="form-control form-control-sm border border-dark"
+                <input type="password" asp-for="ra!.password" class="form-control form-control-sm border border-dark"
                        placeholder="Your Password">
             </div>
             <div class="form-group my-2">
