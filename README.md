@@ -1,7 +1,7 @@
 # FenXs
 FenXs created by Patryk 'UltiPro' Wójtowicz using ASP.NET Core Razor Pages.
 
-FenXs is a website for managing data on a server that was originally intended to host Minecraft servers and FenXs Game. Originally, the project was supposed to be a replacement for the "Nerdownia" project written in PHP, but due to studies and lack of time, the project was abandoned.
+The website for managing data on a server that was originally intended to host Minecraft servers and FenXs Game. The main idea was to be able to remotely start the server and then control its Minecraft servers via a website. Originally, the project was supposed to be a replacement for the "Nerdownia" project written in PHP, but due to studies and lack of time, the project was abandoned.
 
 Warning:
 
