@@ -1,7 +1,9 @@
 # FenXs
 FenXs created by Patryk 'UltiPro' Wójtowicz using ASP.NET Core Razor Pages.
 
-> Warning: This application is my first major project in college, so there is a lot of ugly code. Additionally, instead of using EF Core and Identity, stored procedures and sessions were used. Everything was written from scratch without the use of scaffolding.
+Warning:
+
+> This application is my first major project in college, so there is a lot of ugly code. Additionally, instead of using EF Core and Identity, stored procedures and sessions were used. Everything was written from scratch without the use of scaffolding.
 
 desc
 
