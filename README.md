@@ -12,6 +12,8 @@ Dependencies:
   <li>System.Data.SqlClient 4.8.6</li>
 </ul>
 
+> tekst
+
 Running the app:
 
 > cd "/FenXs/FenXs"
