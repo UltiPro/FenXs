@@ -8,7 +8,8 @@ desc
 Dependencies:
 
 <ul>
-  <li></li>
+  <li>BCrypt.Net-Next 4.0.3</li>
+  <li>System.Data.SqlClient 4.8.6</li>
 </ul>
 
 Running the app:
