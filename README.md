@@ -12,7 +12,9 @@ Dependencies:
   <li>System.Data.SqlClient 4.8.6</li>
 </ul>
 
-> Before running the application: On the database server (Microsoft SQL Server), execute the script creating the database (./FenXs/FenXsDAL/Database/Create.sql) and then provide the appropriate connection string to the database in the "appsettings.json" file (in ./FenXs/FenXs folder).
+Before running or publishing the application:
+
+> On the database server (Microsoft SQL Server), execute the script creating the database (./FenXs/FenXsDAL/Database/Create.sql) and then provide the appropriate connection string to the database in the "appsettings.json" file (in ./FenXs/FenXs folder).
 
 Running the app:
 
