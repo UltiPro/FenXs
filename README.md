@@ -28,3 +28,23 @@ Publishing the app:
 # Preview
 
 ![Index Page 1 Preview](/screenshots/IndexPage1.png)
+
+![Index Page 2 Preview](/screenshots/IndexPage2.png)
+
+![Index Page 3 Preview](/screenshots/IndexPage3.png)
+
+![Main Page Preview](/screenshots/MainPage.png)
+
+![settings Page Preview](/screenshots/SettingsPage.png)
+
+![Admin Page 1 Preview](/screenshots/AdminPage1.png)
+
+![Admin Page 2 Preview](/screenshots/AdminPage2.png)
+
+![Admin Page 3 Preview](/screenshots/AdminPage3.png)
+
+![Admin Page 4 Preview](/screenshots/AdminPage4.png)
+
+![Admin Page 5 Preview](/screenshots/AdminPage5.png)
+
+![NotFound Page Preview](/screenshots/NotFoundPage.png)
