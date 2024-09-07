@@ -13,17 +13,17 @@ Dependencies:
 
 Running the app:
 
-> cd "/"
+> cd "/FenXs/FenXs"
 
 > dotnet run
 
 Publishing the app:
 
-> cd "/"
+> cd "/FenXs/FenXs"
 
 > dotnet publish
 
-> cd "/bin/Debug/net?????.0/publish"
+> cd "/bin/Debug/net8.0/publish"
 
 # Preview
 
